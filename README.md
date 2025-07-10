@@ -1,6 +1,6 @@
 # RAG Lab Environment
 
-This repository contains the full infrastructure and modular application code for a production-style Retrieval-Augmented Generation (RAG) lab.
+This repository contains the full infrastructure and modular application code for a Retrieval-Augmented Generation (RAG) lab using SharePoint data.
 
 The environment runs on a Proxmox virtualized platform with clear separation of concerns: each virtual machine hosts a specific role, such as vector storage, ingestion, or embedding services. Embedding is provided as a dedicated service for performance and modularity. Terraform, Ansible, and cloud-init manage all provisioning (`/infrastructure`).
 
@@ -14,4 +14,3 @@ FastAPI is deployed to Kubernetes (`/kubernetes`) for scalable, containerized qu
 - `shared/` – Reusable code (e.g., logging, config)
 - `docs/` – Deployment and architecture notes
 
-This hybrid setup balances performance, modularity, and learning, enabling realistic experimentation with scalable AI infrastructure and real-world document pipelines.

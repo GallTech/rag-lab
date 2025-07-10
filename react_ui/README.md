@@ -4,9 +4,9 @@ This is the frontend interface for the RAG Lab, built with React. It provides a 
 
 ## Stack
 
-- React (with Vite or CRA)
+- React 
 - Axios for backend requests
-- Tailwind or custom CSS
+- Tailwind
 
 ## Status
 

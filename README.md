@@ -1,6 +1,7 @@
 # RAG Lab  
 
 This repository contains configuration and code for a Retrieval-Augmented Generation (RAG) lab.  
+
 Each top-level folder represents a functional stage in the pipeline.  
 
 The RAG pipeline ingests ~100,000 AI/ML/Math/Stats research papers from SharePoint and other sources, extracts metadata and ACLs, and generates vector embeddings.  

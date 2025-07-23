@@ -14,3 +14,5 @@ Each folder corresponds to a **functional stage** in the pipeline.
 - **MLExperiments/** → PyTorch experiments for fine-tuning
 
 Each VM clones this repo but only uses its relevant folder.
+
+**Status:** Early provisioning & scaffolding.  

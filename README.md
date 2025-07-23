@@ -15,7 +15,3 @@ Each top-level folder represents a **functional stage** in the pipeline.
 - **SharePointSync/** → Document, metadata, and ACL export/sync from SharePoint  
 
 **Current status:** Early provisioning & scaffolding.  
-
----
-
-> Each VM maps to a specific functional stage but uses the same monorepo for consistency.

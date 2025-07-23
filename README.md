@@ -17,4 +17,4 @@ It includes a **SeaweedFS distributed object store** for PDFs, embeddings, and o
 - **API/** → FastAPI microservice for query handling  
 - **MLExperiments/** → PyTorch experiments for fine-tuning and testing  
 - **SharePointSync/** → Document, metadata, and ACL export/sync from SharePoint  
-- **Storage/SeaweedFS** → Object storage for original documents, chunked JSONs, and embedding backups
+- **Storage/SeaweedFS/** → Object storage for original documents, chunked JSONs, and embedding backups

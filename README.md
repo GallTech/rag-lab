@@ -1,6 +1,6 @@
 # RAG Lab  
 
-This repository contains all scripts and configs for the entire RAG Lab setup.
+This repository contains scripts and config for a RAG Lab setup consuming SharePoint data.
 Each folder corresponds to a **functional stage** in the pipeline.
 
 ## Structure

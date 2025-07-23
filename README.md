@@ -1,7 +1,9 @@
 # RAG Lab  
 
-This repository contains all scripts and configuration for a multi-stage Retrieval-Augmented Generation (RAG) lab.  
+This repository contains all scripts and configuration for a **multi-stage Retrieval-Augmented Generation (RAG) lab focused on AI/ML research data**.  
 Each top-level folder represents a **functional stage** in the pipeline.  
+
+The lab runs on Proxmox hosted on a **Minisforum UM890 Pro (Ryzen 9 8945HS, 64GB DDR5, 2TB NVMe)**.
 
 ## Structure  
 
@@ -16,4 +18,4 @@ Each top-level folder represents a **functional stage** in the pipeline.
 
 **Current status:** Early provisioning & scaffolding.  
 
-Lab runs on Proxmox hosted on a Minisforum UM890 Pro (Ryzen 9 8945HS, 64GB DDR5, 2TB NVMe)
+**Next steps:** Move FastAPI to Kubernetes cluster.  

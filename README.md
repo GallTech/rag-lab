@@ -14,7 +14,7 @@ The RAG pipeline ingests ~100,000 AI/ML/Math/Stats research papers from SharePoi
 1. **Extracts documents from SharePoint** with metadata + ACLs  
 2. **Chunks and embeds content** using configurable embedding models  
 3. **Stores vector representations in Qdrant** for fast similarity search  
-4. **Retrieves context via LangChain + prompt engineering**  
+4. **Generates context and prompts using LangChain and customn Python**  
 5. **Generates answers with a pluggable LLM backend** – OpenAI ChatGPT, Google Gemini, or local models – served via FastAPI & Streamlit  
 
 ## Structure  

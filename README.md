@@ -1,4 +1,4 @@
-# RAG Lab Monorepo
+# RAG Lab  
 
 This repository contains all scripts and configs for the entire RAG Lab setup.
 Each folder corresponds to a **functional stage** in the pipeline.
@@ -14,3 +14,5 @@ Each folder corresponds to a **functional stage** in the pipeline.
 - **MLExperiments/** → PyTorch experiments for fine-tuning
 
 Each VM clones this repo but only uses its relevant folder.
+
+**Status:** Early provisioning & scaffolding.  

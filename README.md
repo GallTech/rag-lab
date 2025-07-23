@@ -16,3 +16,8 @@ The RAG pipeline ingests ~100,000 AI/ML/Math/Stats research papers from SharePoi
 - **MLExperiments/** → PyTorch experiments for fine-tuning and testing  
 - **SharePointSync/** → Document, metadata, and ACL export/sync from SharePoint  
 - **Storage/** → Object storage in SeaweedFS for original documents, chunked JSONs, and embedding backups
+- 
+## Current Status  
+Early provisioning & scaffolding. 
+## Infrastructure
+Proxmox on Minisforum UM890 Pro (Ryzen 9 8945HS, 64 GB DDR5, 2 TB NVMe) 

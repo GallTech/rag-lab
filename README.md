@@ -1,20 +1,16 @@
-# RAG Lab Environment
+# RAG Lab Monorepo
 
-This repository contains the infrastructure and application code for a Retrieval-Augmented Generation (RAG) lab using SharePoint data.
-
-The environment runs on a Proxmox virtualized platform with clear separation of concerns: each virtual machine hosts a specific role, such as vector storage, ingestion, or embedding services. Embedding is performed locally using the `all-MiniLM-L6-v2` model from `sentence-transformers`, running as a dedicated service for performance and modularity. Infrastructure is provisioned and managed via Terraform, Ansible, and cloud-init (`/infrastructure`).
-
-FastAPI is deployed to Kubernetes (`/kubernetes`) for scalable, containerized query serving. The RAG LLM is currently configured to use ChatGPT, but this is fully configurable and can be swapped with a local or remote model as needed.
+This repository contains all scripts and configs for the entire RAG Lab setup.
+Each folder corresponds to a **functional stage** in the pipeline.
 
 ## Structure
 
-- `infrastructure/` – Terraform, Ansible, and cloud-init
-- `kubernetes/` – K8s manifests (FastAPI, monitoring)
-- `rag_functions/` – Modular RAG pipeline logic
-- `shared/` – Reusable code (e.g., logging, config)
-- `docs/` – Deployment and architecture notes
-- `react_ui/` – Frontend interface (React)
+- **ManagementScripts/** → VM management, backups, orchestration
+- **Database/** → Database schema, migration, backup scripts
+- **EmbedGeneration/** → Scripts to generate embeddings in batch
+- **Ingestion/** → Data collection, chunking, metadata extraction
+- **UI/** → Streamlit UI (later React)
+- **API/** → FastAPI microservice
+- **MLExperiments/** → PyTorch experiments for fine-tuning
 
-## Status
-
-🧪 Early stage – initial scaffolding in progress.
+Each VM clones this repo but only uses its relevant folder.

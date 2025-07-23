@@ -3,7 +3,19 @@
 This repository contains all scripts and configuration for a Retrieval-Augmented Generation (RAG) lab.  
 Each top-level folder represents a functional stage in the pipeline.  
 
-The RAG pipeline ingests ~100,000 AI/ML/Math/Stats research papers from SharePoint, including metadata and ACLs, generates embeddings, and serves queries via FastAPI and Streamlit.  
+The RAG pipeline ingests ~100,000 AI/ML/Math/Stats research papers from SharePoint and other sources, extracts metadata and ACLs, and generates vector embeddings.  
+
+- It can use **OpenAI’s ChatGPT**, **Google Gemini**, or **local models** (e.g. **LLaMA/Mistral**) as the LLM backend.  
+- All components—ingestion, embedding, vector storage, and LLM reasoning—are **interchangeable**, so you can swap providers without changing the pipeline.  
+- By design, **retrieval is decoupled from generation**, making it easy to upgrade or mix different LLMs for different tasks.  
+
+## Process  
+
+1. **Extracts documents from SharePoint** (with metadata + ACLs)  
+2. **Chunks and embeds content** using configurable embedding models  
+3. **Stores vector representations in Qdrant** for fast similarity search  
+4. **Retrieves context via LangChain + prompt engineering**  
+5. **Generates answers with a pluggable LLM backend** – OpenAI ChatGPT, Google Gemini, or local models – served via FastAPI & Streamlit  
 
 ## Structure  
 

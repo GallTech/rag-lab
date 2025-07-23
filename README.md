@@ -1,18 +1,21 @@
 # RAG Lab  
 
-This repository contains scripts and config for a RAG Lab setup consuming SharePoint data.
-Each folder corresponds to a **functional stage** in the pipeline.
+This repository contains all scripts and configuration for a multi-stage Retrieval-Augmented Generation (RAG) lab.  
+Each top-level folder represents a **functional stage** in the pipeline.  
 
-## Structure
+## Structure  
 
-- **ManagementScripts/** → VM management, backups, orchestration
-- **Database/** → Database schema, migration, backup scripts
-- **EmbedGeneration/** → Scripts to generate embeddings in batch
-- **Ingestion/** → Data collection, chunking, metadata extraction
-- **UI/** → Streamlit UI (later React)
-- **API/** → FastAPI microservice
-- **MLExperiments/** → PyTorch experiments for fine-tuning
+- **ManagementScripts/** → VM provisioning, orchestration, backups  
+- **Database/** → Schema definitions, migration, and backup scripts  
+- **EmbedGeneration/** → Batch embedding generation and model utilities  
+- **Ingestion/** → Data acquisition, chunking, and metadata extraction  
+- **UI/** → Lightweight Streamlit UI (later upgraded to React)  
+- **API/** → FastAPI microservice for query handling  
+- **MLExperiments/** → PyTorch experiments for fine-tuning and testing  
+- **SharePointSync/** → Document, metadata, and ACL export/sync from SharePoint  
 
-Each VM clones this repo but only uses its relevant folder.
+**Current status:** Early provisioning & scaffolding.  
 
-**Status:** Early provisioning & scaffolding.  
+---
+
+> Each VM maps to a specific functional stage but uses the same monorepo for consistency.

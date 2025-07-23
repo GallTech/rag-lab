@@ -15,3 +15,5 @@ Each top-level folder represents a **functional stage** in the pipeline.
 - **SharePointSync/** → Document, metadata, and ACL export/sync from SharePoint  
 
 **Current status:** Early provisioning & scaffolding.  
+
+Lab runs on Proxmox hosted on a Minisforum UM890 Pro (Ryzen 9 8945HS, 64GB DDR5, 2TB NVMe)

@@ -37,28 +37,3 @@ Early provisioning & scaffolding.
 
 ## Infrastructure  
 Proxmox hosted on **Minisforum UM890 Pro (Ryzen 9 8945HS, 64 GB DDR5, 2 TB NVMe)**  
-
-## Architecture  
-
-```mermaid
-flowchart LR
-    SP[SharePoint & External Sources] --> ING[Ingestion & Chunking]
-    ING --> EMB[EmbedGeneration]
-    EMB --> QDR[Qdrant<br>Vector DB]
-    ING --> SWFS[SeaweedFS<br>Object Storage]
-    QDR --> LANG[LangChain<br>Context Retrieval]
-    LANG --> LLM[LLM Backend<br>(ChatGPT / Gemini / Local)]
-    LLM --> API[FastAPI API]
-    API --> UI[Streamlit / React UI]
-    
-    subgraph Storage Layer
-        QDR
-        SWFS
-    end
-    
-    subgraph Compute Layer
-        ING
-        EMB
-        LANG
-        LLM
-    end

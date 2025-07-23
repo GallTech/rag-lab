@@ -1,6 +1,6 @@
 # RAG Lab  
 
-This repository contains all scripts and configuration for a Retrieval-Augmented Generation (RAG) lab.  
+This repository contains configuration and code for a Retrieval-Augmented Generation (RAG) lab.  
 Each top-level folder represents a functional stage in the pipeline.  
 
 The RAG pipeline ingests ~100,000 AI/ML/Math/Stats research papers from SharePoint and other sources, extracts metadata and ACLs, and generates vector embeddings.  
@@ -17,7 +17,7 @@ The RAG pipeline ingests ~100,000 AI/ML/Math/Stats research papers from SharePoi
 4. **Generates context and prompts using LangChain and customn Python**  
 5. **Generates answers with a pluggable LLM backend** – OpenAI ChatGPT, Google Gemini, or local models – served via FastAPI & Streamlit  
 
-## Structure  
+## Project Structure  
 
 - **ManagementScripts/** → VM provisioning, orchestration, and backups using **Terraform** and **Ansible**  
 - **Database/** →  
@@ -33,7 +33,7 @@ The RAG pipeline ingests ~100,000 AI/ML/Math/Stats research papers from SharePoi
 - **Storage/** → Object storage in **SeaweedFS** for original documents, chunked JSONs, and embedding backups  
 
 ## Current Status  
-Early provisioning & scaffolding.  
+Early provisioning & scaffolding
 
 ## Infrastructure  
 Proxmox hosted on **Minisforum UM890 Pro (Ryzen 9 8945HS, 64 GB DDR5, 2 TB NVMe)**  

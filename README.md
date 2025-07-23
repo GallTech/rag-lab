@@ -3,8 +3,6 @@
 This repository contains all scripts and configuration for a multi-stage Retrieval-Augmented Generation (RAG) lab.  
 Each top-level folder represents a **functional stage** in the pipeline.  
 
-The RAG pipeline ingests ~100,000 AI/ML/Math/Stats research papers, including metadata and ACLs.  
-
 ## Structure  
 
 - **ManagementScripts/** → VM provisioning, orchestration, backups  
@@ -18,4 +16,4 @@ The RAG pipeline ingests ~100,000 AI/ML/Math/Stats research papers, including me
 
 **Current status:** Early provisioning & scaffolding.  
 
-Lab runs on Proxmox hosted on a **Minisforum UM890 Pro (Ryzen 9 8945HS, 64GB DDR5, 2TB NVMe)**.
+Lab runs on Proxmox hosted on a Minisforum UM890 Pro (Ryzen 9 8945HS, 64GB DDR5, 2TB NVMe)

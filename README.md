@@ -3,7 +3,7 @@
 This repository contains all scripts and configuration for a Retrieval-Augmented Generation (RAG) lab.  
 Each top-level folder represents a **functional stage** in the pipeline.  
 
-The RAG pipeline ingests ~50,000 AI/ML/Math/Stats research papers from SharePoint, including metadata and ACLs, generates embeddings, and serves queries via FastAPI and Streamlit. 
+The RAG pipeline ingests ~100,000 AI/ML/Math/Stats research papers from SharePoint, including metadata and ACLs, generates embeddings, and serves queries via FastAPI and Streamlit. 
 
 ## Structure  
 

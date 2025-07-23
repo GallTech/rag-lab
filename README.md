@@ -1,4 +1,4 @@
-# RAG Lab Monorepo
+# RAG Lab  
 
 This repository contains all scripts and configs for the entire RAG Lab setup.
 Each folder corresponds to a **functional stage** in the pipeline.

@@ -74,7 +74,7 @@ This deliberate 1:1 mapping provides:
 | 192.168.0.12  | lab-1-embed-generator | Embedding generation (OpenAI/local models) |
 | 192.168.0.13  | lab-1-ingestion    | Data ingestion (SharePoint + OpenAlex pipelines) |
 | 192.168.0.14  | lab-1-ui           | UI layer (Streamlit, React, TypeScript) |
-| 192.168.0.15  | lab-1-api          | FastAPI microservice for retrieval, **LangChain orchestration, and prompt engineering**  |
+| 192.168.0.15  | lab-1-api          | FastAPI microservice for retrieval, LangChain orchestration, and prompt engineering  |
 | 192.168.0.16  | lab-1-PyTorch      | Local model inference (PyTorch/Mistral) |
 | 192.168.0.17  | lab-1-SeaweedFS    | Distributed storage for original PDFs |
 | 192.168.0.18  | lab-1-monitoring   | Prometheus, Grafana, Alertmanager |

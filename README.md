@@ -81,7 +81,7 @@ This deliberate 1:1 mapping provides:
 
 ---
 
-This architecture makes it easy to **swap components** (e.g., different embedding models, storage backends, or UI layers) without disrupting the rest of the system.
+This architecture makes it easy to **swap components** (e.g., different embedding models, storage backends, or UI layers) without disrupting the rest of the system. Also facilitates moving the stateless services (API, UI, embedding workers) to K8s.
 
 ---
 ## Testing Strategy  
@@ -115,6 +115,7 @@ CI/CD will integrate **unit + integration tests** on PRs, with **nightly E2E + d
 - 🔄 **Finalise document retrieval** (Qdrant vector search + validation)  
 - 🔄 **Extend ingestion** (AI, ML, and AI Ethics categories)  
 - 📝 **Implement LangChain retrieval chains & dynamic prompt templates**  
-- 📝 **Build React + TypeScript UI alpha**  
+- 📝 **Build React + TypeScript UI alpha**
+- 📝 **Reprovision stateless services on Kubernetes
 
 ---

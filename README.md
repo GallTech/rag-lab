@@ -93,9 +93,9 @@ This project evolves from **POC → MVP → Pseudo-Production**, so testing dept
   - Focus on proving end-to-end ingestion → retrieval → generation  
 
 - **MVP**  
-  - ✅ Unit tests for key functions (chunking, embedding, metadata parsing)  
-  - ✅ Basic integration tests (ingestion → SeaweedFS → DuckDB → Qdrant)  
-  - ✅ Simple E2E test on a small synthetic dataset  
+  - Unit tests for key functions (chunking, embedding, metadata parsing)  
+  - Basic integration tests (ingestion → SeaweedFS → DuckDB → Qdrant)  
+  - Simple E2E test on a small synthetic dataset  
 
 - **Pseudo-Production**  
   - Full unit + integration test coverage  

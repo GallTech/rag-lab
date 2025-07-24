@@ -65,7 +65,8 @@ This deliberate 1:1 mapping provides:
 - **Clear functional boundaries** (ingestion, embedding, storage, etc.)  
 - **Fault isolation** (a failure in one stage won’t cascade)  
 - **Independent scaling** (e.g., scale only embedding or inference nodes)  
-- **Easier upgrades & replacements**  
+- **Easier upgrades & replacements**
+- **Makes it easier for me to learn and experiment with each component in isolation** 
 
 | VM IP         | Hostname            | Functional Area             |
 |---------------|--------------------|-----------------------------|

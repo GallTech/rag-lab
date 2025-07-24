@@ -61,7 +61,7 @@ VMs:
 | 192.168.0.11  | lab-1-db1          | Qdrant + DuckDB          |
 | 192.168.0.12  | lab-1-embed-generator | Embedding generation   |
 | 192.168.0.13  | lab-1-ingestion    | Document ingestion       |
-| 192.168.0.14  | lab-1-ui           | UI layer (Streamlit/React)|
+| 192.168.0.14  | lab-1-ui           | UI layer (Streamlit/React/Typescript)|
 | 192.168.0.15  | lab-1-api          | FastAPI microservice     |
 | 192.168.0.16  | lab-1-PyTorch      | Local model inference    |
 | 192.168.0.17  | lab-1-SeaweedFS    | Distributed storage      |
@@ -75,8 +75,8 @@ VMs:
 ---
 
 Next steps:  
-- ✅ Finalize ingestion scripts  
-- ✅ Push code to GitHub monorepo  
+- 🔄 Finalise ingestion scripts  
+- 🔄 Push code to GitHub monorepo  
 - 🔄 Extend category support (AI, ML, AI Ethics)  
 - 🔄 Add React + TypeScript UI  
 

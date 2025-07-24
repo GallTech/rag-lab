@@ -26,7 +26,6 @@ A dedicated **monitoring server** (`lab-1-monitoring`) runs:
 - **Prometheus** for metrics collection  
 - **Grafana** for dashboards  
 - **Alertmanager** for notifications  
-- Nightly integrity checks to ensure DuckDB → SeaweedFS references remain valid  
 
 ## Project Structure  
 

@@ -117,6 +117,7 @@ CI/CD will integrate **unit + integration tests** on PRs, with **nightly E2E + d
 - 🔄 **Extend ingestion** (AI, ML, and AI Ethics categories)  
 - 📝 **Implement LangChain retrieval chains & dynamic prompt templates**  
 - 📝 **Build React + TypeScript UI alpha**
+- 📝 **Reprovision entire solution using Terraform and Ansible**
 - 📝 **Reprovision stateless services on Kubernetes**
 
 ---

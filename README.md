@@ -55,16 +55,17 @@ Hosted on **Proxmox** (Minisforum UM890 Pro):
 
 VMs:  
 
-| VM IP         | Hostname            | Role                     |
-|---------------|--------------------|--------------------------|
-| 192.168.0.10  | lab-1-mgmt1        | Management node          |
-| 192.168.0.11  | lab-1-db1          | Qdrant + DuckDB          |
-| 192.168.0.12  | lab-1-embed-generator | Embedding generation   |
-| 192.168.0.13  | lab-1-ingestion    | Document ingestion       |
-| 192.168.0.14  | lab-1-ui           | UI layer (Streamlit/React/Typescript)|
-| 192.168.0.15  | lab-1-api          | FastAPI microservice     |
-| 192.168.0.16  | lab-1-PyTorch      | Local model inference    |
-| 192.168.0.17  | lab-1-SeaweedFS    | Distributed storage      |
+| VM IP         | Hostname            | Role                          |
+|---------------|--------------------|-------------------------------|
+| 192.168.0.10  | lab-1-mgmt1        | Management node               |
+| 192.168.0.11  | lab-1-db1          | Qdrant + DuckDB               |
+| 192.168.0.12  | lab-1-embed-generator | Embedding generation        |
+| 192.168.0.13  | lab-1-ingestion    | Document ingestion            |
+| 192.168.0.14  | lab-1-ui           | UI layer (Streamlit/React/TS) |
+| 192.168.0.15  | lab-1-api          | FastAPI microservice          |
+| 192.168.0.16  | lab-1-PyTorch      | Local model inference         |
+| 192.168.0.17  | lab-1-SeaweedFS    | Distributed storage           |
+| 192.168.0.18  | lab-1-monitoring   | Prometheus, Grafana, alerts   |
 
 ---
 

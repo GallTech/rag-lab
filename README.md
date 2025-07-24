@@ -10,25 +10,15 @@ The RAG pipeline ingests ~100,000 AI/ML/Math/Stats research papers from **ShareP
 - All components—ingestion, embedding, vector storage, and LLM reasoning—are **interchangeable**, so you can swap providers without changing the pipeline.  
 - By design, **retrieval is decoupled from generation**, making it easy to upgrade or mix different LLMs for different tasks.  
 
-## Process  
+## Process
 
-1. **Extracts documents from SharePoint** with metadata + ACLs  
-2. **Downloads open-access research papers from OpenAlex**  
-   - Filters for AI/ML/Math/Ethics  
-   - Checks for PDFs only (`open_access.is_oa=true`)  
-   - Prevents duplicates via a local DuckDB lookup before downloading  
-3. **Stores all original documents in SeaweedFS** as a monolithic archive  
-4. **Writes metadata to DuckDB** with a SeaweedFS file reference  
-5. **Chunks and embeds content** using configurable embedding models  
-6. **Stores vector representations in Qdrant** for fast similarity search  
-7. **Generates context and prompts** with LangChain + custom Python  
-8. **Generates answers with a pluggable LLM backend** (OpenAI, Gemini, or local models) served via FastAPI & Streamlit  
-
-## Duplicate Handling  
-
-- Before downloading, metadata is compared against DuckDB (DOI/OpenAlex ID)  
-- Only new files are downloaded  
-- After successful download, metadata is updated in DuckDB  
+1. **Collects documents** from SharePoint and OpenAlex with metadata and ACLs *(see Data Ingestion section for details)*  
+2. **Stores originals in SeaweedFS** with references in DuckDB  
+3. **Chunks and embeds content** using configurable embedding models  
+4. **Stores vector representations in Qdrant** for fast similarity search  
+5. **Retrieves relevant context** with LangChain + custom Python retrievers  
+6. **Generates answers via a pluggable LLM backend** (OpenAI, Gemini, or local models)  
+7. **Serves responses** through FastAPI & Streamlit  
 
 ## Monitoring  
 

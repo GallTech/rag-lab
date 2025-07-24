@@ -84,6 +84,28 @@ This deliberate 1:1 mapping provides:
 This architecture makes it easy to **swap components** (e.g., different embedding models, storage backends, or UI layers) without disrupting the rest of the system.
 
 ---
+## Testing Strategy  
+
+This project evolves from **POC → MVP → Pseudo-Production**, so testing depth scales accordingly:  
+
+- **POC (now)**  
+  - Minimal sanity checks (manual or quick scripts)  
+  - Focus on proving end-to-end ingestion → retrieval → generation  
+
+- **MVP**  
+  - ✅ Unit tests for key functions (chunking, embedding, metadata parsing)  
+  - ✅ Basic integration tests (ingestion → SeaweedFS → DuckDB → Qdrant)  
+  - ✅ Simple E2E test on a small synthetic dataset  
+
+- **Pseudo-Production**  
+  - Full unit + integration test coverage  
+  - E2E tests validating ingestion → storage → retrieval → generation  
+  - Data integrity tests (DuckDB ↔ SeaweedFS ↔ Qdrant consistency)  
+  - Smoke/health checks for all services  
+  - Performance tests under realistic query + ingestion load  
+
+CI/CD will integrate **unit + integration tests** on PRs, with **nightly E2E + data validation tests** on a controlled dataset.  
+---
 
 ## Roadmap  
 

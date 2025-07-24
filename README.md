@@ -105,6 +105,7 @@ This project evolves from **POC → MVP → Pseudo-Production**, so testing dept
   - Performance tests under realistic query + ingestion load  
 
 CI/CD will integrate **unit + integration tests** on PRs, with **nightly E2E + data validation tests** on a controlled dataset.  
+
 ---
 
 ## Roadmap  

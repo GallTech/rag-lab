@@ -51,7 +51,7 @@ A dedicated **monitoring server** (`lab-1-monitoring`) runs:
 - **MLExperiments/** → Fine-tuning & testing workflows  
 
 ## Infrastructure  
-Proxmox hosted on **Minisforum UM890 Pro (Ryzen 9 8945HS, 64 GB DDR5, 2 TB NVMe)**  
+Proxmox hosted on Minisforum UM890 Pro (Ryzen 9 8945HS, 64 GB DDR5, 2 TB NVMe)  
 
 ## Current Status  
 Early build

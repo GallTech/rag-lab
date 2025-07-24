@@ -39,7 +39,7 @@ A dedicated **monitoring server** (`lab-1-monitoring`) runs:
 - **EmbedGeneration/** → Embedding generation utilities  
 - **Ingestion/** → SharePoint + OpenAlex pipelines  
 - **Storage/** → SeaweedFS for original documents  
-- **Monitoring/** → Prometheus, Grafana, integrity checker  
+- **Monitoring/** → Prometheus + Grafana
 - **UI/** → Streamlit & React prototypes for queries  
 - **API/** → FastAPI microservice for retrieval + LLM  
 - **MLExperiments/** → Fine-tuning & testing workflows  

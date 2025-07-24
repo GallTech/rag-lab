@@ -13,12 +13,12 @@ The RAG pipeline ingests ~100,000 AI/ML/Math/Stats research papers from **ShareP
 ## Process
 
 1. **Collects documents** from SharePoint and OpenAlex with metadata and ACLs *(see Data Ingestion section for details)*  
-2. **Stores originals in SeaweedFS** with references in DuckDB  
-3. **Chunks and embeds content** using configurable embedding models  
+2. **Stores original PDFs in SeaweedFS** with metadata in DuckDB  
+3. **Chunks and embeds content** using configurable embedding models (e.g., OpenAI’s `text-embedding-ada-002` or a local sentence transformer)  
 4. **Stores vector representations in Qdrant** for fast similarity search  
 5. **Retrieves relevant context** with LangChain + custom Python retrievers  
 6. **Generates answers via a pluggable LLM backend** (OpenAI, Gemini, or local models)  
-7. **Serves responses** through FastAPI & Streamlit  
+7. **Serves responses** through FastAPI & Streamlit (React UI under development)   
 
 ## Monitoring  
 

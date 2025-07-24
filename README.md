@@ -53,21 +53,32 @@ Hosted on **Proxmox** (Minisforum UM890 Pro):
 - 64 GB DDR5 RAM  
 - 2 TB NVMe  
 
-VMs:  
+---
 
-| VM IP         | Hostname            | Role                          |
-|---------------|--------------------|-------------------------------|
-| 192.168.0.10  | lab-1-mgmt1        | Management node               |
-| 192.168.0.11  | lab-1-db1          | Qdrant + DuckDB               |
-| 192.168.0.12  | lab-1-embed-generator | Embedding generation        |
-| 192.168.0.13  | lab-1-ingestion    | Document ingestion            |
-| 192.168.0.14  | lab-1-ui           | UI layer (Streamlit/React/TS) |
-| 192.168.0.15  | lab-1-api          | FastAPI microservice          |
-| 192.168.0.16  | lab-1-PyTorch      | Local model inference         |
-| 192.168.0.17  | lab-1-SeaweedFS    | Distributed storage           |
-| 192.168.0.18  | lab-1-monitoring   | Prometheus, Grafana, alerts   |
+### VM-to-Functional-Area Mapping  
+
+Each stage of the RAG pipeline runs on a **dedicated VM**.  
+This deliberate 1:1 mapping provides:  
+- **Clear functional boundaries** (ingestion, embedding, storage, etc.)  
+- **Fault isolation** (a failure in one stage won’t cascade)  
+- **Independent scaling** (e.g., scale only embedding or inference nodes)  
+- **Easier upgrades & replacements**  
+
+| VM IP         | Hostname            | Functional Area             |
+|---------------|--------------------|-----------------------------|
+| 192.168.0.10  | lab-1-mgmt1        | Management & orchestration (Terraform, Ansible) |
+| 192.168.0.11  | lab-1-db1          | Metadata (DuckDB) & vector DB (Qdrant) |
+| 192.168.0.12  | lab-1-embed-generator | Embedding generation (OpenAI/local models) |
+| 192.168.0.13  | lab-1-ingestion    | Data ingestion (SharePoint + OpenAlex pipelines) |
+| 192.168.0.14  | lab-1-ui           | UI layer (Streamlit, React, TypeScript) |
+| 192.168.0.15  | lab-1-api          | FastAPI microservice for retrieval & LLM |
+| 192.168.0.16  | lab-1-PyTorch      | Local model inference (PyTorch/Mistral) |
+| 192.168.0.17  | lab-1-SeaweedFS    | Distributed storage for original PDFs |
+| 192.168.0.18  | lab-1-monitoring   | Prometheus, Grafana, Alertmanager |
 
 ---
+
+This architecture makes it easy to **swap components** (e.g., different embedding models, storage backends, or UI layers) without disrupting the rest of the system.
 
 ## Current Status  
 

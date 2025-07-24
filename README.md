@@ -85,22 +85,13 @@ This architecture makes it easy to **swap components** (e.g., different embeddin
 
 ---
 
-## Current Status  
-🚧 **Under Construction**  
+## Roadmap  
 
-- **Working**: PDF ingestion → SeaweedFS, metadata extraction → DuckDB  
-- **WIP**: Qdrant vector search integration  
-- **Planned**: LangChain-based context retrieval + prompt engineering  
-- **Next**: Streamlit UI alpha  
-
----
-
-## Next Steps  
-
-- 🔄 Finalise ingestion scripts  
-- 🔄 Push code to GitHub monorepo  
-- 🔄 Extend category support (AI, ML, AI Ethics)  
-- 🔄 Implement LangChain retrieval chains + dynamic prompt templates  
-- 🔄 Add React + TypeScript UI  
+- ✅ **PDF ingestion → SeaweedFS, metadata extraction → DuckDB**  
+- 🔄 **Optimise project & Git structure** (monorepo setup, modular folders)  
+- 🔄 **Finalise document retrieval** (Qdrant vector search + validation)  
+- 🔄 **Extend ingestion** (AI, ML, and AI Ethics categories)  
+- 📝 **Implement LangChain retrieval chains & dynamic prompt templates**  
+- 📝 **Add React + TypeScript UI alpha**  
 
 ---

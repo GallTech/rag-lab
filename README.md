@@ -111,8 +111,7 @@ CI/CD will integrate **unit + integration tests** on PRs, with **nightly E2E + d
 
 ## Roadmap  
 
-- ✅ **PDF ingestion → SeaweedFS, metadata extraction → DuckDB**  
-- 🔄 **Optimise project & Git structure** 
+- 🔄 **Urgent: Optimise project & Git structure** 
 - 🔄 **Finalise document retrieval** (Qdrant vector search + validation)  
 - 🔄 **Extend ingestion** (AI, ML, and AI Ethics categories)  
 - 📝 **Implement LangChain retrieval chains & dynamic prompt templates**  

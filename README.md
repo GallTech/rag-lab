@@ -18,7 +18,7 @@ The RAG pipeline ingests ~100,000 AI/ML/Math/Stats research papers from **ShareP
 4. **Stores vector representations in Qdrant** for fast similarity search  
 5. **Retrieves relevant context** with LangChain + custom Python retrievers  
 6. **Generates answers via a pluggable LLM backend** (OpenAI, Gemini, or local models)  
-7. **Serves responses** through FastAPI & Streamlit (React UI under development)   
+7. **Serves responses** through FastAPI & Streamlit (React & TypeScript UI under development)   
 
 ## Monitoring  
 

@@ -4,20 +4,27 @@ import requests
 from urllib.parse import urlencode
 
 # ==== CONFIG ====
-OUTPUT_DIR = "downloads"
+
+CONFIG_PATH = os.path.expanduser("~/rag-lab/Ingestion/config/openalex_config.json")
+OUTPUT_DIR = os.path.expanduser("~/staging")
 META_DIR = os.path.join(OUTPUT_DIR, "metadata")
 PDF_DIR = os.path.join(OUTPUT_DIR, "pdfs")
 
 os.makedirs(META_DIR, exist_ok=True)
 os.makedirs(PDF_DIR, exist_ok=True)
 
-BASE_URL = "https://api.openalex.org/works"
-CONCEPT_MATH = "https://openalex.org/C33923547"  # Mathematics
-DATE_FROM = "2025-01-01"
-DATE_TO = "2025-12-31"
-PER_PAGE = 50
+with open(CONFIG_PATH) as f:
+    CONFIG = json.load(f)
 
-# Only these domains are trusted to actually give PDFs without 403
+EMAIL = CONFIG["email"]
+TOPICS = CONFIG["topics"]
+DATE_FROM = CONFIG["from_date"]
+DATE_TO = CONFIG["to_date"]
+PER_PAGE = CONFIG["per_page"]
+CONCEPT_ID = TOPICS[0]["concept_id"]  # we only use the first topic for now
+
+BASE_URL = "https://api.openalex.org/works"
+
 TRUSTED_OA_DOMAINS = [
     "arxiv.org",
     "osf.io",
@@ -31,50 +38,43 @@ TRUSTED_OA_DOMAINS = [
 
 def build_url(cursor="*"):
     params = {
-        "filter": f"concepts.id:{CONCEPT_MATH},from_publication_date:{DATE_FROM},to_publication_date:{DATE_TO},open_access.is_oa:true",
+        "filter": f"concepts.id:{CONCEPT_ID},from_publication_date:{DATE_FROM},to_publication_date:{DATE_TO},open_access.is_oa:true",
         "per-page": PER_PAGE,
-        "cursor": cursor
+        "cursor": cursor,
+        "mailto": EMAIL
     }
     return f"{BASE_URL}?{urlencode(params)}"
 
 def get_trusted_pdf_url(work):
-    """Pick a PDF URL only from trusted OA domains."""
     candidates = []
 
-    # best OA location
     best = work.get("best_oa_location")
     if best and best.get("pdf_url"):
         candidates.append(best["pdf_url"])
 
-    # all locations
     for loc in work.get("locations", []):
         if loc.get("pdf_url"):
             candidates.append(loc["pdf_url"])
 
-    # return first trusted match
     for url in candidates:
         if any(domain in url for domain in TRUSTED_OA_DOMAINS):
             return url
     return None
 
 def download_pdf_and_metadata(work, pdf_url):
-    """Save metadata JSON + PDF to disk."""
     title_safe = "".join(c for c in work["title"] if c.isalnum() or c in (" ", "_", "-"))[:100]
     work_id = work["id"].split("/")[-1]
 
     meta_path = os.path.join(META_DIR, f"{work_id}.json")
     pdf_path = os.path.join(PDF_DIR, f"{work_id}.pdf")
 
-    # skip duplicates
     if os.path.exists(pdf_path):
         print(f"✅ Already downloaded: {title_safe}")
         return
 
-    # save metadata
     with open(meta_path, "w") as f:
         json.dump(work, f, indent=2)
 
-    # download PDF
     try:
         resp = requests.get(pdf_url, timeout=60)
         resp.raise_for_status()
@@ -87,10 +87,10 @@ def download_pdf_and_metadata(work, pdf_url):
 # ==== MAIN ====
 
 def main():
-    print("=== Starting OpenAlex download for 2025 Mathematics ===")
+    print(f"=== Starting OpenAlex download for concept {CONCEPT_ID} ===")
     cursor = "*"
     total_downloads = 0
-    download_limit = 1000  # change if you want fewer/more
+    download_limit = 1000
 
     while total_downloads < download_limit:
         url = build_url(cursor)
@@ -99,22 +99,18 @@ def main():
         r.raise_for_status()
         data = r.json()
 
-        # iterate works
         for work in data["results"]:
             if total_downloads >= download_limit:
                 break
 
             pdf_url = get_trusted_pdf_url(work)
             if not pdf_url:
-                # skip if no trusted PDF
                 continue
 
             download_pdf_and_metadata(work, pdf_url)
             total_downloads += 1
 
-        # break if no next page
-        meta = data.get("meta", {})
-        cursor = meta.get("next_cursor")
+        cursor = data.get("meta", {}).get("next_cursor")
         if not cursor:
             print("No more pages.")
             break

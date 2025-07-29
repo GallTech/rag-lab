@@ -1,6 +1,6 @@
 # RAG Lab: Modular Pipeline for Research Paper Retrieval & Generation  
 
-A production-grade RAG system for ingesting, embedding, and querying ~100K AI/ML/Math/Stats papers. Supports OpenAI, Gemini, and local LLMs with fully decoupled components for flexibility.  
+A Retrieval-Augmented Generation (RAG) system designed to ingest, embed, and query ~100,000 AI/ML/Math/Stats research papers.
 
 Each top-level folder represents a functional stage in the pipeline. The lab ingests ~100,000 AI/ML/Math/Stats research papers from **SharePoint**, **OpenAlex**, and other sources. It extracts metadata and ACLs, and generates vector embeddings for retrieval-augmented LLM reasoning.  
 
@@ -118,5 +118,5 @@ CI/CD will integrate **unit + integration tests** on PRs, with **nightly E2E + d
 - 📝 **Build React + TypeScript UI alpha**
 - 📝 **Reprovision entire solution using Terraform and Ansible**
 - 📝 **Reprovision stateless services (API, UI, embedding workers) on Kubernetes**
- Test
+ 
 ---

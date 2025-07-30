@@ -1,6 +1,7 @@
 import os
 import json
 import requests
+import duckdb
 from urllib.parse import urlencode
 
 # ==== CONFIG ====
@@ -9,6 +10,8 @@ CONFIG_PATH = os.path.expanduser("~/rag-lab/Ingestion/config/openalex_config.jso
 OUTPUT_DIR = os.path.expanduser("~/staging")
 META_DIR = os.path.join(OUTPUT_DIR, "metadata")
 PDF_DIR = os.path.join(OUTPUT_DIR, "pdfs")
+DB_PATH = "/mnt/duckdb/rag.duckdb"
+TABLE_NAME = "openalex_works"
 
 os.makedirs(META_DIR, exist_ok=True)
 os.makedirs(PDF_DIR, exist_ok=True)
@@ -21,18 +24,22 @@ TOPICS = CONFIG["topics"]
 DATE_FROM = CONFIG["from_date"]
 DATE_TO = CONFIG["to_date"]
 PER_PAGE = CONFIG["per_page"]
-CONCEPT_ID = TOPICS[0]["concept_id"]  # we only use the first topic for now
+CONCEPT_ID = TOPICS[0]["concept_id"]
 
 BASE_URL = "https://api.openalex.org/works"
 
 TRUSTED_OA_DOMAINS = [
-    "arxiv.org",
-    "osf.io",
-    "biorxiv.org",
-    "medrxiv.org",
-    "europepmc.org",
-    "nih.gov/pmc"
+    "arxiv.org", "osf.io", "biorxiv.org", "medrxiv.org", "europepmc.org", "nih.gov/pmc"
 ]
+
+# ==== DB CONNECTION ====
+
+con = duckdb.connect(DB_PATH)
+
+def is_already_loaded(work_id: str) -> bool:
+    """Check if a given work ID is already in the DB."""
+    result = con.execute(f"SELECT COUNT(*) FROM {TABLE_NAME} WHERE id = ?", (work_id,)).fetchone()
+    return result[0] > 0
 
 # ==== HELPERS ====
 
@@ -47,15 +54,12 @@ def build_url(cursor="*"):
 
 def get_trusted_pdf_url(work):
     candidates = []
-
     best = work.get("best_oa_location")
     if best and best.get("pdf_url"):
         candidates.append(best["pdf_url"])
-
     for loc in work.get("locations", []):
         if loc.get("pdf_url"):
             candidates.append(loc["pdf_url"])
-
     for url in candidates:
         if any(domain in url for domain in TRUSTED_OA_DOMAINS):
             return url
@@ -65,12 +69,12 @@ def download_pdf_and_metadata(work, pdf_url):
     title_safe = "".join(c for c in work["title"] if c.isalnum() or c in (" ", "_", "-"))[:100]
     work_id = work["id"].split("/")[-1]
 
+    if is_already_loaded(work["id"]):
+        print(f"⏩ Skipped (already in DuckDB): {title_safe}")
+        return
+
     meta_path = os.path.join(META_DIR, f"{work_id}.json")
     pdf_path = os.path.join(PDF_DIR, f"{work_id}.pdf")
-
-    if os.path.exists(pdf_path):
-        print(f"✅ Already downloaded: {title_safe}")
-        return
 
     with open(meta_path, "w") as f:
         json.dump(work, f, indent=2)
@@ -118,4 +122,7 @@ def main():
     print(f"=== Done. Total downloaded: {total_downloads} ===")
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    finally:
+        con.close()

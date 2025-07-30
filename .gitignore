@@ -19,4 +19,6 @@ terraform.tfvars
 
 # K8s
 *.kubeconfig
+Ingestion/src/venv/
 secrets/*.yaml
+Ingestion/src/venv/

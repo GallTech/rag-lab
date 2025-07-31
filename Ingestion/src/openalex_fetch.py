@@ -37,7 +37,6 @@ TRUSTED_OA_DOMAINS = [
 con = duckdb.connect(DB_PATH)
 
 def is_already_loaded(work_id: str) -> bool:
-    """Check if a given work ID is already in the DB."""
     result = con.execute(f"SELECT COUNT(*) FROM {TABLE_NAME} WHERE id = ?", (work_id,)).fetchone()
     return result[0] > 0
 
@@ -46,7 +45,7 @@ def is_already_loaded(work_id: str) -> bool:
 def build_url(cursor="*"):
     params = {
         "filter": f"concepts.id:{CONCEPT_ID},from_publication_date:{DATE_FROM},to_publication_date:{DATE_TO},open_access.is_oa:true",
-        "per-page": PER_PAGE,
+        "per_page": PER_PAGE,
         "cursor": cursor,
         "mailto": EMAIL
     }
@@ -94,13 +93,17 @@ def main():
     print(f"=== Starting OpenAlex download for concept {CONCEPT_ID} ===")
     cursor = "*"
     total_downloads = 0
-    download_limit = 1000
+    download_limit = 10_000
 
     while total_downloads < download_limit:
         url = build_url(cursor)
         print(f"\nFetching page (cursor={cursor}) ...")
-        r = requests.get(url, timeout=60)
-        r.raise_for_status()
+        try:
+            r = requests.get(url, timeout=60)
+            r.raise_for_status()
+        except requests.exceptions.HTTPError as e:
+            print(f"🚫 HTTP error: {e}")
+            break
         data = r.json()
 
         for work in data["results"]:

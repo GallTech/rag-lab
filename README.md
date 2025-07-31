@@ -8,13 +8,13 @@ Each top-level folder represents a functional stage in the pipeline. The lab ing
 - **Interchangeable components**: ingestion, embedding, vector storage, retrieval orchestration, and LLM reasoning are decoupled.  
 - **Retrieval-first design**: retrieval is separated from generation, making it easy to mix or upgrade LLMs for different tasks.  
 - **LangChain-based orchestration**: dynamic context assembly & prompt engineering before LLM calls.  
----
+─
 
 
 **Status: 🛠️ Under Development**  
 Currently focused on optimising the ingestion pipeline (SharePoint, OpenAlex, SeaweedFS, DuckDB, metadata & ACL extraction)
 
----
+─
 
 
 ## Process  

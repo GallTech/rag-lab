@@ -12,7 +12,7 @@ Each top-level folder represents a functional stage in the pipeline. The lab ing
 
 
 **Status: 🛠️ Under Development**  
-Currently focused on optimising the ingestion pipeline (SharePoint, OpenAlex, SeaweedFS, DuckDB, metadata & ACL extraction).
+Currently focused on optimising the ingestion pipeline (SharePoint, OpenAlex, SeaweedFS, DuckDB, metadata & ACL extraction)
 
 ---
 

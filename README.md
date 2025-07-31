@@ -10,6 +10,10 @@ Each top-level folder represents a functional stage in the pipeline. The lab ing
 - **LangChain-based orchestration**: dynamic context assembly & prompt engineering before LLM calls.  
 
 ---
+**Status: 🛠️ Under Development**  
+Currently focused on optimising the ingestion pipeline (SharePoint, OpenAlex, SeaweedFS, DuckDB, metadata & ACL extraction).
+---
+
 
 ## Process  
 

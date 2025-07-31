@@ -14,7 +14,7 @@ Currently focused on optimising the ingestion pipeline (SharePoint, OpenAlex, Se
 
 ## Process  
 
-1. **Collect documents** from SharePoint and OpenAlex with metadata + ACLs *(see Data Ingestion section for details)*  
+1. **Collect documents** from SharePoint and OpenAlex with metadata + ACLs 
 2. **Store original PDFs in SeaweedFS**, with metadata indexed in DuckDB  
 3. **Chunk & embed content** using configurable embedding models  
    - e.g. OpenAI `text-embedding-ada-002` or local Sentence Transformers  

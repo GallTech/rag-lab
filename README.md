@@ -8,14 +8,11 @@ Each top-level folder represents a functional stage in the pipeline. The lab ing
 - **Interchangeable components**: ingestion, embedding, vector storage, retrieval orchestration, and LLM reasoning are decoupled.  
 - **Retrieval-first design**: retrieval is separated from generation, making it easy to mix or upgrade LLMs for different tasks.  
 - **LangChain-based orchestration**: dynamic context assembly & prompt engineering before LLM calls.  
-─
-
 
 **Status: 🛠️ Under Development**  
 Currently focused on optimising the ingestion pipeline (SharePoint, OpenAlex, SeaweedFS, DuckDB, metadata & ACL extraction)
 
-─
-
+***
 
 ## Process  
 
@@ -29,7 +26,7 @@ Currently focused on optimising the ingestion pipeline (SharePoint, OpenAlex, Se
 7. **Generate answers via pluggable LLM backend** (OpenAI, Gemini, or local models)  
 8. **Serve responses** through FastAPI & Streamlit (**React + TypeScript UI under development**)  
 
----
+***
 
 ## Monitoring  
 
@@ -38,7 +35,7 @@ A dedicated **monitoring server** (`lab-1-monitoring`) runs:
 - **Grafana** for dashboards  
 - **Alertmanager** for notifications  
 
----
+***
 
 ## Project Structure  
 
@@ -53,7 +50,7 @@ A dedicated **monitoring server** (`lab-1-monitoring`) runs:
 - **API/** → FastAPI microservice for retrieval + LLM  
 - **MLExperiments/** → Fine-tuning & testing workflows  
 
----
+***
 
 ## Infrastructure  
 
@@ -62,7 +59,7 @@ Hosted on **Proxmox** (Minisforum UM890 Pro):
 - 64 GB DDR5 RAM  
 - 2 TB NVMe  
 
----
+***
 
 ### VM-to-Functional-Area Mapping  
 
@@ -86,11 +83,12 @@ This deliberate 1:1 mapping provides:
 | 192.168.0.17  | lab-1-SeaweedFS    | Distributed storage for original PDFs |
 | 192.168.0.18  | lab-1-monitoring   | Prometheus, Grafana, Alertmanager |
 
----
+***
 
 This architecture makes it easy to **swap components** (e.g., different embedding models, storage backends, or UI layers) without disrupting the rest of the system. Also facilitates moving the stateless services to K8s.
 
----
+***
+
 ## Testing Strategy  
 
 This project evolves from **POC → MVP → Pseudo-Production**, so testing depth scales accordingly:  
@@ -113,7 +111,7 @@ This project evolves from **POC → MVP → Pseudo-Production**, so testing dept
 
 CI/CD will integrate **unit + integration tests** on PRs, with **nightly E2E + data validation tests** on a controlled dataset.  
 
----
+***
 
 ## Roadmap  
 
@@ -124,5 +122,5 @@ CI/CD will integrate **unit + integration tests** on PRs, with **nightly E2E + d
 - 📝 **Build React + TypeScript UI alpha**
 - 📝 **Reprovision entire solution using Terraform and Ansible**
 - 📝 **Reprovision stateless services (API, UI, embedding workers) on Kubernetes**
- 
----
+
+***

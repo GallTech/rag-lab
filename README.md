@@ -12,8 +12,6 @@ Each top-level folder represents a functional stage in the pipeline. The lab ing
 **Status: 🛠️ Under Development**  
 Currently focused on optimising the ingestion pipeline (SharePoint, OpenAlex, SeaweedFS, DuckDB, metadata & ACL extraction)
 
-***
-
 ## Process  
 
 1. **Collect documents** from SharePoint and OpenAlex with metadata + ACLs *(see Data Ingestion section for details)*  
@@ -26,16 +24,12 @@ Currently focused on optimising the ingestion pipeline (SharePoint, OpenAlex, Se
 7. **Generate answers via pluggable LLM backend** (OpenAI, Gemini, or local models)  
 8. **Serve responses** through FastAPI & Streamlit (**React + TypeScript UI under development**)  
 
-***
-
 ## Monitoring  
 
 A dedicated **monitoring server** (`lab-1-monitoring`) runs:  
 - **Prometheus** for metrics collection  
 - **Grafana** for dashboards  
 - **Alertmanager** for notifications  
-
-***
 
 ## Project Structure  
 
@@ -50,16 +44,12 @@ A dedicated **monitoring server** (`lab-1-monitoring`) runs:
 - **API/** → FastAPI microservice for retrieval + LLM  
 - **MLExperiments/** → Fine-tuning & testing workflows  
 
-***
-
 ## Infrastructure  
 
 Hosted on **Proxmox** (Minisforum UM890 Pro):  
 - Ryzen 9 8945HS  
 - 64 GB DDR5 RAM  
 - 2 TB NVMe  
-
-***
 
 ### VM-to-Functional-Area Mapping  
 
@@ -68,8 +58,8 @@ This deliberate 1:1 mapping provides:
 - **Clear functional boundaries** (ingestion, embedding, storage, etc.)  
 - **Fault isolation** (a failure in one stage won’t cascade)  
 - **Independent scaling** (e.g., scale only embedding or inference nodes)  
-- **Easier upgrades & replacements**
-- **Makes it easier for me to learn and experiment with each component in isolation** 
+- **Easier upgrades & replacements**  
+- **Makes it easier for me to learn and experiment with each component in isolation**  
 
 | VM IP         | Hostname            | Functional Area             |
 |---------------|--------------------|-----------------------------|
@@ -83,11 +73,7 @@ This deliberate 1:1 mapping provides:
 | 192.168.0.17  | lab-1-SeaweedFS    | Distributed storage for original PDFs |
 | 192.168.0.18  | lab-1-monitoring   | Prometheus, Grafana, Alertmanager |
 
-***
-
 This architecture makes it easy to **swap components** (e.g., different embedding models, storage backends, or UI layers) without disrupting the rest of the system. Also facilitates moving the stateless services to K8s.
-
-***
 
 ## Testing Strategy  
 
@@ -111,16 +97,12 @@ This project evolves from **POC → MVP → Pseudo-Production**, so testing dept
 
 CI/CD will integrate **unit + integration tests** on PRs, with **nightly E2E + data validation tests** on a controlled dataset.  
 
-***
-
 ## Roadmap  
 
-- 🔄 **Urgent: Optimise project & Git structure** 
+- 🔄 **Urgent: Optimise project & Git structure**  
 - 🔄 **Finalise document retrieval** (Qdrant vector search + validation)  
 - 🔄 **Extend ingestion** (AI, ML, and AI Ethics categories)  
 - 📝 **Implement LangChain retrieval chains & dynamic prompt templates**  
-- 📝 **Build React + TypeScript UI alpha**
-- 📝 **Reprovision entire solution using Terraform and Ansible**
+- 📝 **Build React + TypeScript UI alpha**  
+- 📝 **Reprovision entire solution using Terraform and Ansible**  
 - 📝 **Reprovision stateless services (API, UI, embedding workers) on Kubernetes**
-
-***

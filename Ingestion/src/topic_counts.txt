@@ -1,0 +1,1915 @@
+Topic Modeling: 647
+Natural Language Processing Techniques: 464
+Quantum Computing Algorithms and Architecture: 365
+Quantum Information and Cryptography: 360
+Neural Networks and Applications: 356
+Cosmology and Gravitation Theories: 223
+Anomaly Detection Techniques and Applications: 210
+Black Holes and Theoretical Physics: 185
+Multimodal Machine Learning Applications: 183
+Advanced Neural Network Applications: 165
+Pulsars and Gravitational Waves Research: 161
+Privacy-Preserving Technologies in Data: 159
+Artificial Intelligence in Healthcare and Education: 158
+Model Reduction and Neural Networks: 155
+Quantum Mechanics and Applications: 152
+Advanced Graph Neural Networks: 148
+Machine Learning in Materials Science: 148
+Semantic Web and Ontologies: 147
+Advanced Image and Video Retrieval Techniques: 146
+Particle physics theoretical and experimental studies: 138
+Fault Detection and Control Systems: 134
+Adversarial Robustness in Machine Learning: 132
+Speech Recognition and Synthesis: 129
+AI in cancer detection: 125
+Radiomics and Machine Learning in Medical Imaging: 123
+Machine Learning in Healthcare: 123
+Quantum many-body systems: 122
+Explainable Artificial Intelligence (XAI): 115
+Medical Image Segmentation Techniques: 114
+Software Engineering Research: 111
+Advanced Memory and Neural Computing: 111
+Speech and dialogue systems: 110
+Network Security and Intrusion Detection: 110
+Advanced Malware Detection Techniques: 110
+Generative Adversarial Networks and Image Synthesis: 108
+Advanced Vision and Imaging: 108
+Quantum and electron transport phenomena: 108
+Domain Adaptation and Few-Shot Learning: 107
+Medical Imaging Techniques and Applications: 106
+Complex Network Analysis Techniques: 106
+Neural dynamics and brain function: 105
+Astronomy and Astrophysical Research: 105
+Human Pose and Action Recognition: 105
+Astrophysical Phenomena and Observations: 105
+Photonic and Optical Devices: 102
+Image and Signal Denoising Methods: 101
+Advanced Thermodynamics and Statistical Mechanics: 100
+Video Surveillance and Tracking Methods: 100
+Ethics and Social Impacts of AI: 99
+Time Series Analysis and Forecasting: 99
+Neural Networks and Reservoir Computing: 99
+Statistical Methods and Inference: 98
+Speech and Audio Processing: 97
+Brain Tumor Detection and Classification: 96
+Robotics and Sensor-Based Localization: 95
+Parallel Computing and Optimization Techniques: 95
+Computer Graphics and Visualization Techniques: 93
+Machine Learning and Data Classification: 93
+Image Retrieval and Classification Techniques: 93
+Stellar, planetary, and galactic studies: 92
+Scientific Computing and Data Management: 90
+Reinforcement Learning in Robotics: 90
+Video Analysis and Summarization: 89
+Gamma-ray bursts and supernovae: 88
+Galaxies: Formation, Evolution, Phenomena: 85
+Recommender Systems and Techniques: 84
+3D Shape Modeling and Analysis: 83
+Computational Physics and Python Applications: 81
+Computational Drug Discovery Methods: 80
+Music and Audio Processing: 79
+Matrix Theory and Algorithms: 78
+Advanced Control Systems Optimization: 76
+Robotic Path Planning Algorithms: 76
+EEG and Brain-Computer Interfaces: 76
+Advanced MIMO Systems Optimization: 75
+Industrial Vision Systems and Defect Detection: 73
+Advanced Mathematical Modeling in Engineering: 72
+Nonlinear Dynamics and Pattern Formation: 72
+Software Testing and Debugging Techniques: 71
+Quantum Chromodynamics and Particle Interactions: 71
+Quantum chaos and dynamical systems: 71
+Data Management and Algorithms: 70
+Biomedical Text Mining and Ontologies: 70
+Algorithms and Data Compression: 70
+Sparse and Compressive Sensing Techniques: 70
+Image Processing Techniques and Applications: 70
+Cold Atom Physics and Bose-Einstein Condensates: 69
+Cell Image Analysis Techniques: 68
+Face and Expression Recognition: 68
+Particle Detector Development and Performance: 67
+Opinion Dynamics and Social Influence: 67
+Image Processing and 3D Reconstruction: 67
+COVID-19 diagnosis using AI: 66
+Advanced Numerical Analysis Techniques: 65
+Advanced Graph Theory Research: 65
+Intelligent Tutoring Systems and Adaptive Learning: 65
+Advanced Text Analysis Techniques: 65
+Machine Learning and Algorithms: 64
+Distributed and Parallel Computing Systems: 64
+IoT and Edge/Fog Computing: 63
+Astro and Planetary Science: 63
+Online Learning and Analytics: 61
+Data Quality and Management: 61
+Computability, Logic, AI Algorithms: 61
+Advanced Topics in Algebra: 61
+Advanced MRI Techniques and Applications: 60
+Blockchain Technology Applications and Security: 60
+Functional Brain Connectivity Studies: 60
+Stochastic Gradient Optimization Techniques: 59
+Stochastic processes and financial applications: 59
+graph theory and CDMA systems: 59
+Atomic and Subatomic Physics Research: 59
+Gaussian Processes and Bayesian Inference: 59
+Advanced Image Processing Techniques: 59
+Advanced Data Storage Technologies: 59
+Algebraic structures and combinatorial models: 59
+Graph Theory and Algorithms: 58
+Theoretical and Computational Physics: 58
+Quantum optics and atomic interactions: 57
+Astrophysics and Cosmic Phenomena: 57
+Remote-Sensing Image Classification: 57
+Formal Methods in Verification: 57
+Protein Structure and Dynamics: 57
+Face recognition and analysis: 56
+Autonomous Vehicle Technology and Safety: 56
+Fluid Dynamics and Turbulent Flows: 56
+Dark Matter and Cosmic Phenomena: 56
+Misinformation and Its Impacts: 56
+Advanced Optimization Algorithms Research: 56
+Traffic Prediction and Management Techniques: 55
+Multi-Agent Systems and Negotiation: 55
+Robotics and Automated Systems: 54
+Topological and Geometric Data Analysis: 53
+Bayesian Methods and Mixture Models: 53
+Mechanical and Optical Resonators: 53
+Numerical methods in inverse problems: 53
+Spectroscopy and Quantum Chemical Studies: 52
+Antenna Design and Analysis: 52
+High-Energy Particle Collisions Research: 52
+Manufacturing Process and Optimization: 52
+Geophysics and Gravity Measurements: 51
+Probabilistic and Robust Engineering Design: 50
+Cloud Computing and Resource Management: 50
+Coding theory and cryptography: 50
+Optical Network Technologies: 50
+Advanced Bandit Algorithms Research: 50
+Advanced X-ray and CT Imaging: 50
+Control Systems and Identification: 50
+CCD and CMOS Imaging Sensors: 50
+Bayesian Modeling and Causal Inference: 49
+Noncommutative and Quantum Gravity Theories: 49
+Optimization and Search Problems: 49
+Auction Theory and Applications: 49
+Medical Imaging and Analysis: 48
+AI in Service Interactions: 48
+3D Surveying and Cultural Heritage: 48
+Remote Sensing and LiDAR Applications: 48
+Geometric Analysis and Curvature Flows: 48
+Text and Document Classification Technologies: 48
+Stochastic processes and statistical mechanics: 47
+Complex Systems and Time Series Analysis: 47
+Mathematical Dynamics and Fractals: 47
+Robot Manipulation and Learning: 47
+Modular Robots and Swarm Intelligence: 47
+Software System Performance and Reliability: 47
+Ferroelectric and Negative Capacitance Devices: 47
+Relativity and Gravitational Theory: 46
+Computational Geometry and Mesh Generation: 46
+Advanced Wireless Communication Technologies: 46
+Data Stream Mining Techniques: 45
+Simulation Techniques and Applications: 45
+Cryptography and Data Security: 45
+Computational and Text Analysis Methods: 45
+Stock Market Forecasting Methods: 44
+Logic, programming, and type systems: 44
+Machine Learning in Bioinformatics: 44
+Quantum-Dot Cellular Automata: 43
+Gene Regulatory Network Analysis: 43
+Cellular Automata and Applications: 43
+Software Reliability and Analysis Research: 42
+Algebraic Geometry and Number Theory: 42
+Graph Labeling and Dimension Problems: 42
+Meteorological Phenomena and Simulations: 42
+Hate Speech and Cyberbullying Detection: 42
+Advanced Clustering Algorithms Research: 41
+Advanced Image Fusion Techniques: 41
+Advanced Fiber Laser Technologies: 41
+Scheduling and Optimization Algorithms: 41
+Image Enhancement Techniques: 41
+Infrared Target Detection Methodologies: 41
+Advancements in Semiconductor Devices and Circuit Design: 41
+Advanced Mathematical Physics Problems: 41
+Embedded Systems Design Techniques: 41
+Stability and Controllability of Differential Equations: 41
+Handwritten Text Recognition Techniques: 41
+Human Motion and Animation: 41
+Advanced Numerical Methods in Computational Mathematics: 41
+Spectral Theory in Mathematical Physics: 40
+Advanced Algebra and Geometry: 40
+Graph theory and applications: 40
+Artificial Intelligence in Healthcare: 40
+Security and Verification in Computing: 40
+Text Readability and Simplification: 39
+Advanced Data Compression Techniques: 39
+Statistical Methods and Bayesian Inference: 39
+Web Data Mining and Analysis: 39
+Complexity and Algorithms in Graphs: 39
+Data Visualization and Analytics: 39
+Satellite Communication Systems: 39
+Mental Health Research Topics: 39
+Radiation Detection and Scintillator Technologies: 38
+Machine Learning and ELM: 38
+Sentiment Analysis and Opinion Mining: 38
+Radio Astronomy Observations and Technology: 38
+Evolutionary Algorithms and Applications: 38
+Spam and Phishing Detection: 38
+Logic, Reasoning, and Knowledge: 38
+Physics of Superconductivity and Magnetism: 38
+Advanced Algebra and Logic: 37
+Digital Media Forensic Detection: 37
+Internet Traffic Analysis and Secure E-voting: 37
+Astronomical Observations and Instrumentation: 37
+Genomics and Phylogenetic Studies: 37
+Advanced Neuroimaging Techniques and Applications: 37
+Indoor and Outdoor Localization Technologies: 37
+Blind Source Separation Techniques: 37
+Advanced Database Systems and Queries: 36
+Model-Driven Software Engineering Techniques: 36
+Astrophysics and Star Formation Studies: 36
+Optical measurement and interference techniques: 36
+Advanced Statistical Methods and Models: 36
+Distributed systems and fault tolerance: 36
+Cooperative Communication and Network Coding: 36
+Energy Harvesting in Wireless Networks: 36
+Photoacoustic and Ultrasonic Imaging: 36
+Business Process Modeling and Analysis: 35
+Human-Automation Interaction and Safety: 35
+advanced mathematical theories: 35
+Geometry and complex manifolds: 35
+Transportation and Mobility Innovations: 35
+Advanced Chemical Physics Studies: 35
+Bioinformatics and Genomic Networks: 35
+Quantum, superfluid, helium dynamics: 35
+Advanced Multi-Objective Optimization Algorithms: 34
+Neutrino Physics Research: 34
+Markov Chains and Monte Carlo Methods: 34
+Mathematical Biology Tumor Growth: 34
+Smart Grid Security and Resilience: 34
+Antenna Design and Optimization: 33
+Advanced Causal Inference Techniques: 33
+Geometric and Algebraic Topology: 33
+DNA and Biological Computing: 33
+Evolutionary Game Theory and Cooperation: 33
+Interconnection Networks and Systems: 33
+Visual Attention and Saliency Detection: 33
+Topological Materials and Phenomena: 33
+Solar and Space Plasma Dynamics: 33
+Micro and Nano Robotics: 32
+Finite Group Theory Research: 32
+Traffic control and management: 32
+Big Data and Business Intelligence: 32
+Gene expression and cancer classification: 32
+Metaheuristic Optimization Algorithms Research: 32
+Game Theory and Applications: 32
+Single-cell and spatial transcriptomics: 32
+Lattice Boltzmann Simulation Studies: 32
+Target Tracking and Data Fusion in Sensor Networks: 32
+Privacy, Security, and Data Protection: 31
+Polynomial and algebraic computation: 31
+Homotopy and Cohomology in Algebraic Topology: 31
+Imbalanced Data Classification Techniques: 31
+Tensor decomposition and applications: 31
+Evolution and Genetic Dynamics: 31
+Computational Fluid Dynamics and Aerodynamics: 31
+Energy Load and Power Forecasting: 30
+Innovative Human-Technology Interaction: 30
+Human Mobility and Location-Based Analysis: 30
+Nonlinear Waves and Solitons: 30
+Mathematical and Theoretical Epidemiology and Ecology Models: 30
+stochastic dynamics and bifurcation: 29
+Diffusion and Search Dynamics: 29
+Integrated Circuits and Semiconductor Failure Analysis: 29
+Semiconductor materials and devices: 29
+Data Mining Algorithms and Applications: 29
+Service-Oriented Architecture and Web Services: 28
+Distributed Control Multi-Agent Systems: 28
+Seismic Imaging and Inversion Techniques: 28
+Nonlinear Partial Differential Equations: 28
+Millimeter-Wave Propagation and Modeling: 28
+Social Robot Interaction and HRI: 28
+Digital Rights Management and Security: 28
+Smart Grid Energy Management: 27
+Nuclear Physics and Applications: 27
+Statistical Mechanics and Entropy: 27
+Gaze Tracking and Assistive Technology: 27
+Rings, Modules, and Algebras: 27
+Digital Imaging for Blood Diseases: 27
+Advanced Optical Sensing Technologies: 27
+Advanced Condensed Matter Physics: 27
+Laser-Matter Interactions and Applications: 27
+COVID-19 epidemiological studies: 27
+Game Theory and Voting Systems: 27
+Reservoir Engineering and Simulation Methods: 26
+Context-Aware Activity Recognition Systems: 26
+Limits and Structures in Graph Theory: 26
+Quantum Electrodynamics and Casimir Effect: 26
+Real-time simulation and control systems: 26
+Advanced Statistical Process Monitoring: 26
+Physical Unclonable Functions (PUFs) and Hardware Security: 26
+AI-based Problem Solving and Planning: 26
+Numerical methods for differential equations: 26
+Advanced Combinatorial Mathematics: 26
+UAV Applications and Optimization: 26
+Force Microscopy Techniques and Applications: 26
+RNA and protein synthesis mechanisms: 26
+Advanced Materials and Mechanics: 25
+Digital and Cyber Forensics: 25
+Metamaterials and Metasurfaces Applications: 25
+Magnetic properties of thin films: 25
+Transportation Planning and Optimization: 25
+Music Technology and Sound Studies: 24
+Semiconductor Lasers and Optical Devices: 24
+Data-Driven Disease Surveillance: 24
+semigroups and automata theory: 24
+Economic theories and models: 24
+Genetics, Bioinformatics, and Biomedical Research: 24
+Augmented Reality Applications: 24
+Rough Sets and Fuzzy Logic: 23
+Advanced Steganography and Watermarking Techniques: 23
+Electronic and Structural Properties of Oxides: 23
+Energy Efficient Wireless Sensor Networks: 23
+Statistical Methods in Clinical Trials: 23
+Molecular Communication and Nanonetworks: 23
+Language, Metaphor, and Cognition: 23
+Advanced Fluorescence Microscopy Techniques: 23
+Advanced Antenna and Metasurface Technologies: 23
+Advanced Manufacturing and Logistics Optimization: 23
+Wireless Body Area Networks: 23
+Distributed Sensor Networks and Detection Algorithms: 22
+Hand Gesture Recognition Systems: 22
+Gait Recognition and Analysis: 22
+Software Engineering Techniques and Practices: 22
+Retinal Imaging and Analysis: 22
+Advanced Photonic Communication Systems: 22
+Advanced X-ray Imaging Techniques: 22
+Advanced Computational Techniques and Applications: 22
+Gas Dynamics and Kinetic Theory: 22
+Infrastructure Maintenance and Monitoring: 22
+Underwater Vehicles and Communication Systems: 22
+Nonlinear Photonic Systems: 22
+Artificial Intelligence in Law: 22
+Point processes and geometric inequalities: 22
+Social Media and Politics: 22
+Optimization and Variational Analysis: 22
+Caching and Content Delivery: 22
+Geographic Information Systems Studies: 22
+Virtual Reality Applications and Impacts: 21
+Numerical Methods and Algorithms: 21
+Particle Accelerators and Free-Electron Lasers: 21
+Information and Cyber Security: 21
+Educational Games and Gamification: 21
+Teaching and Learning Programming: 21
+FinTech, Crowdfunding, Digital Finance: 21
+Radiation Effects in Electronics: 21
+Wireless Communication Networks Research: 21
+Advanced Differential Equations and Dynamical Systems: 21
+VLSI and Analog Circuit Testing: 21
+Chaos-based Image/Signal Encryption: 20
+Access Control and Trust: 20
+Inertial Sensor and Navigation: 20
+Image and Video Quality Assessment: 20
+Analog and Mixed-Signal Circuit Design: 20
+Graphene research and applications: 20
+Constraint Satisfaction and Optimization: 20
+Cognitive Computing and Networks: 20
+Risk and Portfolio Optimization: 20
+Smart Agriculture and AI: 20
+Spectroscopy Techniques in Biomedical and Chemical Research: 20
+Artificial Intelligence in Games: 19
+Adaptive optics and wavefront sensing: 19
+Optical Systems and Laser Technology: 19
+Differential Equations and Numerical Methods: 19
+Geophysics and Sensor Technology: 19
+Scientific Research and Discoveries: 19
+Holomorphic and Operator Theory: 19
+Algebraic and Geometric Analysis: 19
+Remote Sensing and Land Use: 19
+Opportunistic and Delay-Tolerant Networks: 19
+ECG Monitoring and Analysis: 19
+Statistical and numerical algorithms: 19
+Analytic Number Theory Research: 19
+Experimental Behavioral Economics Studies: 19
+Sports Analytics and Performance: 19
+Quantum Mechanics and Non-Hermitian Physics: 19
+Non-Destructive Testing Techniques: 19
+Digital Mental Health Interventions: 19
+Mobile Crowdsensing and Crowdsourcing: 19
+Remote Sensing in Agriculture: 19
+Climate variability and models: 19
+Biometric Identification and Security: 18
+Topology Optimization in Engineering: 18
+Digital Image Processing Techniques: 18
+X-ray Diffraction in Crystallography: 18
+Multimedia Communication and Technology: 18
+Advanced Topology and Set Theory: 18
+High-pressure geophysics and materials: 18
+Magnetic confinement fusion research: 18
+Neuroscience and Neural Engineering: 18
+Orbital Angular Momentum in Optics: 18
+Expert finding and Q&A systems: 18
+Mathematical Approximation and Integration: 18
+Vehicular Ad Hoc Networks (VANETs): 18
+Mathematical Analysis and Transform Methods: 18
+Random Matrices and Applications: 18
+Underwater Acoustics Research: 18
+Optimization and Packing Problems: 18
+Ultrasonics and Acoustic Wave Propagation: 18
+Digital Transformation in Industry: 18
+Emotion and Mood Recognition: 17
+Error Correcting Code Techniques: 17
+Nuclear physics research studies: 17
+Nuclear reactor physics and engineering: 17
+Vehicle License Plate Recognition: 17
+Commutative Algebra and Its Applications: 17
+Magnetic and transport properties of perovskites and related materials: 17
+Low-power high-performance VLSI design: 17
+Spectroscopy and Laser Applications: 17
+Advanced Battery Technologies Research: 17
+Differential Equations and Boundary Problems: 17
+Air Quality Monitoring and Forecasting: 17
+Chaos control and synchronization: 17
+Wireless Communication Security Techniques: 17
+Advanced Mathematical Theories and Applications: 17
+Cryptographic Implementations and Security: 16
+Photonic Crystals and Applications: 16
+Electron and X-Ray Spectroscopy Techniques: 16
+Machine Fault Diagnosis Techniques: 16
+Nuclear Engineering Thermal-Hydraulics: 16
+Cognitive Science and Mapping: 16
+Mathematics and Applications: 16
+Spectroscopy and Chemometric Analyses: 16
+Innovative Teaching and Learning Methods: 16
+Space Satellite Systems and Control: 16
+Interactive and Immersive Displays: 16
+Microfluidic and Bio-sensing Technologies: 16
+Non-Invasive Vital Sign Monitoring: 16
+Electromagnetic Scattering and Analysis: 16
+Advanced Measurement and Metrology Techniques: 16
+Health Systems, Economic Evaluations, Quality of Life: 16
+Guidance and Control Systems: 16
+Advanced Differential Geometry Research: 16
+Microwave Engineering and Waveguides: 16
+Muscle activation and electromyography studies: 16
+Numerical methods in engineering: 16
+Advanced Fiber Optic Sensors: 16
+Semiconductor Quantum Structures and Devices: 16
+Microgrid Control and Optimization: 15
+Slime Mold and Myxomycetes Research: 15
+Design Education and Practice: 15
+Spacecraft Dynamics and Control: 15
+Robotic Locomotion and Control: 15
+Fuzzy Logic and Control Systems: 15
+Automated Road and Building Extraction: 15
+Advanced NMR Techniques and Applications: 15
+Advanced Mathematical Identities: 15
+Control and Stability of Dynamical Systems: 15
+Educational Technology and Assessment: 15
+2D Materials and Applications: 15
+Advanced Wireless Communication Techniques: 15
+Additive Manufacturing and 3D Printing Technologies: 15
+Vehicle Routing Optimization Methods: 15
+Financial Risk and Volatility Modeling: 15
+BIM and Construction Integration: 15
+Software-Defined Networks and 5G: 15
+Advanced Banach Space Theory: 15
+Advanced Harmonic Analysis Research: 15
+Occupational Health and Safety Research: 15
+Forecasting Techniques and Applications: 15
+Law, AI, and Intellectual Property: 15
+Visual perception and processing mechanisms: 15
+Green IT and Sustainability: 15
+Electromagnetic Simulation and Numerical Methods: 15
+Ecosystem dynamics and resilience: 15
+Navier-Stokes equation solutions: 15
+Complex Systems and Decision Making: 15
+Planetary Science and Exploration: 14
+Seismology and Earthquake Studies: 14
+Advanced Data Processing Techniques: 14
+Advanced Frequency and Time Standards: 14
+Geochemistry and Geologic Mapping: 14
+MRI in cancer diagnosis: 14
+Aerospace Engineering and Control Systems: 14
+Open Source Software Innovations: 14
+Lung Cancer Diagnosis and Treatment: 14
+Mathematics, Computing, and Information Processing: 14
+Acoustic Wave Phenomena Research: 14
+Mental Health via Writing: 14
+Fractal and DNA sequence analysis: 14
+Optical Wireless Communication Technologies: 14
+Precipitation Measurement and Analysis: 14
+Tactile and Sensory Interactions: 14
+Smart Parking Systems Research: 14
+Advanced biosensing and bioanalysis techniques: 14
+Atmospheric and Environmental Gas Dynamics: 14
+Advanced Computing and Algorithms: 14
+Photoreceptor and optogenetics research: 13
+Language and cultural evolution: 13
+Big Data Technologies and Applications: 13
+Terahertz technology and applications: 13
+Metabolomics and Mass Spectrometry Studies: 13
+Fire Detection and Safety Systems: 13
+Satellite Image Processing and Photogrammetry: 13
+Hydrological Forecasting Using AI: 13
+Radiation Therapy and Dosimetry: 13
+Stroke Rehabilitation and Recovery: 13
+Plasmonic and Surface Plasmon Research: 13
+Experimental and Theoretical Physics Studies: 13
+Acoustic Wave Resonator Technologies: 13
+Adaptive Control of Nonlinear Systems: 13
+Advanced Electron Microscopy Techniques and Applications: 13
+Particle accelerators and beam dynamics: 13
+Prosthetics and Rehabilitation Robotics: 13
+Advanced Adaptive Filtering Techniques: 13
+Advanced Operator Algebra Research: 13
+Supply Chain and Inventory Management: 13
+Magnetic Properties and Applications: 13
+Elasticity and Material Modeling: 13
+IoT Networks and Protocols: 13
+Structural Health Monitoring Techniques: 13
+Characterization and Applications of Magnetic Nanoparticles: 12
+Material Dynamics and Properties: 12
+Advanced SAR Imaging Techniques: 12
+Aesthetic Perception and Analysis: 12
+Image and Object Detection Techniques: 12
+Robotic Mechanisms and Dynamics: 12
+Meta-analysis and systematic reviews: 12
+Advanced Optical Imaging Technologies: 12
+Monoclonal and Polyclonal Antibodies Research: 12
+Advanced Sensor and Energy Harvesting Materials: 12
+Financial Markets and Investment Strategies: 12
+VLSI and FPGA Design Techniques: 12
+Ethics in Clinical Research: 12
+Mathematical and Theoretical Analysis: 12
+Superconducting Materials and Applications: 12
+Persona Design and Applications: 12
+Advanced Optical Network Technologies: 12
+Fuel Cells and Related Materials: 12
+Video Coding and Compression Technologies: 12
+Surgical Simulation and Training: 12
+Research Data Management Practices: 12
+Risk and Safety Analysis: 12
+Consumer Market Behavior and Pricing: 12
+Evacuation and Crowd Dynamics: 12
+Geophysical Methods and Applications: 12
+Statistical and Computational Modeling: 12
+Social and Intergroup Psychology: 12
+Fluid Dynamics and Heat Transfer: 12
+Insurance, Mortality, Demography, Risk Management: 11
+Fractional Differential Equations Solutions: 11
+Seismic Waves and Analysis: 11
+Molecular Biology Techniques and Applications: 11
+Fluid Dynamics and Vibration Analysis: 11
+Geophysical and Geoelectrical Methods: 11
+Spacecraft and Cryogenic Technologies: 11
+Scheduling and Timetabling Solutions: 11
+History and Theory of Mathematics: 11
+Molecular spectroscopy and chirality: 11
+Advanced Wireless Network Optimization: 11
+Advanced Radiotherapy Techniques: 11
+scientometrics and bibliometrics research: 11
+Stability and Control of Uncertain Systems: 11
+Geomagnetism and Paleomagnetism Studies: 11
+Subtitles and Audiovisual Media: 11
+Neural and Behavioral Psychology Studies: 11
+Spacecraft Design and Technology: 11
+Web Application Security Vulnerabilities: 11
+Cancer Genomics and Diagnostics: 11
+Mobile Ad Hoc Networks: 11
+Ultrasound Imaging and Elastography: 11
+Action Observation and Synchronization: 11
+Advanced Queuing Theory Analysis: 11
+Psychology of Moral and Emotional Judgment: 11
+Neural Networks Stability and Synchronization: 10
+Power Systems and Technologies: 10
+Surface and Thin Film Phenomena: 10
+Nonlinear Differential Equations Analysis: 10
+Neurobiology of Language and Bilingualism: 10
+Reliability and Maintenance Optimization: 10
+Diamond and Carbon-based Materials Research: 10
+Creativity in Education and Neuroscience: 10
+Elevator Systems and Control: 10
+Impact of AI and Big Data on Business and Society: 10
+Anatomy and Medical Technology: 10
+Atomic and Molecular Physics: 10
+Optimal Power Flow Distribution: 10
+Phase Equilibria and Thermodynamics: 10
+Microwave Imaging and Scattering Analysis: 10
+Molecular Junctions and Nanostructures: 10
+Genomics and Rare Diseases: 10
+Digital Radiography and Breast Imaging: 10
+Insurance and Financial Risk Management: 10
+NMR spectroscopy and applications: 10
+Fluid Dynamics Simulations and Interactions: 10
+Health disparities and outcomes: 10
+Advancements in Photolithography Techniques: 10
+Data Analysis with R: 10
+Genetic diversity and population structure: 10
+Chemical Synthesis and Analysis: 10
+Digital Holography and Microscopy: 10
+Oceanographic and Atmospheric Processes: 10
+Iterative Methods for Nonlinear Equations: 10
+Random lasers and scattering media: 10
+Teleoperation and Haptic Systems: 10
+Power System Reliability and Maintenance: 10
+Age of Information Optimization: 10
+Neuroscience and Music Perception: 10
+Calibration and Measurement Techniques: 10
+Advanced MEMS and NEMS Technologies: 10
+Technology and Data Analysis: 10
+Particle Dynamics in Fluid Flows: 9
+Electoral Systems and Political Participation: 9
+Advanced Materials Characterization Techniques: 9
+Colorectal Cancer Screening and Detection: 9
+Health, Environment, Cognitive Aging: 9
+Experimental Learning in Engineering: 9
+Media Influence and Health: 9
+Impact of Technology on Adolescents: 9
+Memory and Neural Mechanisms: 9
+Soft Robotics and Applications: 9
+Methane Hydrates and Related Phenomena: 9
+Telecommunications and Broadcasting Technologies: 9
+Approximation Theory and Sequence Spaces: 9
+Various Chemistry Research Topics: 9
+Cardiac Imaging and Diagnostics: 9
+Team Dynamics and Performance: 9
+Voice and Speech Disorders: 9
+3D Modeling in Geospatial Applications: 9
+Multiferroics and related materials: 9
+Behavioral Health and Interventions: 9
+Digital Games and Media: 9
+Hearing Loss and Rehabilitation: 9
+Color Science and Applications: 9
+Spatial and Panel Data Analysis: 9
+Strong Light-Matter Interactions: 9
+Innovative Microfluidic and Catalytic Techniques Innovation: 9
+Face Recognition and Perception: 9
+Maritime Navigation and Safety: 9
+Control and Dynamics of Mobile Robots: 9
+Dynamics and Control of Mechanical Systems: 9
+Plant and animal studies: 9
+GNSS positioning and interference: 9
+Optical Imaging and Spectroscopy Techniques: 9
+Biomedical and Engineering Education: 9
+Electric Vehicles and Infrastructure: 9
+Digital Filter Design and Implementation: 9
+Fetal and Pediatric Neurological Disorders: 9
+Atmospheric Ozone and Climate: 9
+Education and Critical Thinking Development: 9
+Neonatal and fetal brain pathology: 8
+Phonetics and Phonology Research: 8
+Radar Systems and Signal Processing: 8
+Analytic and geometric function theory: 8
+Cloud Data Security Solutions: 8
+Hydraulic and Pneumatic Systems: 8
+Microbial Metabolic Engineering and Bioproduction: 8
+Bacteriophages and microbial interactions: 8
+Fuzzy Systems and Optimization: 8
+Soil Geostatistics and Mapping: 8
+Safety Systems Engineering in Autonomy: 8
+Laser-Plasma Interactions and Diagnostics: 8
+Animal Vocal Communication and Behavior: 8
+Phonocardiography and Auscultation Techniques: 8
+Mathematical functions and polynomials: 8
+Cellular Mechanics and Interactions: 8
+Power System Optimization and Stability: 8
+Digital Platforms and Economics: 8
+Market Dynamics and Volatility: 8
+Radio Wave Propagation Studies: 8
+Law, Economics, and Judicial Systems: 8
+Hemodynamic Monitoring and Therapy: 8
+Cardiovascular Function and Risk Factors: 8
+Hydrocarbon exploration and reservoir analysis: 8
+Superconducting and THz Device Technology: 8
+Cognitive Abilities and Testing: 8
+Advanced Measurement and Detection Methods: 8
+RNA modifications and cancer: 8
+Vibration and Dynamic Analysis: 8
+Sensor Technology and Measurement Systems: 8
+Ocean Waves and Remote Sensing: 8
+Motor Control and Adaptation: 8
+Wikis in Education and Collaboration: 8
+Multi-Criteria Decision Making: 8
+Digital Economy and Work Transformation: 8
+Architecture and Computational Design: 8
+Child and Animal Learning Development: 8
+Structural Analysis and Optimization: 8
+Catalytic Processes in Materials Science: 8
+Philosophy and History of Science: 8
+Heat Transfer Mechanisms: 8
+Ionosphere and magnetosphere dynamics: 8
+Iterative Learning Control Systems: 8
+Optimization and Mathematical Programming: 8
+Peer-to-Peer Network Technologies: 8
+Electric Power System Optimization: 7
+Spatial Cognition and Navigation: 7
+Solid-state spectroscopy and crystallography: 7
+Probability and Risk Models: 7
+Gear and Bearing Dynamics Analysis: 7
+Aerodynamics and Acoustics in Jet Flows: 7
+Radiation Dose and Imaging: 7
+Phase-change materials and chalcogenides: 7
+Nuclear Materials and Properties: 7
+Innovative Approaches in Technology and Social Development: 7
+Technology Use by Older Adults: 7
+Cancer-related molecular mechanisms research: 7
+Image and Video Stabilization: 7
+Hearing Impairment and Communication: 7
+Space Science and Extraterrestrial Life: 7
+Big Data and Digital Economy: 7
+Advancements in Battery Materials: 7
+Biomimetic flight and propulsion mechanisms: 7
+Statistical Distribution Estimation and Applications: 7
+Advanced Surface Polishing Techniques: 7
+Optimal Experimental Design Methods: 7
+Evaluation and Performance Assessment: 7
+IoT-based Smart Home Systems: 7
+Library Science and Information Systems: 7
+Vehicle Noise and Vibration Control: 7
+Categorization, perception, and language: 7
+Economic and Environmental Valuation: 7
+Quasicrystal Structures and Properties: 7
+nanoparticles nucleation surface interactions: 7
+Optical Coherence Tomography Applications: 7
+Evolution and Paleontology Studies: 7
+Cognitive Science and Education Research: 7
+RNA Research and Splicing: 7
+Sports Dynamics and Biomechanics: 7
+Ion-surface interactions and analysis: 7
+Solar Radiation and Photovoltaics: 7
+Fuzzy and Soft Set Theory: 7
+Photorefractive and Nonlinear Optics: 7
+Enzyme Structure and Function: 7
+Additive Manufacturing Materials and Processes: 7
+Cultural Differences and Values: 7
+Ecology and Vegetation Dynamics Studies: 7
+Color perception and design: 7
+Translation Studies and Practices: 7
+Reading and Literacy Development: 7
+Diabetic Foot Ulcer Assessment and Management: 7
+Process Optimization and Integration: 7
+Nanopore and Nanochannel Transport Studies: 7
+Electricity Theft Detection Techniques: 7
+Mobile Agent-Based Network Management: 7
+History and Developments in Astronomy: 7
+Surface Roughness and Optical Measurements: 7
+Evolutionary Psychology and Human Behavior: 7
+Advanced Algorithms and Applications: 7
+Urban Transport and Accessibility: 7
+Energy, Environment, and Transportation Policies: 7
+Electrocatalysts for Energy Conversion: 7
+Species Distribution and Climate Change: 7
+User Authentication and Security Systems: 6
+Visual and Cognitive Learning Processes: 6
+Economic Policies and Impacts: 6
+Receptor Mechanisms and Signaling: 6
+Retinal Diseases and Treatments: 6
+Winter Sports Injuries and Performance: 6
+Infrared Thermography in Medicine: 6
+Olfactory and Sensory Function Studies: 6
+Mass Spectrometry Techniques and Applications: 6
+Meromorphic and Entire Functions: 6
+Inorganic Fluorides and Related Compounds: 6
+Diverse Musicological Studies: 6
+Network Packet Processing and Optimization: 6
+Iron-based superconductors research: 6
+Heart Rate Variability and Autonomic Control: 6
+Digital Humanities and Scholarship: 6
+Gyrotron and Vacuum Electronics Research: 6
+Advanced Chemical Sensor Technologies: 6
+Petri Nets in System Modeling: 6
+Soil Moisture and Remote Sensing: 6
+Perovskite Materials and Applications: 6
+Landslides and related hazards: 6
+Flood Risk Assessment and Management: 6
+Network Traffic and Congestion Control: 6
+Crystallography and molecular interactions: 6
+Embodied and Extended Cognition: 6
+Advanced Software Engineering Methodologies: 6
+Artificial Immune Systems Applications: 6
+Optical and Acousto-Optic Technologies: 6
+Genetic and phenotypic traits in livestock: 6
+thermodynamics and calorimetric analyses: 6
+Academic integrity and plagiarism: 6
+Online and Blended Learning: 6
+Electrical and Bioimpedance Tomography: 6
+Food Supply Chain Traceability: 6
+Mobile Health and mHealth Applications: 6
+Gas Sensing Nanomaterials and Sensors: 6
+Composite Structure Analysis and Optimization: 6
+Integrated Energy Systems Optimization: 6
+Safety Warnings and Signage: 6
+Advanced Control Systems Design: 6
+Plasma and Flow Control in Aerodynamics: 6
+Fatigue and fracture mechanics: 6
+Composite Material Mechanics: 6
+Power Line Communications and Noise: 6
+Vehicle emissions and performance: 6
+Adaptive Dynamic Programming Control: 6
+Advanced Research in Systems and Signal Processing: 6
+Biosensors and Analytical Detection: 6
+Benford’s Law and Fraud Detection: 6
+Electronic Health Records Systems: 6
+Impact of Light on Environment and Health: 6
+Cryospheric studies and observations: 6
+Genomics and Chromatin Dynamics: 6
+SARS-CoV-2 detection and testing: 6
+Advanced Biosensing Techniques and Applications: 6
+Radioactive Decay and Measurement Techniques: 6
+Cutaneous Melanoma Detection and Management: 6
+Cybercrime and Law Enforcement Studies: 6
+Inorganic Chemistry and Materials: 6
+Scientific Measurement and Uncertainty Evaluation: 6
+Mechanics and Biomechanics Studies: 6
+Magneto-Optical Properties and Applications: 6
+Building Energy and Comfort Optimization: 6
+Neurobiology and Insect Physiology Research: 6
+Traffic and Road Safety: 6
+Rare-earth and actinide compounds: 6
+Wireless Signal Modulation Classification: 6
+Collaboration in agile enterprises: 5
+Smart Grid and Power Systems: 5
+Information Retrieval and Search Behavior: 5
+Microstructure and mechanical properties: 5
+School Choice and Performance: 5
+Climate Change Policy and Economics: 5
+Neuroscience and Neuropharmacology Research: 5
+Assembly Line Balancing Optimization: 5
+Sexuality, Behavior, and Technology: 5
+Aerospace Engineering and Energy Systems: 5
+Gut microbiota and health: 5
+Catalysis and Oxidation Reactions: 5
+Security in Wireless Sensor Networks: 5
+Biofield Effects and Biophysics: 5
+Silicon Nanostructures and Photoluminescence: 5
+Thermal properties of materials: 5
+Wireless Networks and Protocols: 5
+vaccines and immunoinformatics approaches: 5
+Flow Measurement and Analysis: 5
+ICT Impact and Policies: 5
+Laser and Thermal Forming Techniques: 5
+Educational and Psychological Assessments: 5
+Water Quality Monitoring and Analysis: 5
+Fire effects on ecosystems: 5
+Photovoltaic System Optimization Techniques: 5
+Decision-Making and Behavioral Economics: 5
+Functional Equations Stability Results: 5
+Insect and Arachnid Ecology and Behavior: 5
+Balance, Gait, and Falls Prevention: 5
+Systems Engineering Methodologies and Applications: 5
+Personality Traits and Psychology: 5
+Knowledge Management and Sharing: 5
+Aerosol Filtration and Electrostatic Precipitation: 5
+demographic modeling and climate adaptation: 5
+Customer churn and segmentation: 5
+Fixed Point Theorems Analysis: 5
+Analytical Chemistry and Sensors: 5
+Photonic Crystal and Fiber Optics: 5
+Crime, Illicit Activities, and Governance: 5
+Transition Metal Oxide Nanomaterials: 5
+Enhanced Oil Recovery Techniques: 5
+Crystallography and Radiation Phenomena: 5
+Traditional Chinese Medicine Studies: 5
+Innovations in Concrete and Construction Materials: 5
+Power Systems Fault Detection: 5
+Geological Modeling and Analysis: 5
+Digital Storytelling and Education: 5
+Cryptography and Residue Arithmetic: 5
+Financial Distress and Bankruptcy Prediction: 5
+Culinary Culture and Tourism: 5
+Facial Nerve Paralysis Treatment and Research: 5
+Advanced Proteomics Techniques and Applications: 5
+Digital Marketing and Social Media: 5
+3D IC and TSV technologies: 5
+Health Literacy and Information Accessibility: 5
+Mathematics Education and Teaching Techniques: 5
+Urban and Freight Transport Logistics: 5
+Industrial Technology and Control Systems: 5
+Wind and Air Flow Studies: 5
+Wildlife Ecology and Conservation: 5
+Real-Time Systems Scheduling: 5
+Dementia and Cognitive Impairment Research: 5
+Geotechnical and Geomechanical Engineering: 5
+Magnetism in coordination complexes: 5
+Syntax, Semantics, Linguistic Variation: 5
+Power Systems and Renewable Energy: 5
+Noise Effects and Management: 5
+Full-Duplex Wireless Communications: 5
+Clinical Reasoning and Diagnostic Skills: 5
+Mobile and Web Applications: 5
+Political Economy and Marxism: 5
+Personal Information Management and User Behavior: 5
+Aquatic and Environmental Studies: 5
+Hydrogen Storage and Materials: 5
+Edcuational Technology Systems: 4
+Cardiovascular Health and Disease Prevention: 4
+Advanced Data and IoT Technologies: 4
+Psychometric Methodologies and Testing: 4
+Vehicle Dynamics and Control Systems: 4
+Lipid Membrane Structure and Behavior: 4
+Technology Adoption and User Behaviour: 4
+Environmental Impact and Sustainability: 4
+Advanced Mathematical Theories: 4
+Plasma Diagnostics and Applications: 4
+Power Transformer Diagnostics and Insulation: 4
+Magnetic Field Sensors Techniques: 4
+Laser Design and Applications: 4
+Near-Field Optical Microscopy: 4
+Textile materials and evaluations: 4
+Organic and Molecular Conductors Research: 4
+Currency Recognition and Detection: 4
+Cardiac electrophysiology and arrhythmias: 4
+Sleep and Wakefulness Research: 4
+Language Development and Disorders: 4
+Law in Society and Culture: 4
+Silicon and Solar Cell Technologies: 4
+Wireless Power Transfer Systems: 4
+Advanced Thermoelectric Materials and Devices: 4
+Cerebral Palsy and Movement Disorders: 4
+International Science and Diplomacy: 4
+Drilling and Well Engineering: 4
+linguistics and terminology studies: 4
+Advanced Electrical Measurement Techniques: 4
+Sports Performance and Training: 4
+Multisensory perception and integration: 4
+Aerospace and Aviation Technology: 4
+Sharing Economy and Platforms: 4
+Animal Behavior and Welfare Studies: 4
+Infant Health and Development: 4
+Engineering Education and Technology: 4
+Contact Mechanics and Variational Inequalities: 4
+Advancements in PLL and VCO Technologies: 4
+Vaccine Coverage and Hesitancy: 4
+Radiative Heat Transfer Studies: 4
+Viral Infectious Diseases and Gene Expression in Insects: 4
+Isotope Analysis in Ecology: 4
+Liver Disease Diagnosis and Treatment: 4
+Extremum Seeking Control Systems: 4
+Climate Change Communication and Perception: 4
+Aging and Gerontology Research: 4
+Advanced Sensor and Control Systems: 4
+Metallurgy and Material Forming: 4
+Microfluidic and Capillary Electrophoresis Applications: 4
+Optical Coatings and Gratings: 4
+Gold and Silver Nanoparticles Synthesis and Applications: 4
+SARS-CoV-2 and COVID-19 Research: 4
+Neuroethics, Human Enhancement, Biomedical Innovations: 4
+Influenza Virus Research Studies: 4
+Cerebrovascular and Carotid Artery Diseases: 4
+Electromagnetic Compatibility and Measurements: 4
+Advanced Semiconductor Detectors and Materials: 4
+Business Strategy and Innovation: 4
+Retinal and Optic Conditions: 4
+Combustion and flame dynamics: 4
+History and advancements in chemistry: 4
+Terrorism, Counterterrorism, and Political Violence: 4
+Silicon Carbide Semiconductor Technologies: 4
+Advanced machining processes and optimization: 4
+Environmental Education and Sustainability: 4
+Granular flow and fluidized beds: 4
+Census and Population Estimation: 4
+Supply Chain Resilience and Risk Management: 4
+Muon and positron interactions and applications: 4
+IPv6, Mobility, Handover, Networks, Security: 4
+Modeling and Simulation Systems: 4
+Crystallization and Solubility Studies: 4
+Adhesion, Friction, and Surface Interactions: 4
+Liquid Crystal Research Advancements: 4
+Media Influence and Politics: 4
+Tropical and Extratropical Cyclones Research: 4
+Authorship Attribution and Profiling: 4
+Wave and Wind Energy Systems: 4
+Animal Behavior and Reproduction: 4
+Chemical Thermodynamics and Molecular Structure: 4
+Electrostatics and Colloid Interactions: 4
+Autism Spectrum Disorder Research: 4
+Product Development and Customization: 4
+Infrastructure Resilience and Vulnerability Analysis: 4
+Electrostatic Discharge in Electronics: 4
+Innovation in Digital Healthcare Systems: 4
+Economic and Technological Innovation: 4
+Deception detection and forensic psychology: 4
+Copper-based nanomaterials and applications: 4
+Memory Processes and Influences: 4
+Electrochemical Analysis and Applications: 4
+Simulation and Modeling Applications: 4
+Educational Assessment and Pedagogy: 3
+Forensic Fingerprint Detection Methods: 3
+Pancreatic function and diabetes: 3
+Hybrid Renewable Energy Systems: 3
+Quality and Safety in Healthcare: 3
+Space Exploration and Technology: 3
+Thermography and Photoacoustic Techniques: 3
+Supramolecular Self-Assembly in Materials: 3
+Bullying, Victimization, and Aggression: 3
+HIV Research and Treatment: 3
+Economic Growth and Productivity: 3
+Electrohydrodynamics and Fluid Dynamics: 3
+Forensic Anthropology and Bioarchaeology Studies: 3
+Space exploration and regulation: 3
+Gender, Labor, and Family Dynamics: 3
+Microtubule and mitosis dynamics: 3
+Optical Polarization and Ellipsometry: 3
+Usability and User Interface Design: 3
+Advanced Sensor Technologies Research: 3
+Conservation Techniques and Studies: 3
+Prostate Cancer Diagnosis and Treatment: 3
+Superconductivity in MgB2 and Alloys: 3
+Radiology practices and education: 3
+Rocket and propulsion systems research: 3
+Knowledge Management and Technology: 3
+Molecular Spectroscopy and Structure: 3
+Economic and Technological Systems Analysis: 3
+Electric Motor Design and Analysis: 3
+Advanced DC-DC Converters: 3
+Interdisciplinary Research and Collaboration: 3
+Smart Systems and Machine Learning: 3
+Diabetes Management and Research: 3
+Assistive Technology in Communication and Mobility: 3
+Genome Rearrangement Algorithms: 3
+Chronic Disease Management Strategies: 3
+Blockchain Technology in Education and Learning: 3
+Genetic Associations and Epidemiology: 3
+Concrete Corrosion and Durability: 3
+Chromosomal and Genetic Variations: 3
+Monetary Policy and Economic Impact: 3
+Pickering emulsions and particle stabilization: 3
+Surfactants and Colloidal Systems: 3
+Biosimilars and Bioanalytical Methods: 3
+Effects of Environmental Stressors on Livestock: 3
+Morphological variations and asymmetry: 3
+Conducting polymers and applications: 3
+Greenhouse Technology and Climate Control: 3
+Cognitive and developmental aspects of mathematical skills: 3
+Innovative Teaching Methods: 3
+Electrowetting and Microfluidic Technologies: 3
+Cognitive Functions and Memory: 3
+Hydraulic Fracturing and Reservoir Analysis: 3
+X-ray Spectroscopy and Fluorescence Analysis: 3
+Advanced optical system design: 3
+Legal Education and Practice Innovations: 3
+Microbial Community Ecology and Physiology: 3
+E-commerce and Technology Innovations: 3
+Solidification and crystal growth phenomena: 3
+Aluminum Alloy Microstructure Properties: 3
+Insect and Pesticide Research: 3
+Anxiety, Depression, Psychometrics, Treatment, Cognitive Processes: 3
+T-cell and B-cell Immunology: 3
+Optimism, Hope, and Well-being: 3
+PAPR reduction in OFDM: 3
+Gender, Feminism, and Media: 3
+Regional Development and Policy: 3
+Open Education and E-Learning: 3
+Educational Tools and Methods: 3
+Higher Education Learning Practices: 3
+Geotechnical Engineering and Underground Structures: 3
+Statistical Methods in Epidemiology: 3
+Advanced Theoretical and Applied Studies in Material Sciences and Geometry: 3
+Groundwater flow and contamination studies: 3
+ICT in Developing Communities: 3
+Global Energy and Sustainability Research: 3
+Language, Discourse, Communication Strategies: 3
+Economic Theory and Institutions: 3
+Innovation Policy and R&D: 3
+Embedded Systems and FPGA Design: 3
+Biofuel production and bioconversion: 3
+Radio Frequency Integrated Circuit Design: 3
+Earthquake Detection and Analysis: 3
+Economic Development and Digital Transformation: 3
+Carbon Nanotubes in Composites: 3
+Corporate Governance and Law: 3
+Credit Risk and Financial Regulations: 3
+Combustion and Detonation Processes: 3
+Arctic and Antarctic ice dynamics: 3
+Laser-induced spectroscopy and plasma: 3
+Plant and Biological Electrophysiology Studies: 3
+Technology Assessment and Management: 3
+Aeolian processes and effects: 3
+Engineering Applied Research: 3
+HVDC Systems and Fault Protection: 3
+Neuroendocrine regulation and behavior: 3
+Synthetic Aperture Radar (SAR) Applications and Techniques: 3
+Surface Modification and Superhydrophobicity: 3
+Digital Media and Visual Art: 3
+Hydrogen embrittlement and corrosion behaviors in metals: 3
+Public Relations and Crisis Communication: 3
+Media, Religion, Digital Communication: 3
+Mathematics Education and Pedagogy: 3
+Innovation Diffusion and Forecasting: 3
+Structural Integrity and Reliability Analysis: 3
+Advanced Battery Materials and Technologies: 3
+Facial Rejuvenation and Surgery Techniques: 3
+Educational Strategies and Epistemologies: 3
+earthquake and tectonic studies: 3
+Digital Imaging in Medicine: 3
+Urban Heat Island Mitigation: 3
+Atrial Fibrillation Management and Outcomes: 3
+Elasticity and Wave Propagation: 3
+Identification and Quantification in Food: 3
+Educational Methods and Media Use: 3
+MXene and MAX Phase Materials: 3
+Engineering and Test Systems: 3
+Attention Deficit Hyperactivity Disorder: 3
+Fullerene Chemistry and Applications: 3
+Advanced Physical and Chemical Molecular Interactions: 3
+Photochemistry and Electron Transfer Studies: 3
+Rheology and Fluid Dynamics Studies: 3
+Structural Response to Dynamic Loads: 3
+Healthcare cost, quality, practices: 3
+Islamic Finance and Banking Studies: 3
+Dielectric materials and actuators: 3
+Advanced Photocatalysis Techniques: 3
+Consumer Perception and Purchasing Behavior: 3
+High-Velocity Impact and Material Behavior: 3
+Gambling Behavior and Treatments: 3
+Ship Hydrodynamics and Maneuverability: 3
+Nonmelanoma Skin Cancer Studies: 3
+Welding Techniques and Residual Stresses: 3
+Advanced Decision-Making Techniques: 3
+Intellectual Property and Patents: 3
+Advanced Technologies in Various Fields: 3
+Global trade, sustainability, and social impact: 3
+Humor Studies and Applications: 3
+Facility Location and Emergency Management: 3
+Agricultural risk and resilience: 3
+Urban, Neighborhood, and Segregation Studies: 3
+Ocular and Laser Science Research: 3
+Tribology and Lubrication Engineering: 3
+Media Studies and Communication: 3
+Child and Adolescent Psychosocial and Emotional Development: 3
+Dental Radiography and Imaging: 3
+Marine animal studies overview: 3
+Thermal Radiation and Cooling Technologies: 3
+Health Sciences Research and Education: 3
+Forest ecology and management: 3
+Mineral Processing and Grinding: 3
+Sepsis Diagnosis and Treatment: 3
+Suicide and Self-Harm Studies: 3
+Advanced Statistical Modeling Techniques: 3
+Mental Health and Patient Involvement: 3
+Diatoms and Algae Research: 3
+Geological and Geophysical Studies: 3
+Economic and Technological Developments in Russia: 3
+CRISPR and Genetic Engineering: 3
+Pharmacy and Medical Practices: 3
+Water Quality Monitoring Technologies: 3
+Air Traffic Management and Optimization: 3
+Solid State Laser Technologies: 2
+Linguistics and Cultural Studies: 2
+Geological and Geochemical Analysis: 2
+Metallic Glasses and Amorphous Alloys: 2
+Nanowire Synthesis and Applications: 2
+Astronomical and nuclear sciences: 2
+Advanced Thermodynamic Systems and Engines: 2
+Metal and Thin Film Mechanics: 2
+Epilepsy research and treatment: 2
+Mitochondrial Function and Pathology: 2
+Language, Linguistics, Cultural Analysis: 2
+Asphalt Pavement Performance Evaluation: 2
+Problem and Project Based Learning: 2
+Magnetic Properties of Alloys: 2
+Nanofabrication and Lithography Techniques: 2
+Poverty, Education, and Child Welfare: 2
+Intergenerational Family Dynamics and Caregiving: 2
+Intracerebral and Subarachnoid Hemorrhage Research: 2
+Capital Investment and Risk Analysis: 2
+Smart Cities and Technologies: 2
+Ergonomics and Musculoskeletal Disorders: 2
+Wound Healing and Treatments: 2
+Maritime Ports and Logistics: 2
+Reliability and Agreement in Measurement: 2
+Radiopharmaceutical Chemistry and Applications: 2
+Linguistics, Language Diversity, and Identity: 2
+Linguistic research and analysis: 2
+Mentoring and Academic Development: 2
+Statistics Education and Methodologies: 2
+Piezoelectric Actuators and Control: 2
+Multiple Myeloma Research and Treatments: 2
+Chemistry and Chemical Engineering: 2
+Crystal Structures and Properties: 2
+Global Cancer Incidence and Screening: 2
+Innovative Teaching Methodologies in Social Sciences: 2
+Photocathodes and Microchannel Plates: 2
+Coronary Interventions and Diagnostics: 2
+Genetic Mapping and Diversity in Plants and Animals: 2
+Oil and Gas Production Techniques: 2
+Regional Economics and Spatial Analysis: 2
+Spaceflight effects on biology: 2
+Electrical Fault Detection and Protection: 2
+Sensory Analysis and Statistical Methods: 2
+Pharmacovigilance and Adverse Drug Reactions: 2
+Intergenerational and Educational Inequality Studies: 2
+Social and Cultural Dynamics: 2
+Chemical and Physical Studies: 2
+DNA and Nucleic Acid Chemistry: 2
+Asian Geopolitics and Ethnography: 2
+Nuclear and radioactivity studies: 2
+Educational Reforms and Innovations: 2
+Cybersecurity and Cyber Warfare Studies: 2
+Heat Transfer and Optimization: 2
+Surface Chemistry and Catalysis: 2
+Parkinson's Disease Mechanisms and Treatments: 2
+Survey Methodology and Nonresponse: 2
+Survey Sampling and Estimation Techniques: 2
+Names, Identity, and Discrimination Research: 2
+Merger and Competition Analysis: 2
+Liver Disease and Transplantation: 2
+Fashion and Cultural Textiles: 2
+Employment and Welfare Studies: 2
+Archaeological Research and Protection: 2
+Scientific Research and Philosophical Inquiry: 2
+Engineering Technology and Methodologies: 2
+COVID-19 and Mental Health: 2
+Science Education and Pedagogy: 2
+Organizational and Employee Performance: 2
+Climate Change and Health Impacts: 2
+Psychological and Temporal Perspectives Research: 2
+Radioactivity and Radon Measurements: 2
+Dispute Resolution and Class Actions: 2
+Flexible and Reconfigurable Manufacturing Systems: 2
+Virology and Viral Diseases: 2
+Consumer Retail Behavior Studies: 2
+Organ Donation and Transplantation: 2
+Genomic variations and chromosomal abnormalities: 2
+Fiscal Policy and Economic Growth: 2
+Bluetooth and Wireless Communication Technologies: 2
+Urbanization and City Planning: 2
+Power Line Inspection Robots: 2
+Hepatocellular Carcinoma Treatment and Prognosis: 2
+Forest Biomass Utilization and Management: 2
+University-Industry-Government Innovation Models: 2
+Innovation and Knowledge Management: 2
+Emotions and Moral Behavior: 2
+Protein purification and stability: 2
+Digital Transformation in Law: 2
+Resilience and Mental Health: 2
+American Constitutional Law and Politics: 2
+Higher Education Research Studies: 2
+Glaucoma and retinal disorders: 2
+Art History and Market Analysis: 2
+Interpreting and Communication in Healthcare: 2
+Adolescent and Pediatric Healthcare: 2
+Tunneling and Rock Mechanics: 2
+Tree Root and Stability Studies: 2
+Industrial Automation and Control Systems: 2
+Icing and De-icing Technologies: 2
+Marine and fisheries research: 2
+Mathematical Control Systems and Analysis: 2
+Infant Development and Preterm Care: 2
+Free Will and Agency: 2
+Perfectionism, Procrastination, Anxiety Studies: 2
+Mind wandering and attention: 2
+Advancements in Solid Oxide Fuel Cells: 2
+Housing Market and Economics: 2
+Death Anxiety and Social Exclusion: 2
+Mechanical Engineering and Vibrations Research: 2
+Nanomaterials and Printing Technologies: 2
+Neuroscience of respiration and sleep: 2
+Livestock Management and Performance Improvement: 2
+ERP Systems Implementation and Impact: 2
+Plant Surface Properties and Treatments: 2
+Animal Ecology and Behavior Studies: 2
+Renal function and acid-base balance: 2
+Oral Health Pathology and Treatment: 2
+Digital Accessibility for Disabilities: 2
+Osteoarthritis Treatment and Mechanisms: 2
+Lower Extremity Biomechanics and Pathologies: 2
+Leaf Properties and Growth Measurement: 2
+Hydrology and Sediment Transport Processes: 2
+Hydraulic flow and structures: 2
+Quality and Supply Management: 2
+Nanoporous metals and alloys: 2
+Legal and Policy Issues: 2
+Animal Disease Management and Epidemiology: 2
+Plant Water Relations and Carbon Dynamics: 2
+Education and Learning Interventions: 2
+Sustainable Industrial Ecology: 2
+Network Time Synchronization Technologies: 2
+Scoliosis diagnosis and treatment: 2
+Environmental Monitoring and Data Management: 2
+Advanced Computational Techniques in Science and Engineering: 2
+Narrative Theory and Analysis: 2
+Advanced Combustion Engine Technologies: 2
+Heat and Mass Transfer in Porous Media: 2
+Pharmaceutical Economics and Policy: 2
+RNA Interference and Gene Delivery: 2
+Economics of Agriculture and Food Markets: 2
+Mathematical Inequalities and Applications: 2
+Traumatic Brain Injury Research: 2
+Healthcare Technology and Patient Monitoring: 2
+Electric and Hybrid Vehicle Technologies: 2
+Evaluation of Teaching Practices: 2
+Grey System Theory Applications: 2
+Microfinance and Financial Inclusion: 2
+Field-Flow Fractionation Techniques: 2
+Wireless Sensor Networks and IoT: 2
+Innovation, Sustainability, Human-Machine Systems: 2
+Metal Forming Simulation Techniques: 2
+Physiological and biochemical adaptations: 2
+Cancer Treatment and Pharmacology: 2
+Boron and Carbon Nanomaterials Research: 2
+Italy: Economic History and Contemporary Issues: 2
+Neurological disorders and treatments: 2
+High-Voltage Power Transmission Systems: 2
+Chronic Obstructive Pulmonary Disease (COPD) Research: 2
+Communication in Education and Healthcare: 2
+Neuroscience, Education and Cognitive Function: 2
+Ultrasound and Hyperthermia Applications: 2
+Cellular and Composite Structures: 2
+Nanomaterials for catalytic reactions: 2
+Air Quality and Health Impacts: 2
+Atmospheric chemistry and aerosols: 2
+Personality Disorders and Psychopathology: 2
+Diverse Approaches in Healthcare and Education Studies: 2
+Child Development and Digital Technology: 2
+Gender Politics and Representation: 2
+Energetic Materials and Combustion: 2
+Fusion materials and technologies: 2
+Boron Compounds in Chemistry: 2
+Historical Geography and Cartography: 2
+Fluorine in Organic Chemistry: 2
+Sustainable Supply Chain Management: 2
+Thermoelastic and Magnetoelastic Phenomena: 2
+Protein Degradation and Inhibitors: 2
+Digital and Traditional Archives Management: 2
+Energy Efficiency and Management: 2
+Acute Ischemic Stroke Management: 2
+Advanced Power Generation Technologies: 2
+Photosynthetic Processes and Mechanisms: 2
+Cybersecurity and Information Systems: 2
+Simulation-Based Education in Healthcare: 2
+Zeolite Catalysis and Synthesis: 2
+European and International Contract Law: 2
+Mental Health and Psychiatry: 2
+Healthcare Systems and Technology: 2
+Reflective Practices in Education: 2
+Mechanical stress and fatigue analysis: 2
+Forest Ecology and Biodiversity Studies: 2
+HIV/AIDS Research and Interventions: 2
+HIV-related health complications and treatments: 2
+Military Defense Systems Analysis: 2
+Hallucinations in medical conditions: 2
+Aeroelasticity and Vibration Control: 2
+Microwave and Dielectric Measurement Techniques: 2
+State Capitalism and Financial Governance: 2
+Pancreatic and Hepatic Oncology Research: 2
+Cardiac, Anesthesia and Surgical Outcomes: 2
+Water Systems and Optimization: 2
+biodegradable polymer synthesis and properties: 2
+Transcranial Magnetic Stimulation Studies: 2
+Psychological Well-being and Life Satisfaction: 2
+Mental Health Treatment and Access: 2
+Coastal and Marine Dynamics: 2
+Behavioral and Psychological Studies: 2
+Information Systems Theories and Implementation: 2
+Chalcogenide Semiconductor Thin Films: 2
+Earth Systems and Cosmic Evolution: 2
+Fluid Dynamics and Thin Films: 2
+Multilevel Inverters and Converters: 2
+AI and HR Technologies: 2
+Glycosylation and Glycoproteins Research: 2
+Magnetic and Electromagnetic Effects: 2
+Private Equity and Venture Capital: 2
+Neurotransmitter Receptor Influence on Behavior: 2
+Historical Astronomy and Related Studies: 2
+Paranormal Experiences and Beliefs: 2
+Maritime Transport Emissions and Efficiency: 2
+Quantum and Classical Electrodynamics: 2
+Family and Disability Support Research: 2
+E-Learning and Knowledge Management: 2
+Fish Ecology and Management Studies: 2
+Food Security and Health in Diverse Populations: 2
+Peptidase Inhibition and Analysis: 2
+Innovative Energy Harvesting Technologies: 2
+Circadian rhythm and melatonin: 2
+Extracellular vesicles in disease: 2
+Cardiac Arrhythmias and Treatments: 2
+Cognitive Radio Networks and Spectrum Sensing: 2
+STEM Education: 1
+Spinal Fractures and Fixation Techniques: 1
+Conferences and Exhibitions Management: 1
+Preterm Birth and Chorioamnionitis: 1
+Glass properties and applications: 1
+3D Printing in Biomedical Research: 1
+Tissue Engineering and Regenerative Medicine: 1
+Metallurgical Processes and Thermodynamics: 1
+Physics and Engineering Research Articles: 1
+Refrigeration and Air Conditioning Technologies: 1
+Analytical Chemistry and Chromatography: 1
+Swearing, Euphemism, Multilingualism: 1
+South Asian Studies and Conflicts: 1
+History of Science and Medicine: 1
+Radiation Shielding Materials Analysis: 1
+Musicians’ Health and Performance: 1
+Pediatric Pain Management Techniques: 1
+Pain Management and Placebo Effect: 1
+Developmental Biology and Gene Regulation: 1
+Computer Science and Engineering: 1
+Prion Diseases and Protein Misfolding: 1
+Outsourcing and Supply Chain Management: 1
+Cardiomyopathy and Myosin Studies: 1
+Ginseng Biological Effects and Applications: 1
+Medical Imaging and Pathology Studies: 1
+Linguistic Education and Pedagogy: 1
+Delphi Technique in Research: 1
+Myeloproliferative Neoplasms: Diagnosis and Treatment: 1
+Amyloidosis: Diagnosis, Treatment, Outcomes: 1
+Block Copolymer Self-Assembly: 1
+Engineering Diagnostics and Reliability: 1
+Electric Power Systems and Control: 1
+Marine Sponges and Natural Products: 1
+Crafts, Textile, and Design: 1
+Injury Epidemiology and Prevention: 1
+Government, Law, and Information Management: 1
+European Criminal Justice and Data Protection: 1
+International Environmental Law and Policies: 1
+Resource-Constrained Project Scheduling: 1
+Migration, Health and Trauma: 1
+Health and Education Studies: 1
+Educational Research and Methods: 1
+Photochromic and Fluorescence Chemistry: 1
+Health and Medical Research Impacts: 1
+Magnetic Bearings and Levitation Dynamics: 1
+Healthcare Policy and Management: 1
+Primary Care and Health Outcomes: 1
+Genetics, Aging, and Longevity in Model Organisms: 1
+Axon Guidance and Neuronal Signaling: 1
+Medical Coding and Health Information: 1
+Income, Poverty, and Inequality: 1
+Data Mining and Machine Learning Applications: 1
+Plant tissue culture and regeneration: 1
+Ideological and Political Education: 1
+Polyoxometalates: Synthesis and Applications: 1
+Dermatology and Skin Diseases: 1
+Customer Service Quality and Loyalty: 1
+Environmental DNA in Biodiversity Studies: 1
+Medical Education and Admissions: 1
+High voltage insulation and dielectric phenomena: 1
+Power Quality and Harmonics: 1
+Synthetic Organic Chemistry Methods: 1
+HER2/EGFR in Cancer Research: 1
+Criminal Law and Evidence: 1
+Law, Rights, and Freedoms: 1
+Legal Systems and Judicial Processes: 1
+Science, Research, and Medicine: 1
+Covalent Organic Framework Applications: 1
+Mindfulness and Compassion Interventions: 1
+Algal biology and biofuel production: 1
+Social Capital and Networks: 1
+Polysaccharides Composition and Applications: 1
+Workplace Health and Well-being: 1
+Turbomachinery Performance and Optimization: 1
+Retirement, Disability, and Employment: 1
+Educational Curriculum and Learning Methods: 1
+Turtle Biology and Conservation: 1
+Insect behavior and control techniques: 1
+Forest Insect Ecology and Management: 1
+Poxvirus research and outbreaks: 1
+Microbial infections and disease research: 1
+Luminescence Properties of Advanced Materials: 1
+Copper Interconnects and Reliability: 1
+Renal Transplantation Outcomes and Treatments: 1
+Blood donation and transfusion practices: 1
+Musculoskeletal Disorders and Rehabilitation: 1
+Learning Styles and Cognitive Differences: 1
+Streptococcal Infections and Treatments: 1
+Cardiac pacing and defibrillation studies: 1
+Thin-Film Transistor Technologies: 1
+Demographic Trends and Gender Preferences: 1
+Ophthalmology and Visual Impairment Studies: 1
+Taxation and Compliance Studies: 1
+Corporate Finance and Governance: 1
+Literacy, Media, and Education: 1
+Second Language Learning and Teaching: 1
+Viral Infections and Immunology Research: 1
+Metal-Organic Frameworks: Synthesis and Applications: 1
+Membrane Separation and Gas Transport: 1
+Patient Dignity and Privacy: 1
+Global trade and economics: 1
+melanin and skin pigmentation: 1
+Prenatal Screening and Diagnostics: 1
+Structural Engineering and Vibration Analysis: 1
+Civil and Geotechnical Engineering Research: 1
+Structural Load-Bearing Analysis: 1
+Oil Palm Production and Sustainability: 1
+Antimicrobial Peptides and Activities: 1
+Information Systems and Technology Applications: 1
+Intuitionistic Fuzzy Systems Applications: 1
+Diverse Scientific and Engineering Research: 1
+Ocular Diseases and Behçet’s Syndrome: 1
+Families in Therapy and Culture: 1
+Problem Solving Skills Development: 1
+Maternal and fetal healthcare: 1
+Ectopic Pregnancy Diagnosis and Management: 1
+Maternal and Perinatal Health Interventions: 1
+Higher Education and Employability: 1
+Tryptophan and brain disorders: 1
+Advanced Control and Stabilization in Aerospace Systems: 1
+Japanese History and Culture: 1
+Hong Kong and Taiwan Politics: 1
+Free Radicals and Antioxidants: 1
+Orthopaedic implants and arthroplasty: 1
+African history and culture studies: 1
+Eastern European Communism and Reforms: 1
+Renewable energy and sustainable power systems: 1
+Nutritional Studies and Diet: 1
+Artificial Intelligence Applications: 1
+Maritime and Coastal Archaeology: 1
+Intermetallics and Advanced Alloy Properties: 1
+Materials Engineering and Processing: 1
+Coal Combustion and Slurry Processing: 1
+Diverse Educational Innovations Studies: 1
+Information Architecture and Usability: 1
+Competitive and Knowledge Intelligence: 1
+Wind Turbine Control Systems: 1
+Frequency Control in Power Systems: 1
+Biocrusts and Microbial Ecology: 1
+Populism, Right-Wing Movements: 1
+Southeast Asian Sociopolitical Studies: 1
+Cancer Cells and Metastasis: 1
+Ultra-Wideband Communications Technology: 1
+Material Science and Thermodynamics: 1
+DNA Repair Mechanisms: 1
+CAR-T cell therapy research: 1
+Organizational Management and Leadership: 1
+Colorectal Cancer Surgical Treatments: 1
+Local Government Finance and Decentralization: 1
+Global Educational Reforms and Inequalities: 1
+Participatory Visual Research Methods: 1
+Radio, Podcasts, and Digital Media: 1
+Education Systems and Policy: 1
+Conflict Management and Negotiation: 1
+Total Knee Arthroplasty Outcomes: 1
+Modeling, Simulation, and Optimization: 1
+Halal products and consumer behavior: 1
+Sustainability in Higher Education: 1
+Healthcare Operations and Scheduling Optimization: 1
+Orthodontics and Dentofacial Orthopedics: 1
+Transportation Systems and Logistics: 1
+Sports Science and Education: 1
+Public Policy and Administration Research: 1
+Vibrio bacteria research studies: 1
+Viral gastroenteritis research and epidemiology: 1
+Organ Transplantation Techniques and Outcomes: 1
+Cancer-related cognitive impairment studies: 1
+Tree-ring climate responses: 1
+Human auditory perception and evaluation: 1
+Traditional Chinese Medicine Analysis: 1
+Geotechnical Engineering and Soil Mechanics: 1
+Silicone and Siloxane Chemistry: 1
+RFID technology advancements: 1
+Obstructive Sleep Apnea Research: 1
+Tracheal and airway disorders: 1
+Banking stability, regulation, efficiency: 1
+Flowering Plant Growth and Cultivation: 1
+Light effects on plants: 1
+Taxation and Legal Issues: 1
+Education and Military Integration: 1
+Youth Development and Social Support: 1
+Hematological disorders and diagnostics: 1
+SAS software applications and methods: 1
+Chemical and Environmental Engineering Research: 1
+Space Technology and Applications: 1
+Sexual Differentiation and Disorders: 1
+Lung Cancer Research Studies: 1
+Lung Cancer Treatments and Mutations: 1
+Healthcare Systems and Reforms: 1
+Qualitative Comparative Analysis Research: 1
+Educational Leadership and Innovation: 1
+Date Palm Research Studies: 1
+Plant Disease Management Techniques: 1
+Multilingual Education and Policy: 1
+Information Systems Education and Curriculum Development: 1
+Science and Science Education: 1
+Cardiac Arrest and Resuscitation: 1
+Comics and Graphic Narratives: 1
+Psychological Treatments and Assessments: 1
+Digital Innovation in Industries: 1
+Global Energy Security and Policy: 1
+Facilities and Workplace Management: 1
+Ion channel regulation and function: 1
+Graphene and Nanomaterials Applications: 1
+Web Applications and Data Management: 1
+Education Practices and Evaluation: 1
+Fluid Dynamics and Mixing: 1
+Protein Tyrosine Phosphatases: 1
+Pressure Ulcer Prevention and Management: 1
+Offshore Engineering and Technologies: 1
+Quantum Dots Synthesis And Properties: 1
+Energy, Environment, Agriculture Analysis: 1
+Bee Products Chemical Analysis: 1
+Bacterial Genetics and Biotechnology: 1
+Heusler alloys: electronic and magnetic properties: 1
+Parkinson's Disease and Spinal Disorders: 1
+Colorectal Cancer Treatments and Studies: 1
+Bacillus and Francisella bacterial research: 1
+Vibration Control and Rheological Fluids: 1
+Geology and Paleoclimatology Research: 1
+Engineering and Environmental Studies: 1
+Nanotechnology research and applications: 1
+Nanoparticles: synthesis and applications: 1
+Advanced Machining and Optimization Techniques: 1
+Neonatal Respiratory Health Research: 1
+Respiratory Support and Mechanisms: 1
+Internet of Things and Social Network Interactions: 1
+Transportation Systems and Infrastructure: 1
+Architecture, Design, and Social History: 1
+Socioeconomic and Demographic Analysis: 1
+Plant Reproductive Biology: 1
+Potato Plant Research: 1
+Retinal Development and Disorders: 1
+Thermoregulation and physiological responses: 1
+Minerals Flotation and Separation Techniques: 1
+Polydiacetylene-based materials and applications: 1
+Planarian Biology and Electrostimulation: 1
+Innovation and Socioeconomic Development: 1
+Advanced Power Amplifier Design: 1
+Embedded Systems and FPGA Applications: 1
+Innovations in Educational Methods: 1
+Cancer, Stress, Anesthesia, and Immune Response: 1
+Cervical Cancer and HPV Research: 1
+Anodic Oxide Films and Nanostructures: 1
+ATP Synthase and ATPases Research: 1
+COVID-19 Digital Contact Tracing: 1
+Hydrology and Drought Analysis: 1
+COVID-19 Clinical Research Studies: 1
+Periodontal Regeneration and Treatments: 1
+Urban Design and Spatial Analysis: 1
+Ocular Infections and Treatments: 1
+Intracranial Aneurysms: Treatment and Complications: 1
+Thermodynamic properties of mixtures: 1
+Healthcare professionals’ stress and burnout: 1
+Emotional Intelligence and Performance: 1
+Porphyrin and Phthalocyanine Chemistry: 1
+Diverse Topics in Contemporary Research: 1
+European and Russian Geopolitical Military Strategies: 1
+Security, Politics, and Digital Transformation: 1
+Global Trade and Competitiveness: 1
+Environmental Conservation and Management: 1
+Peatlands and Wetlands Ecology: 1
+Microplastics and Plastic Pollution: 1
+Direction-of-Arrival Estimation Techniques: 1
+Critical Theory and Philosophy: 1
+Plant biochemistry and biosynthesis: 1
+Synthesis and properties of polymers: 1
+Organic Electronics and Photovoltaics: 1
+Healthcare Quality and Management: 1
+Sex and Gender in Healthcare: 1
+Pharmaceutical studies and practices: 1
+Stalking, Cyberstalking, and Harassment: 1
+Dental Research and COVID-19: 1
+Chemical Reactions and Isotopes: 1
+Synthesis and Biological Evaluation: 1
+Cardiac Valve Diseases and Treatments: 1
+Airway Management and Intubation Techniques: 1
+Psychological and Educational Research Studies: 1
+Ferroptosis and cancer prognosis: 1
+Financial Reporting and XBRL: 1
+Conflict of Laws and Jurisdiction: 1
+International Law and Human Rights: 1
+Psychosomatic Disorders and Their Treatments: 1
+Defense, Military, and Policy Studies: 1
+GaN-based semiconductor devices and materials: 1
+interferon and immune responses: 1
+Immune cells in cancer: 1
+Diverse Music Education Insights: 1
+Children's Physical and Motor Development: 1
+Risk Management in Financial Firms: 1
+Cultural Heritage Materials Analysis: 1
+Maritime Security and History: 1
+Ultrasound in Clinical Applications: 1
+Rock Mechanics and Modeling: 1
+Medical Research and Treatments: 1
+Advanced Polymer Synthesis and Characterization: 1
+Chemical and Physical Properties of Materials: 1
+Law, logistics, and international trade: 1
+Literary, Cultural, Historical Analysis: 1
+Islamic Studies and History: 1
+Historical and Architectural Studies: 1
+Environmental Changes in China: 1
+Fungal Biology and Applications: 1
+Head and Neck Cancer Studies: 1
+Corporate Taxation and Avoidance: 1
+Hydrology and Watershed Management Studies: 1
+Labor market dynamics and wage inequality: 1
+Global Financial Crisis and Policies: 1
+Dam Engineering and Safety: 1
+Berberine and alkaloids research: 1
+Securities Regulation and Market Practices: 1
+Media, Gender, and Advertising: 1
+High Entropy Alloys Studies: 1
+High-Temperature Coating Behaviors: 1
+Retinopathy of Prematurity Studies: 1
+Orthopedic Surgery and Rehabilitation: 1
+Engineering and Materials Science Studies: 1
+Neuroblastoma Research and Treatments: 1
+Radioactive contamination and transfer: 1
+Wildlife-Road Interactions and Conservation: 1
+Nonlinear Optical Materials Studies: 1
+Jewish and Middle Eastern Studies: 1
+Tourism, Volunteerism, and Development: 1
+Philosophy, Science, and History: 1
+Philosophy and Historical Thought: 1
+Corruption and Economic Development: 1
+Congenital Heart Disease Studies: 1
+Plant Genetic and Mutation Studies: 1
+Diabetes and associated disorders: 1
+Socioeconomic Development in MENA: 1
+CO2 Sequestration and Geologic Interactions: 1
+Auditing, Earnings Management, Governance: 1
+Sustainability and Ecological Systems Analysis: 1
+Second Language Acquisition and Learning: 1
+Crime Patterns and Interventions: 1
+HIV, Drug Use, Sexual Risk: 1
+Aging, Elder Care, and Social Issues: 1
+Diverse Cultural Media Analysis: 1
+Sleep and related disorders: 1
+Youth Substance Use and School Attendance: 1
+Knee injuries and reconstruction techniques: 1
+Schizophrenia research and treatment: 1
+E-Government and Public Services: 1
+Electron Spin Resonance Studies: 1
+Groundwater and Isotope Geochemistry: 1
+Plant Physiology and Cultivation Studies: 1
+Cholinesterase and Neurodegenerative Diseases: 1
+Protein Interaction Studies and Fluorescence Analysis: 1
+Hormonal and reproductive studies: 1
+Doping in Sports: 1
+Italian Literature and Culture: 1
+Engineering Education and Pedagogy: 1
+Diverse academic and cultural studies: 1
+Mineralogy and Gemology Studies: 1
+Statistical Methods and Applications: 1
+Earthquake and Tsunami Effects: 1
+Plant Molecular Biology Research: 1
+Soil Carbon and Nitrogen Dynamics: 1
+Plant nutrient uptake and metabolism: 1
+Legume Nitrogen Fixing Symbiosis: 1
+English Language Learning and Teaching: 1
+Border Security and International Relations: 1
+Bladed Disk Vibration Dynamics: 1
+Criminal Justice and Corrections Analysis: 1
+Religion, Spirituality, and Psychology: 1
+Cinema and Media Studies: 1
+Clinical practice guidelines implementation: 1
+Medical Malpractice and Liability Issues: 1
+Pharmaceutical and Antibiotic Environmental Impacts: 1
+Toxic Organic Pollutants Impact: 1
+Water Treatment and Disinfection: 1
+Antibiotic Resistance in Bacteria: 1
+Infections and bacterial resistance: 1
+Psychopathy, Forensic Psychiatry, Sexual Offending: 1
+Gender, Security, and Conflict: 1
+Historical Gender and Feminism Studies: 1
+Energy, Environment, Economic Growth: 1
+Sustainable Development and Environmental Policy: 1
+Coagulation and Flocculation Studies: 1
+Older Adults Driving Studies: 1
+Medication Adherence and Compliance: 1
+Spanish Literature and Culture Studies: 1
+Optics and Image Analysis: 1
+Rural development and sustainability: 1
+Geological Studies and Exploration: 1
+Family Caregiving in Mental Illness: 1
+Chemical synthesis and alkaloids: 1
+Hemoglobin structure and function: 1
+Structural Analysis of Composite Materials: 1
+Wind Energy Research and Development: 1
+Food Waste Reduction and Sustainability: 1
+QR Code Applications and Technologies: 1
+Electrospun Nanofibers in Biomedical Applications: 1
+Plant Virus Research Studies: 1
+Animal Virus Infections Studies: 1
+RNA regulation and disease: 1
+Culture, Economy, and Development Studies: 1
+Global Health Care Issues: 1
+Advanced Research in Science and Engineering: 1
+Consumer Attitudes and Food Labeling: 1
+Organic Food and Agriculture: 1
+Land Rights and Reforms: 1
+Meat and Animal Product Quality: 1
+Religious Studies and Spiritual Practices: 1
+Financial Crisis of the 21st Century: 1
+Chemical Synthesis and Reactions: 1
+Organic Chemistry Cycloaddition Reactions: 1
+Organoselenium and organotellurium chemistry: 1
+Proteins in Food Systems: 1
+Nutrition, Genetics, and Disease: 1
+Magnetic Properties and Synthesis of Ferrites: 1
+Educational Challenges and Innovations: 1
+Atmospheric aerosols and clouds: 1
+Childhood Cancer Survivors' Quality of Life: 1
+Environmental Sustainability in Business: 1
+Catalysis and Hydrodesulfurization Studies: 1
+COVID-19 Pandemic Impacts: 1
+Probability and Statistical Research: 1
+Obesity and Health Practices: 1
+Music History and Culture: 1
+Family Dynamics and Relationships: 1
+Turkey's Politics and Society: 1
+Advanced Authentication Protocols Security: 1
+Homelessness and Social Issues: 1
+Animal testing and alternatives: 1
+Alzheimer's disease research and treatments: 1
+Ophthalmology and Visual Health Research: 1
+Diffusion Coefficients in Liquids: 1
+Corneal surgery and disorders: 1
+Leprosy Research and Treatment: 1
+Congenital heart defects research: 1
+Pragmatism in Philosophy and Education: 1
+Material Properties and Failure Mechanisms: 1
+Cancer, Hypoxia, and Metabolism: 1
+Industrial Engineering and Technologies: 1
+Intensive Care Unit Cognitive Disorders: 1
+Petroleum Processing and Analysis: 1
+Ichthyology and Marine Biology: 1
+Human-Animal Interaction Studies: 1
+Hemispheric Asymmetry in Neuroscience: 1
+Eating Disorders and Behaviors: 1
+Obsessive-Compulsive Spectrum Disorders: 1
+Zebrafish Biomedical Research Applications: 1
+Chromatin Remodeling and Cancer: 1
+Bat Biology and Ecology Studies: 1
+Engineering and Information Technology: 1
+Software Engineering and Design Patterns: 1
+Animal and Plant Science Education: 1
+Cancer-related gene regulation: 1
+Marriage and Sexual Relationships: 1
+Islamic Finance and Communication: 1
+Immunotherapy and Immune Responses: 1
+Disaster Management and Resilience: 1
+Climate Change, Adaptation, Migration: 1
+Land Use and Ecosystem Services: 1
+Carbon Dioxide Capture Technologies: 1
+HIV/AIDS oral health manifestations: 1
+Blood disorders and treatments: 1
+Nanofluid Flow and Heat Transfer: 1
+Outdoor and Experiential Education: 1
+Adventure Sports and Sensation Seeking: 1
+Gender Diversity and Inequality: 1
+Career Development and Diversity: 1
+Alcohol Consumption and Health Effects: 1
+Technology and Human Factors in Education and Health: 1
+Legal and Constitutional Studies: 1
+Dental Implant Techniques and Outcomes: 1
+Cardiovascular and Diving-Related Complications: 1
+Soil Mechanics and Vehicle Dynamics: 1
+Advanced oxidation water treatment: 1
+Pharmacogenetics and Drug Metabolism: 1
+Ferroelectric and Piezoelectric Materials: 1
+Retinal and Macular Surgery: 1
+Railway Engineering and Dynamics: 1
+Fusion and Plasma Physics Studies: 1
+Philosophy and Theoretical Science: 1
+Innovations in Medical Education: 1
+Nonlinear Optical Materials Research: 1
+Gun Ownership and Violence Research: 1
+Geochemistry and Geochronology of Asian Mineral Deposits: 1
+Electrokinetic Soil Remediation Techniques: 1
+Marine and Coastal Research: 1
+Flow Experience in Various Fields: 1
+Intravenous Infusion Technology and Safety: 1
+Academic Writing and Publishing: 1
+Pregnancy and preeclampsia studies: 1
+Regulation and Compliance Studies: 1
+Dysphagia Assessment and Management: 1
+Cephalopods and Marine Biology: 1
+Sensorless Control of Electric Motors: 1
+Hearing, Cochlea, Tinnitus, Genetics: 1
+Job Satisfaction and Organizational Behavior: 1
+Analytical Methods in Pharmaceuticals: 1
+Asymmetric Hydrogenation and Catalysis: 1
+Qualitative Research Methods and Applications: 1
+Material Properties and Processing: 1
+Healthcare Systems and Public Health: 1
+Alkaloids: synthesis and pharmacology: 1
+Empathy and Medical Education: 1
+Psychotherapy Techniques and Applications: 1
+European Monetary and Fiscal Policies: 1
+Oil, Gas, and Environmental Issues: 1
+Marine and coastal ecosystems: 1
+Orthopedic Infections and Treatments: 1
+Analysis of environmental and stochastic processes: 1
+Ga2O3 and related materials: 1
+ZnO doping and properties: 1
+Concrete and Cement Materials Research: 1
+Recycled Aggregate Concrete Performance: 1
+Ultrasound and Cavitation Phenomena: 1
+Cavitation Phenomena in Pumps: 1
+Sport and Mega-Event Impacts: 1
+Food Industry and Aquatic Biology: 1
+Marine and environmental studies: 1
+Dengue and Mosquito Control Research: 1
+China's Ethnic Minorities and Relations: 1
+BRCA gene mutations in cancer: 1
+Mechanical Failure Analysis and Simulation: 1
+Identity, Memory, and Therapy: 1
+European and International Law Studies: 1
+Legal Language and Interpretation: 1
+Viral Infections and Outbreaks Research: 1
+Metallurgical and Alloy Processes: 1
+Building materials and conservation: 1
+Efficiency Analysis Using DEA: 1
+Microstructure and Mechanical Properties of Steels: 1
+Ergonomics and Human Factors: 1
+Public Administration and Governance: 1

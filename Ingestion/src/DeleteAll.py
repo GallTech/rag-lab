@@ -4,43 +4,36 @@ import requests
 # === Config ===
 DB_PATH = "/mnt/duckdb/rag.duckdb"
 TABLE_NAME = "openalex_works"
-SEAWEED_MASTER = "http://192.168.0.17:9333"
-SEAWEED_VOLUME_PORT = 8080
-VOLUME_RANGE = range(1, 101)  # Adjust if needed
+VOLUME_SERVER = "http://192.168.0.17:8080"  # Not the master
+EXISTING_VOLUMES = range(1, 8)  # You can confirm these via /dir/status
 
 # === 1. Wipe DuckDB ===
-print("🧹 Deleting rows from DuckDB...")
+print("🧹 Deleting all rows from DuckDB...")
 con = duckdb.connect(DB_PATH)
 con.execute(f"DELETE FROM {TABLE_NAME};")
 con.close()
 print("✅ DuckDB cleared.")
 
-# === 2. Wipe SeaweedFS Volumes ===
-print("🧹 Deleting all PDF files from SeaweedFS...")
+# === 2. Delete volumes from SeaweedFS ===
+print("🧹 Deleting SeaweedFS volumes...")
 
 deleted = 0
-errors = 0
+failed = 0
 
-for vid in VOLUME_RANGE:
+for vid in EXISTING_VOLUMES:
+    url = f"{VOLUME_SERVER}/admin/delete_volume?volume={vid}"
     try:
-        index_url = f"http://192.168.0.17:{SEAWEED_VOLUME_PORT}/?volumeId={vid}"
-        res = requests.get(index_url, timeout=5)
-        if not res.ok or "html" not in res.text:
-            continue
-
-        for line in res.text.splitlines():
-            if ".pdf" in line:
-                fid = line.split()[0].split(".pdf")[0]
-                delete_url = f"http://192.168.0.17:{SEAWEED_VOLUME_PORT}/{fid}"
-                del_res = requests.delete(delete_url)
-                if del_res.status_code == 200:
-                    deleted += 1
-                else:
-                    errors += 1
-
+        r = requests.post(url, timeout=5)
+        if r.status_code == 200:
+            print(f"✅ Deleted volume {vid}")
+            deleted += 1
+        else:
+            print(f"❌ Failed to delete volume {vid} ({r.status_code})")
+            failed += 1
     except Exception as e:
-        continue
+        print(f"❌ Exception deleting volume {vid}: {e}")
+        failed += 1
 
-print(f"✅ SeaweedFS: {deleted} files deleted.")
-if errors > 0:
-    print(f"⚠️ {errors} deletions failed.")
+print(f"\n✅ {deleted} volumes deleted.")
+if failed:
+    print(f"⚠️ {failed} deletions failed.")

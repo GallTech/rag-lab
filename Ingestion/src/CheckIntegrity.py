@@ -5,13 +5,13 @@ import os
 # === Config ===
 PG_HOST = "192.168.0.11"
 PG_DB = "raglab"
-PG_USER = "mike"
+PG_USER = "placeholder"
 PG_PASSWORD = os.environ.get("PG_PASSWORD")
 
 MINIO_URL = "http://192.168.0.17:9000"
 MINIO_ACCESS = "admin"
-MINIO_SECRET = "adminsecret"
-MINIO_BUCKET = "papers"
+MINIO_SECRET = "placeholder"
+MINIO_BUCKET = "placeholder"
 
 # === Connect to PostgreSQL ===
 pg_conn = psycopg2.connect(

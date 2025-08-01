@@ -9,7 +9,7 @@ Each top-level folder represents a functional stage in the pipeline. The lab ing
 - **Retrieval-first design**: retrieval is separated from generation, making it easy to mix or upgrade LLMs for different tasks.  
 - **LangChain-based orchestration**: dynamic context assembly & prompt engineering before LLM calls.  
 
-**Status: 🛠️ Under Development**  
+**Status: 🛠️ Early Development**  
 Currently focused on the ingestion pipeline: SharePoint, OpenAlex, MinIO (files), PostgreSQL (metadata), chunking and embedding. 
 
 ## Process  

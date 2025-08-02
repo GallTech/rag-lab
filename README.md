@@ -63,7 +63,7 @@ This deliberate 1:1 mapping provides:
 |---------------|--------------------|-----------------------------|
 | 192.168.0.10  | lab-1-mgmt1        | Management & orchestration (Terraform, Ansible) |
 | 192.168.0.11  | lab-1-db1          | Metadata (PostgreSQL) & vector DB (Qdrant) |
-| 192.168.0.12  | lab-1-embed-generator | Document chunking + embedding generation (OpenAI/local models) |
+| 192.168.0.12  | lab-1-embed-generator | Embedding generation (nomic-embed-text-v1) |
 | 192.168.0.13  | lab-1-ingestion    | Data ingestion (SharePoint + OpenAlex pipelines) |
 | 192.168.0.14  | lab-1-ui           | UI layer (Streamlit, React, TypeScript) |
 | 192.168.0.15  | lab-1-api          | FastAPI microservice for retrieval, LangChain orchestration, and prompt engineering  |

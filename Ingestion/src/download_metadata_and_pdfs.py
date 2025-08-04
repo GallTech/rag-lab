@@ -4,7 +4,6 @@ import requests
 import psycopg2
 import time
 from urllib.parse import urlencode
-from datetime import datetime
 
 # === Config ===
 CONFIG_PATH = "../config/openalex_config.json"
@@ -28,6 +27,11 @@ TABLE_NAME = "openalex_works"
 TRUSTED_OA_DOMAINS = [
     "arxiv.org", "osf.io", "biorxiv.org", "medrxiv.org", "europepmc.org", "nih.gov/pmc"
 ]
+
+HEADERS = {
+    "User-Agent": "Mozilla/5.0",
+    "Accept": "application/json"
+}
 
 os.makedirs(META_DIR, exist_ok=True)
 os.makedirs(PDF_DIR, exist_ok=True)
@@ -76,7 +80,7 @@ def get_trusted_pdf_url(work):
 def download_with_retries(url, path):
     for attempt in range(1, RETRY_COUNT + 1):
         try:
-            r = requests.get(url, timeout=60)
+            r = requests.get(url, timeout=60, headers=HEADERS)
             r.raise_for_status()
             with open(path, "wb") as f:
                 f.write(r.content)
@@ -110,7 +114,7 @@ def main():
     while total < DOWNLOAD_LIMIT:
         url = build_url(cursor)
         print(f"📡 Fetching: {url}")
-        r = requests.get(url, timeout=60)
+        r = requests.get(url, timeout=60, headers=HEADERS)
         if r.status_code == 403:
             print("❌ 403 Forbidden. Check email parameter or rate limits.")
             break

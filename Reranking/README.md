@@ -1,16 +1,14 @@
 # Reranking Module
 
-This module performs post-retrieval reranking of candidate documents in the RAG pipeline using interpretable, statistical features extracted from metadata.
+This module performs post-retrieval reranking of candidate documents in the RAG pipeline.
 
 ## Purpose
 
-After initial document retrieval v, this module applies scoring functions based on features such as:
+After initial document retrieval, this module applies scoring functions based on features such as:
 
 - Publication year
 - Citation count
 - Concept relevance score
-- Open access status
-- PDF availability
 
 The goal is to boost relevance and trustworthiness of context documents before passing them to the language model.
 

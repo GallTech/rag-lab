@@ -3,7 +3,7 @@ import json
 import requests
 import psycopg2
 import time
-from urllib.parse import urlencode
+from urllib.parse import quote_plus
 
 # === Config ===
 CONFIG_PATH = "../config/openalex_config.json"
@@ -42,8 +42,6 @@ with open(CONFIG_PATH) as f:
 
 EMAIL = config["email"]
 CONCEPT_IDS = ",".join([c["concept_id"] for c in config["topics"]])
-DATE_FROM = config["from_date"]
-DATE_TO = config["to_date"]
 
 # === Connect to PostgreSQL ===
 pg_conn = psycopg2.connect(
@@ -55,40 +53,27 @@ def already_downloaded(work_id: str) -> bool:
     pg_cursor.execute("SELECT 1 FROM openalex_works WHERE id = %s", (work_id,))
     return pg_cursor.fetchone() is not None
 
+# ✅ Final fix: encode all but `filter`
 def build_url(cursor="*"):
+    filter_str = f"concepts.id:{CONCEPT_IDS},open_access.is_oa:true"
     params = {
-        "filter": f"concepts.id:{CONCEPT_IDS},open_access.is_oa:true,publication_date:{DATE_FROM}:{DATE_TO}",
+        "filter": filter_str,
         "per_page": PER_PAGE,
         "cursor": cursor,
         "mailto": EMAIL
     }
-    return f"{BASE_URL}?{urlencode(params)}"
+    query = "&".join(f"{k}={quote_plus(str(v))}" for k, v in params.items() if k != "filter")
+    return f"{BASE_URL}?filter={filter_str}&{query}"
 
-def get_trusted_pdf_url(work):
-    candidates = []
+def get_pdf_url(work):
     best = work.get("best_oa_location")
     if best and best.get("pdf_url"):
-        candidates.append(best["pdf_url"])
+        return best["pdf_url"]
     for loc in work.get("locations", []):
-        if loc.get("pdf_url"):
-            candidates.append(loc["pdf_url"])
-    for url in candidates:
-        if any(domain in url for domain in TRUSTED_OA_DOMAINS):
+        url = loc.get("pdf_url")
+        if url and any(domain in url for domain in TRUSTED_OA_DOMAINS):
             return url
     return None
-
-def download_with_retries(url, path):
-    for attempt in range(1, RETRY_COUNT + 1):
-        try:
-            r = requests.get(url, timeout=60, headers=HEADERS)
-            r.raise_for_status()
-            with open(path, "wb") as f:
-                f.write(r.content)
-            return True
-        except Exception as e:
-            print(f"❌ Retry {attempt} for {url}: {e}")
-            time.sleep(RETRY_DELAY)
-    return False
 
 def download(work, pdf_url):
     work_id = work["id"]
@@ -100,12 +85,19 @@ def download(work, pdf_url):
     with open(meta_path, "w") as f:
         json.dump(work, f, indent=2)
 
-    if download_with_retries(pdf_url, pdf_path):
-        print(f"✅ {short_id} downloaded")
-        return True
-    else:
-        print(f"❌ {short_id} failed PDF download")
-        return False
+    for attempt in range(RETRY_COUNT):
+        try:
+            r = requests.get(pdf_url, timeout=60, headers=HEADERS)
+            r.raise_for_status()
+            with open(pdf_path, "wb") as f:
+                f.write(r.content)
+            print(f"✅ {short_id} downloaded")
+            return True
+        except Exception as e:
+            print(f"❌ Retry {attempt+1} for {short_id}: {e}")
+            time.sleep(RETRY_DELAY)
+    print(f"❌ {short_id} failed PDF download")
+    return False
 
 def main():
     cursor = "*"
@@ -115,17 +107,20 @@ def main():
         url = build_url(cursor)
         print(f"📡 Fetching: {url}")
         r = requests.get(url, timeout=60, headers=HEADERS)
-        if r.status_code == 403:
-            print("❌ 403 Forbidden. Check email parameter or rate limits.")
-            break
-        r.raise_for_status()
 
+        if r.status_code == 403 or r.status_code == 400:
+            print(f"❌ HTTP {r.status_code}. Full response:")
+            print(r.text)
+            break
+
+        r.raise_for_status()
         data = r.json()
+
         for work in data["results"]:
             work_id = work["id"]
             if already_downloaded(work_id):
                 continue
-            pdf_url = get_trusted_pdf_url(work)
+            pdf_url = get_pdf_url(work)
             if not pdf_url:
                 continue
             if download(work, pdf_url):

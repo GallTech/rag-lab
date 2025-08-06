@@ -1,6 +1,6 @@
 # RAG Lab: Modular Pipeline for Research Paper Retrieval & Generation  
 
-A Retrieval-Augmented Generation (RAG) system designed to ingest, embed, and query ~100,000 AI/ML/Math/Stats research papers.
+A Retrieval-Augmented Generation (RAG) system designed to ingest, embed, and query ~100,000 Artificial Intelligence research papers.
 
 Each top-level folder represents a functional stage in the pipeline. The lab ingests ~100,000 AI/ML/Math/Stats research papers from **SharePoint**, **OpenAlex**, and other sources. It extracts metadata and ACLs, and generates vector embeddings for retrieval-augmented LLM reasoning.  
 

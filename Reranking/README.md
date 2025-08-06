@@ -9,8 +9,6 @@ After initial document retrieval, this module applies scoring functions based on
 - Publication year
 - Citation count
 - Concept relevance score
-- Open access status
-- PDF availability
 
 The goal is to boost relevance and trustworthiness of context documents before passing them to the language model.
 

@@ -95,6 +95,23 @@ This project evolves from **POC → MVP → Pseudo-Production**, so testing dept
 
 CI/CD will integrate **unit + integration tests** on PRs, with **nightly E2E + data validation tests** on a controlled dataset.  
 
+## 🗓️ August Sprint  
+**Start:** 1 August 2025  
+**End:** 31 August 2025  
+
+| Date         | Title                          | Description                                              | Status       |
+|--------------|--------------------------------|----------------------------------------------------------|--------------|
+| 2025-08-01   | Kickoff + Planning             | Define sprint goals, assign VM tasks, lock priorities    | ✅ Completed |
+| 2025-08-03   | Embed Worker Sync              | Test embedding script handoff to Qdrant write queue      | 🚧 In Progress |
+| 2025-08-06   | Ingestion Status Report        | Verify all OpenAlex papers ingested + stored        | ✅ Completed |
+| 2025-08-08   | SharePoint ACL Audit           | Review SharePoint ingestion                        | 🔲 Not Started |
+| 2025-08-11   | LangChain Chain Template Test  | Create draft RAG template                                | 🔲 Not Started |
+| 2025-08-14   | Vector Consistency Validator   | Compare Qdrant IDs with chunk table in Postgres          | 🚧 In Progress |
+| 2025-08-18   | CI/CD Stub Setup               | Begin draft GitHub Actions pipeline for ingest + embed   | 🔲 Not Started |
+| 2025-08-21   | FastAPI Retrieval Test         | Run test query through FastAPI + LangChain orchestration | 🔲 Not Started |
+| 2025-08-24   | Prometheus MinIO Alerts        | Add storage usage alerts and scrape metrics              | 🔲 Not Started |
+| 2025-08-29   | Qdrant Prune & Optimize        | Remove unused vectors and optimize storage               | 🔲 Not Started |
+
 ## Roadmap  
 
 - 🔄 **Urgent: Optimise project & Git structure**  

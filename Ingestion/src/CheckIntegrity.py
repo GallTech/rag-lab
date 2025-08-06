@@ -1,53 +1,56 @@
+# ResetPipeline.py
 import boto3
 import psycopg2
 import os
+import argparse
 
-# === Config ===
-PG_HOST = "192.168.0.11"
-PG_DB = "raglab"
-PG_USER = "mike"
-PG_PASSWORD = os.environ.get("PG_PASSWORD")
-
-MINIO_URL = "http://192.168.0.17:9000"
-MINIO_ACCESS = "admin"
-MINIO_SECRET = "adminsecret"
+# MinIO config
+MINIO_ENDPOINT = "http://192.168.0.17:9000"
+MINIO_ACCESS_KEY = "admin"
+MINIO_SECRET_KEY = "adminsecret"
 MINIO_BUCKET = "papers"
 
-# === Connect to PostgreSQL ===
-pg_conn = psycopg2.connect(
-    host=PG_HOST,
-    dbname=PG_DB,
-    user=PG_USER,
-    password=PG_PASSWORD
-)
-pg_cursor = pg_conn.cursor()
-pg_cursor.execute("SELECT pdf_key FROM openalex_works WHERE pdf_key IS NOT NULL;")
-pg_keys = set(row[0] for row in pg_cursor.fetchall())
+# PostgreSQL config
+PG_CONFIG = {
+    "host": "192.168.0.11",
+    "dbname": "raglab",
+    "user": "mike",
+    "password": os.getenv("PG_PASSWORD")
+}
 
-# === Connect to MinIO ===
-s3 = boto3.client(
-    "s3",
-    endpoint_url=MINIO_URL,
-    aws_access_key_id=MINIO_ACCESS,
-    aws_secret_access_key=MINIO_SECRET
-)
+def reset(confirm=False):
+    if not confirm:
+        print("⚠️  Add --confirm to actually run the reset.")
+        return
 
-# === Get all keys from MinIO ===
-minio_keys = set()
-paginator = s3.get_paginator("list_objects_v2")
-for page in paginator.paginate(Bucket=MINIO_BUCKET):
-    for obj in page.get("Contents", []):
-        minio_keys.add(obj["Key"])
+    print("🧨 Resetting pipeline...")
 
-# === Output comparison ===
-all_keys = sorted(pg_keys | minio_keys)
-print(f"{'MinIO':<10} | {'Postgres':<10} | Key")
-print("-" * 40)
+    # MinIO: delete all PDFs
+    s3 = boto3.client(
+        "s3",
+        endpoint_url=MINIO_ENDPOINT,
+        aws_access_key_id=MINIO_ACCESS_KEY,
+        aws_secret_access_key=MINIO_SECRET_KEY
+    )
+    response = s3.list_objects_v2(Bucket=MINIO_BUCKET)
+    if "Contents" in response:
+        for obj in response["Contents"]:
+            key = obj["Key"]
+            s3.delete_object(Bucket=MINIO_BUCKET, Key=key)
+            print(f"🗑️  Deleted from MinIO: {key}")
 
-for key in all_keys:
-    m = "✅" if key in minio_keys else "❌"
-    p = "✅" if key in pg_keys else "❌"
-    print(f"{m:<10} | {p:<10} | {key}")
+    # PostgreSQL: delete all metadata + chunks
+    conn = psycopg2.connect(**PG_CONFIG)
+    cur = conn.cursor()
+    cur.execute("DELETE FROM chunks;")
+    cur.execute("DELETE FROM openalex_works;")
+    conn.commit()
+    cur.close()
+    conn.close()
+    print("✅ All database entries wiped.")
 
-pg_cursor.close()
-pg_conn.close()
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--confirm", action="store_true", help="Actually perform the reset")
+    args = parser.parse_args()
+    reset(confirm=args.confirm)

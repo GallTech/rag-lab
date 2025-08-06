@@ -10,6 +10,7 @@ Each top-level folder represents a functional stage in the pipeline. The lab ing
 - **LangChain-based orchestration**: dynamic context assembly & prompt engineering before LLM calls.  
 
 Status: 🛠️ Development
+
 The end-to-end MVP pipeline is now functional. Focus is currently on refactoring all code to support unit testing and to ensure all environment variables (e.g., DB credentials, storage keys) are handled securely. Once the SharePoint ingestion process is finalized, fine-tuning work will begin (starting the week of 11 August 2025), covering chunking, embedding and retrieval.
 
 ## Process Flow  

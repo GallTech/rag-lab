@@ -3,7 +3,7 @@ import json
 import requests
 import psycopg2
 import time
-from urllib.parse import quote_plus
+from urllib.parse import quote_plus, urlparse
 
 # === Config ===
 CONFIG_PATH = "../config/openalex_config.json"
@@ -19,13 +19,41 @@ DB_PASSWORD = os.getenv("PG_PASSWORD")
 
 PER_PAGE = 50
 DOWNLOAD_LIMIT = 100_000
-RETRY_COUNT = 3
+RETRY_COUNT = 1
 RETRY_DELAY = 5
 
 BASE_URL = "https://api.openalex.org/works"
 TABLE_NAME = "openalex_works"
 TRUSTED_OA_DOMAINS = [
     "arxiv.org", "osf.io", "biorxiv.org", "medrxiv.org", "europepmc.org", "nih.gov/pmc"
+]
+
+BLOCKED_DOMAINS = [
+    "academic.oup.com",
+    "dl.acm.org",
+    "repositorio.unal.edu.co",
+    "rss.onlinelibrary.wiley.com",
+    "research.rug.nl",
+    "discovery.ucl.ac.uk",
+    "deepblue.lib.umich.edu",
+    "onlinelibrary.wiley.com",
+    "www.tandfonline.com",
+    "saberesepraticas.cenpec.org.br",
+    "www.nature.com",
+    "lirias.kuleuven.be",
+    "www.thelancet.com",
+    "eprints.whiterose.ac.uk",
+    "cris.maastrichtuniversity.nl",
+    "eprints.qut.edu.au",
+    "advances.sciencemag.org",
+    "direct.mit.edu",
+    "zenodo.org",
+    "ahajournals.org",
+    "scans.hebis.de",
+    "www.zora.uzh.ch",
+    "www.biorxiv.org",
+    "www.sciencedirect.com",
+    "nsuworks.nova.edu"
 ]
 
 HEADERS = {
@@ -53,7 +81,6 @@ def already_downloaded(work_id: str) -> bool:
     pg_cursor.execute("SELECT 1 FROM openalex_works WHERE id = %s", (work_id,))
     return pg_cursor.fetchone() is not None
 
-# ✅ Final fix: encode all but `filter`
 def build_url(cursor="*"):
     filter_str = f"concepts.id:{CONCEPT_IDS},open_access.is_oa:true"
     params = {
@@ -66,13 +93,23 @@ def build_url(cursor="*"):
     return f"{BASE_URL}?filter={filter_str}&{query}"
 
 def get_pdf_url(work):
+    candidates = []
     best = work.get("best_oa_location")
     if best and best.get("pdf_url"):
-        return best["pdf_url"]
+        candidates.append(best["pdf_url"])
     for loc in work.get("locations", []):
-        url = loc.get("pdf_url")
-        if url and any(domain in url for domain in TRUSTED_OA_DOMAINS):
+        if loc.get("pdf_url"):
+            candidates.append(loc["pdf_url"])
+
+    for url in candidates:
+        domain = urlparse(url).netloc
+        if domain in BLOCKED_DOMAINS:
+            print(f"⛔ Skipping blocked domain: {domain} → {url}")
+            continue
+        if any(trusted in url for trusted in TRUSTED_OA_DOMAINS):
             return url
+        return url  # fallback if no trust check required
+
     return None
 
 def download(work, pdf_url):

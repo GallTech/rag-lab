@@ -9,10 +9,10 @@ Each top-level folder represents a functional stage in the pipeline. The lab ing
 - **Retrieval-first design**: retrieval is separated from generation, making it easy to mix or upgrade LLMs for different tasks.  
 - **LangChain-based orchestration**: dynamic context assembly & prompt engineering before LLM calls.  
 
-**Status: 🛠️ Early Development**  
-MVP end-to-end process is now working. Currently refactoring all code to facilitate unit testing. Also need to tidy up some connections params that are in the wrong place. Validate fallback logic. .env need to be completed. After that next step is finalise SharePoint sites. Then finetuning chunking, embedding, retrieval and UI for the rest of August. 
+Status: 🛠️ Early Development
+The end-to-end MVP pipeline is now functional. Focus is currently on refactoring all code to support unit testing and to ensure all environment variables (e.g., DB credentials, storage keys) are handled securely. Once the SharePoint ingestion process is finalized, fine-tuning work will begin (starting the week of 11 August 2025), covering chunking, embedding and retrieval.
 
-## Process  
+## Process Flow  
 
 1. **Collect documents** from SharePoint and OpenAlex with metadata + ACLs  
 2. **Store original PDFs in MinIO**, with metadata indexed in PostgreSQL  

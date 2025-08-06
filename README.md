@@ -122,3 +122,4 @@ CI/CD will integrate **unit + integration tests** on PRs, with **nightly E2E + d
 - 📝 **Build React + TypeScript UI alpha**  
 - 📝 **Reprovision entire solution using Terraform and Ansible**  
 - 📝 **Reprovision stateless services (API, UI, embedding workers) on Kubernetes**
+- 📝 **Once that's all done, it's cloud migration time. I'll use the existing provisioning scripts and rebuild the entire thing in Azure and subsequently AWS**

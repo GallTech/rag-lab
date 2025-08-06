@@ -1,0 +1,695 @@
+{
+  "id": "https://openalex.org/W2099540110",
+  "doi": "https://doi.org/10.1038/nmeth.2089",
+  "title": "NIH Image to ImageJ: 25 years of image analysis",
+  "display_name": "NIH Image to ImageJ: 25 years of image analysis",
+  "publication_year": 2012,
+  "publication_date": "2012-06-28",
+  "ids": {
+    "openalex": "https://openalex.org/W2099540110",
+    "doi": "https://doi.org/10.1038/nmeth.2089",
+    "mag": "2099540110",
+    "pmid": "https://pubmed.ncbi.nlm.nih.gov/22930834",
+    "pmcid": "https://www.ncbi.nlm.nih.gov/pmc/articles/5554542"
+  },
+  "language": "en",
+  "primary_location": {
+    "is_oa": false,
+    "landing_page_url": "https://doi.org/10.1038/nmeth.2089",
+    "pdf_url": null,
+    "source": {
+      "id": "https://openalex.org/S127827428",
+      "display_name": "Nature Methods",
+      "issn_l": "1548-7091",
+      "issn": [
+        "1548-7091",
+        "1548-7105"
+      ],
+      "is_oa": false,
+      "is_in_doaj": false,
+      "is_indexed_in_scopus": true,
+      "is_core": true,
+      "host_organization": "https://openalex.org/P4310319908",
+      "host_organization_name": "Nature Portfolio",
+      "host_organization_lineage": [
+        "https://openalex.org/P4310319908",
+        "https://openalex.org/P4310319965"
+      ],
+      "host_organization_lineage_names": [
+        "Nature Portfolio",
+        "Springer Nature"
+      ],
+      "type": "journal"
+    },
+    "license": null,
+    "license_id": null,
+    "version": null,
+    "is_accepted": false,
+    "is_published": false
+  },
+  "type": "article",
+  "type_crossref": "journal-article",
+  "indexed_in": [
+    "crossref",
+    "pubmed"
+  ],
+  "open_access": {
+    "is_oa": true,
+    "oa_status": "green",
+    "oa_url": "https://europepmc.org/articles/pmc5554542?pdf=render",
+    "any_repository_has_fulltext": true
+  },
+  "authorships": [
+    {
+      "author_position": "first",
+      "author": {
+        "id": "https://openalex.org/A5111881458",
+        "display_name": "Caroline A Schneider",
+        "orcid": null
+      },
+      "institutions": [
+        {
+          "id": "https://openalex.org/I135310074",
+          "display_name": "University of Wisconsin\u2013Madison",
+          "ror": "https://ror.org/01y2jtd41",
+          "country_code": "US",
+          "type": "funder",
+          "lineage": [
+            "https://openalex.org/I135310074"
+          ]
+        }
+      ],
+      "countries": [
+        "US"
+      ],
+      "is_corresponding": false,
+      "raw_author_name": "Caroline A Schneider",
+      "raw_affiliation_strings": [
+        "Laboratory for Optical and Computational Instrumentation, University of Wisconsin at Madison, Madison, Wisconsin, USA."
+      ],
+      "affiliations": [
+        {
+          "raw_affiliation_string": "Laboratory for Optical and Computational Instrumentation, University of Wisconsin at Madison, Madison, Wisconsin, USA.",
+          "institution_ids": [
+            "https://openalex.org/I135310074"
+          ]
+        }
+      ]
+    },
+    {
+      "author_position": "middle",
+      "author": {
+        "id": "https://openalex.org/A5052725140",
+        "display_name": "Wayne Rasband",
+        "orcid": null
+      },
+      "institutions": [
+        {
+          "id": "https://openalex.org/I1299303238",
+          "display_name": "National Institutes of Health",
+          "ror": "https://ror.org/01cwqze88",
+          "country_code": "US",
+          "type": "government",
+          "lineage": [
+            "https://openalex.org/I1299022934",
+            "https://openalex.org/I1299303238"
+          ]
+        }
+      ],
+      "countries": [
+        "US"
+      ],
+      "is_corresponding": false,
+      "raw_author_name": "Wayne S Rasband",
+      "raw_affiliation_strings": [
+        "Wayne S. Rasband is at the Section on Instrumentation, US National Institutes of Health, Bethesda, Maryland, USA.,"
+      ],
+      "affiliations": [
+        {
+          "raw_affiliation_string": "Wayne S. Rasband is at the Section on Instrumentation, US National Institutes of Health, Bethesda, Maryland, USA.,",
+          "institution_ids": [
+            "https://openalex.org/I1299303238"
+          ]
+        }
+      ]
+    },
+    {
+      "author_position": "last",
+      "author": {
+        "id": "https://openalex.org/A5010413374",
+        "display_name": "Kevin W. Eliceiri",
+        "orcid": "https://orcid.org/0000-0001-8678-670X"
+      },
+      "institutions": [
+        {
+          "id": "https://openalex.org/I135310074",
+          "display_name": "University of Wisconsin\u2013Madison",
+          "ror": "https://ror.org/01y2jtd41",
+          "country_code": "US",
+          "type": "funder",
+          "lineage": [
+            "https://openalex.org/I135310074"
+          ]
+        }
+      ],
+      "countries": [
+        "US"
+      ],
+      "is_corresponding": false,
+      "raw_author_name": "Kevin W Eliceiri",
+      "raw_affiliation_strings": [
+        "Caroline A. Schneider and Kevin W. Eliceiri are at the Laboratory for Optical and Computational Instrumentation, University of Wisconsin at Madison, Madison, Wisconsin, USA.,"
+      ],
+      "affiliations": [
+        {
+          "raw_affiliation_string": "Caroline A. Schneider and Kevin W. Eliceiri are at the Laboratory for Optical and Computational Instrumentation, University of Wisconsin at Madison, Madison, Wisconsin, USA.,",
+          "institution_ids": [
+            "https://openalex.org/I135310074"
+          ]
+        }
+      ]
+    }
+  ],
+  "institution_assertions": [],
+  "countries_distinct_count": 1,
+  "institutions_distinct_count": 2,
+  "corresponding_author_ids": [],
+  "corresponding_institution_ids": [],
+  "apc_list": {
+    "value": 9750,
+    "currency": "EUR",
+    "value_usd": 11690
+  },
+  "apc_paid": null,
+  "fwci": 728.549,
+  "has_fulltext": true,
+  "fulltext_origin": "pdf",
+  "cited_by_count": 57318,
+  "citation_normalized_percentile": {
+    "value": 0.99957,
+    "is_in_top_1_percent": true,
+    "is_in_top_10_percent": true
+  },
+  "cited_by_percentile_year": {
+    "min": 99,
+    "max": 100
+  },
+  "biblio": {
+    "volume": "9",
+    "issue": "7",
+    "first_page": "671",
+    "last_page": "675"
+  },
+  "is_retracted": false,
+  "is_paratext": false,
+  "primary_topic": {
+    "id": "https://openalex.org/T12859",
+    "display_name": "Cell Image Analysis Techniques",
+    "score": 0.9998,
+    "subfield": {
+      "id": "https://openalex.org/subfields/1304",
+      "display_name": "Biophysics"
+    },
+    "field": {
+      "id": "https://openalex.org/fields/13",
+      "display_name": "Biochemistry, Genetics and Molecular Biology"
+    },
+    "domain": {
+      "id": "https://openalex.org/domains/1",
+      "display_name": "Life Sciences"
+    }
+  },
+  "topics": [
+    {
+      "id": "https://openalex.org/T12859",
+      "display_name": "Cell Image Analysis Techniques",
+      "score": 0.9998,
+      "subfield": {
+        "id": "https://openalex.org/subfields/1304",
+        "display_name": "Biophysics"
+      },
+      "field": {
+        "id": "https://openalex.org/fields/13",
+        "display_name": "Biochemistry, Genetics and Molecular Biology"
+      },
+      "domain": {
+        "id": "https://openalex.org/domains/1",
+        "display_name": "Life Sciences"
+      }
+    },
+    {
+      "id": "https://openalex.org/T13937",
+      "display_name": "Genetics, Bioinformatics, and Biomedical Research",
+      "score": 0.9846,
+      "subfield": {
+        "id": "https://openalex.org/subfields/1312",
+        "display_name": "Molecular Biology"
+      },
+      "field": {
+        "id": "https://openalex.org/fields/13",
+        "display_name": "Biochemistry, Genetics and Molecular Biology"
+      },
+      "domain": {
+        "id": "https://openalex.org/domains/1",
+        "display_name": "Life Sciences"
+      }
+    },
+    {
+      "id": "https://openalex.org/T13114",
+      "display_name": "Image Processing Techniques and Applications",
+      "score": 0.9715,
+      "subfield": {
+        "id": "https://openalex.org/subfields/2214",
+        "display_name": "Media Technology"
+      },
+      "field": {
+        "id": "https://openalex.org/fields/22",
+        "display_name": "Engineering"
+      },
+      "domain": {
+        "id": "https://openalex.org/domains/3",
+        "display_name": "Physical Sciences"
+      }
+    }
+  ],
+  "keywords": [
+    {
+      "id": "https://openalex.org/keywords/image-analysis",
+      "display_name": "Image Analysis",
+      "score": 0.41257802
+    }
+  ],
+  "concepts": [
+    {
+      "id": "https://openalex.org/C2777904410",
+      "wikidata": "https://www.wikidata.org/wiki/Q7397",
+      "display_name": "Software",
+      "level": 2,
+      "score": 0.621754
+    },
+    {
+      "id": "https://openalex.org/C115961682",
+      "wikidata": "https://www.wikidata.org/wiki/Q860623",
+      "display_name": "Image (mathematics)",
+      "level": 2,
+      "score": 0.5597298
+    },
+    {
+      "id": "https://openalex.org/C41008148",
+      "wikidata": "https://www.wikidata.org/wiki/Q21198",
+      "display_name": "Computer science",
+      "level": 0,
+      "score": 0.53059757
+    },
+    {
+      "id": "https://openalex.org/C2522767166",
+      "wikidata": "https://www.wikidata.org/wiki/Q2374463",
+      "display_name": "Data science",
+      "level": 1,
+      "score": 0.5069635
+    },
+    {
+      "id": "https://openalex.org/C9417928",
+      "wikidata": "https://www.wikidata.org/wiki/Q1070689",
+      "display_name": "Image processing",
+      "level": 3,
+      "score": 0.4299115
+    },
+    {
+      "id": "https://openalex.org/C28435686",
+      "wikidata": "https://www.wikidata.org/wiki/Q860755",
+      "display_name": "Image analysis",
+      "level": 5,
+      "score": 0.41257802
+    },
+    {
+      "id": "https://openalex.org/C121684516",
+      "wikidata": "https://www.wikidata.org/wiki/Q7600677",
+      "display_name": "Computer graphics (images)",
+      "level": 1,
+      "score": 0.32770425
+    },
+    {
+      "id": "https://openalex.org/C31972630",
+      "wikidata": "https://www.wikidata.org/wiki/Q844240",
+      "display_name": "Computer vision",
+      "level": 1,
+      "score": 0.3105359
+    },
+    {
+      "id": "https://openalex.org/C104317675",
+      "wikidata": "https://www.wikidata.org/wiki/Q1070689",
+      "display_name": "Digital image processing",
+      "level": 4,
+      "score": 0.18196529
+    },
+    {
+      "id": "https://openalex.org/C199360897",
+      "wikidata": "https://www.wikidata.org/wiki/Q9143",
+      "display_name": "Programming language",
+      "level": 1,
+      "score": 0.0
+    }
+  ],
+  "mesh": [
+    {
+      "descriptor_ui": "D019295",
+      "descriptor_name": "Computational Biology",
+      "qualifier_ui": "",
+      "qualifier_name": null,
+      "is_major_topic": true
+    },
+    {
+      "descriptor_ui": "D007091",
+      "descriptor_name": "Image Processing, Computer-Assisted",
+      "qualifier_ui": "Q000379",
+      "qualifier_name": "methods",
+      "is_major_topic": true
+    },
+    {
+      "descriptor_ui": "D012984",
+      "descriptor_name": "Software",
+      "qualifier_ui": "Q000266",
+      "qualifier_name": "history",
+      "is_major_topic": true
+    },
+    {
+      "descriptor_ui": "D019295",
+      "descriptor_name": "Computational Biology",
+      "qualifier_ui": "Q000639",
+      "qualifier_name": "trends",
+      "is_major_topic": false
+    },
+    {
+      "descriptor_ui": "D019295",
+      "descriptor_name": "Computational Biology",
+      "qualifier_ui": "Q000379",
+      "qualifier_name": "methods",
+      "is_major_topic": false
+    },
+    {
+      "descriptor_ui": "D019295",
+      "descriptor_name": "Computational Biology",
+      "qualifier_ui": "Q000266",
+      "qualifier_name": "history",
+      "is_major_topic": false
+    },
+    {
+      "descriptor_ui": "D049673",
+      "descriptor_name": "History, 20th Century",
+      "qualifier_ui": "",
+      "qualifier_name": null,
+      "is_major_topic": false
+    },
+    {
+      "descriptor_ui": "D049674",
+      "descriptor_name": "History, 21st Century",
+      "qualifier_ui": "",
+      "qualifier_name": null,
+      "is_major_topic": false
+    },
+    {
+      "descriptor_ui": "D007091",
+      "descriptor_name": "Image Processing, Computer-Assisted",
+      "qualifier_ui": "",
+      "qualifier_name": null,
+      "is_major_topic": false
+    },
+    {
+      "descriptor_ui": "D009316",
+      "descriptor_name": "National Institutes of Health (U.S.)",
+      "qualifier_ui": "",
+      "qualifier_name": null,
+      "is_major_topic": false
+    },
+    {
+      "descriptor_ui": "D012984",
+      "descriptor_name": "Software",
+      "qualifier_ui": "",
+      "qualifier_name": null,
+      "is_major_topic": false
+    },
+    {
+      "descriptor_ui": "D012984",
+      "descriptor_name": "Software",
+      "qualifier_ui": "Q000639",
+      "qualifier_name": "trends",
+      "is_major_topic": false
+    },
+    {
+      "descriptor_ui": "D014481",
+      "descriptor_name": "United States",
+      "qualifier_ui": "",
+      "qualifier_name": null,
+      "is_major_topic": false
+    }
+  ],
+  "locations_count": 4,
+  "locations": [
+    {
+      "is_oa": false,
+      "landing_page_url": "https://doi.org/10.1038/nmeth.2089",
+      "pdf_url": null,
+      "source": {
+        "id": "https://openalex.org/S127827428",
+        "display_name": "Nature Methods",
+        "issn_l": "1548-7091",
+        "issn": [
+          "1548-7091",
+          "1548-7105"
+        ],
+        "is_oa": false,
+        "is_in_doaj": false,
+        "is_indexed_in_scopus": true,
+        "is_core": true,
+        "host_organization": "https://openalex.org/P4310319908",
+        "host_organization_name": "Nature Portfolio",
+        "host_organization_lineage": [
+          "https://openalex.org/P4310319908",
+          "https://openalex.org/P4310319965"
+        ],
+        "host_organization_lineage_names": [
+          "Nature Portfolio",
+          "Springer Nature"
+        ],
+        "type": "journal"
+      },
+      "license": null,
+      "license_id": null,
+      "version": null,
+      "is_accepted": false,
+      "is_published": false
+    },
+    {
+      "is_oa": true,
+      "landing_page_url": "https://europepmc.org/articles/pmc5554542",
+      "pdf_url": "https://europepmc.org/articles/pmc5554542?pdf=render",
+      "source": {
+        "id": "https://openalex.org/S4306400806",
+        "display_name": "Europe PMC (PubMed Central)",
+        "issn_l": null,
+        "issn": null,
+        "is_oa": true,
+        "is_in_doaj": false,
+        "is_indexed_in_scopus": false,
+        "is_core": false,
+        "host_organization": "https://openalex.org/I1303153112",
+        "host_organization_name": "European Bioinformatics Institute",
+        "host_organization_lineage": [
+          "https://openalex.org/I1303153112"
+        ],
+        "host_organization_lineage_names": [
+          "European Bioinformatics Institute"
+        ],
+        "type": "repository"
+      },
+      "license": "cc-by-nc-nd",
+      "license_id": "https://openalex.org/licenses/cc-by-nc-nd",
+      "version": "publishedVersion",
+      "is_accepted": true,
+      "is_published": true
+    },
+    {
+      "is_oa": true,
+      "landing_page_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5554542",
+      "pdf_url": null,
+      "source": {
+        "id": "https://openalex.org/S2764455111",
+        "display_name": "PubMed Central",
+        "issn_l": null,
+        "issn": null,
+        "is_oa": true,
+        "is_in_doaj": false,
+        "is_indexed_in_scopus": false,
+        "is_core": false,
+        "host_organization": "https://openalex.org/I1299303238",
+        "host_organization_name": "National Institutes of Health",
+        "host_organization_lineage": [
+          "https://openalex.org/I1299303238"
+        ],
+        "host_organization_lineage_names": [
+          "National Institutes of Health"
+        ],
+        "type": "repository"
+      },
+      "license": null,
+      "license_id": null,
+      "version": "acceptedVersion",
+      "is_accepted": true,
+      "is_published": false
+    },
+    {
+      "is_oa": false,
+      "landing_page_url": "https://pubmed.ncbi.nlm.nih.gov/22930834",
+      "pdf_url": null,
+      "source": {
+        "id": "https://openalex.org/S4306525036",
+        "display_name": "PubMed",
+        "issn_l": null,
+        "issn": null,
+        "is_oa": false,
+        "is_in_doaj": false,
+        "is_indexed_in_scopus": false,
+        "is_core": false,
+        "host_organization": "https://openalex.org/I1299303238",
+        "host_organization_name": "National Institutes of Health",
+        "host_organization_lineage": [
+          "https://openalex.org/I1299303238"
+        ],
+        "host_organization_lineage_names": [
+          "National Institutes of Health"
+        ],
+        "type": "repository"
+      },
+      "license": null,
+      "license_id": null,
+      "version": null,
+      "is_accepted": false,
+      "is_published": false
+    }
+  ],
+  "best_oa_location": {
+    "is_oa": true,
+    "landing_page_url": "https://europepmc.org/articles/pmc5554542",
+    "pdf_url": "https://europepmc.org/articles/pmc5554542?pdf=render",
+    "source": {
+      "id": "https://openalex.org/S4306400806",
+      "display_name": "Europe PMC (PubMed Central)",
+      "issn_l": null,
+      "issn": null,
+      "is_oa": true,
+      "is_in_doaj": false,
+      "is_indexed_in_scopus": false,
+      "is_core": false,
+      "host_organization": "https://openalex.org/I1303153112",
+      "host_organization_name": "European Bioinformatics Institute",
+      "host_organization_lineage": [
+        "https://openalex.org/I1303153112"
+      ],
+      "host_organization_lineage_names": [
+        "European Bioinformatics Institute"
+      ],
+      "type": "repository"
+    },
+    "license": "cc-by-nc-nd",
+    "license_id": "https://openalex.org/licenses/cc-by-nc-nd",
+    "version": "publishedVersion",
+    "is_accepted": true,
+    "is_published": true
+  },
+  "sustainable_development_goals": [],
+  "grants": [],
+  "datasets": [],
+  "versions": [],
+  "referenced_works_count": 13,
+  "referenced_works": [
+    "https://openalex.org/W1532532969",
+    "https://openalex.org/W1540070193",
+    "https://openalex.org/W1969293071",
+    "https://openalex.org/W2031502025",
+    "https://openalex.org/W2037586865",
+    "https://openalex.org/W2037947871",
+    "https://openalex.org/W2107554012",
+    "https://openalex.org/W2121469024",
+    "https://openalex.org/W2129047745",
+    "https://openalex.org/W2154592269",
+    "https://openalex.org/W2166771618",
+    "https://openalex.org/W2167279371",
+    "https://openalex.org/W565449262"
+  ],
+  "related_works": [
+    "https://openalex.org/W4312189111",
+    "https://openalex.org/W3108778583",
+    "https://openalex.org/W2736583656",
+    "https://openalex.org/W2553152692",
+    "https://openalex.org/W2408155416",
+    "https://openalex.org/W2402416188",
+    "https://openalex.org/W2383936811",
+    "https://openalex.org/W2318667446",
+    "https://openalex.org/W2013131338",
+    "https://openalex.org/W1504972346"
+  ],
+  "abstract_inverted_index": null,
+  "abstract_inverted_index_v3": null,
+  "cited_by_api_url": "https://api.openalex.org/works?filter=cites:W2099540110",
+  "counts_by_year": [
+    {
+      "year": 2025,
+      "cited_by_count": 3171
+    },
+    {
+      "year": 2024,
+      "cited_by_count": 6654
+    },
+    {
+      "year": 2023,
+      "cited_by_count": 6824
+    },
+    {
+      "year": 2022,
+      "cited_by_count": 6551
+    },
+    {
+      "year": 2021,
+      "cited_by_count": 6529
+    },
+    {
+      "year": 2020,
+      "cited_by_count": 6084
+    },
+    {
+      "year": 2019,
+      "cited_by_count": 5013
+    },
+    {
+      "year": 2018,
+      "cited_by_count": 4378
+    },
+    {
+      "year": 2017,
+      "cited_by_count": 3653
+    },
+    {
+      "year": 2016,
+      "cited_by_count": 3081
+    },
+    {
+      "year": 2015,
+      "cited_by_count": 2335
+    },
+    {
+      "year": 2014,
+      "cited_by_count": 1805
+    },
+    {
+      "year": 2013,
+      "cited_by_count": 1097
+    },
+    {
+      "year": 2012,
+      "cited_by_count": 127
+    }
+  ],
+  "updated_date": "2025-08-02T20:06:48.463955",
+  "created_date": "2016-06-24"
+}

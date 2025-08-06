@@ -1,0 +1,132 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "OpenAlex Work",
+  "type": "object",
+  "required": ["id", "title", "publication_year", "type", "open_access", "authorships"],
+  "properties": {
+    "id": { "type": "string", "format": "uri" },
+    "doi": { "type": ["string", "null"] },
+    "title": { "type": "string" },
+    "display_name": { "type": "string" },
+    "publication_year": { "type": "integer" },
+    "publication_date": { "type": ["string", "null"], "format": "date" },
+    "language": { "type": ["string", "null"] },
+
+    "ids": {
+      "type": "object",
+      "properties": {
+        "openalex": { "type": "string" },
+        "doi": { "type": ["string", "null"] },
+        "mag": { "type": ["string", "null"] },
+        "pmid": { "type": ["string", "null"] },
+        "pmcid": { "type": ["string", "null"] }
+      },
+      "additionalProperties": false
+    },
+
+    "primary_location": {
+      "type": ["object", "null"],
+      "properties": {
+        "is_oa": { "type": "boolean" },
+        "landing_page_url": { "type": ["string", "null"], "format": "uri" },
+        "pdf_url": { "type": ["string", "null"], "format": "uri" },
+        "license": { "type": ["string", "null"] },
+        "license_id": { "type": ["string", "null"] },
+        "version": { "type": ["string", "null"] },
+        "is_accepted": { "type": "boolean" },
+        "is_published": { "type": "boolean" }
+      },
+      "required": ["is_oa"]
+    },
+
+    "type": { "type": "string" },
+    "type_crossref": { "type": ["string", "null"] },
+    
+    "open_access": {
+      "type": "object",
+      "required": ["is_oa", "oa_status"],
+      "properties": {
+        "is_oa": { "type": "boolean" },
+        "oa_status": { "type": "string" },
+        "oa_url": { "type": ["string", "null"], "format": "uri" },
+        "any_repository_has_fulltext": { "type": ["boolean", "null"] }
+      }
+    },
+
+    "authorships": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["author_position", "author"],
+        "properties": {
+          "author_position": { "type": "string" },
+          "author": {
+            "type": "object",
+            "required": ["display_name"],
+            "properties": {
+              "id": { "type": ["string", "null"] },
+              "display_name": { "type": "string" },
+              "orcid": { "type": ["string", "null"] }
+            }
+          }
+        }
+      }
+    },
+
+    "cited_by_count": { "type": "integer" },
+    "fwci": { "type": ["number", "null"] },
+    "has_fulltext": { "type": "boolean" },
+    "fulltext_origin": { "type": ["string", "null"] },
+
+    "best_oa_location": {
+      "type": ["object", "null"],
+      "properties": {
+        "pdf_url": { "type": ["string", "null"], "format": "uri" },
+        "landing_page_url": { "type": ["string", "null"], "format": "uri" },
+        "is_oa": { "type": "boolean" }
+      }
+    },
+
+    "locations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "is_oa": { "type": "boolean" },
+          "pdf_url": { "type": ["string", "null"], "format": "uri" },
+          "landing_page_url": { "type": ["string", "null"], "format": "uri" },
+          "is_published": { "type": ["boolean", "null"] }
+        }
+      }
+    },
+
+    "concepts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "display_name", "score"],
+        "properties": {
+          "id": { "type": "string" },
+          "display_name": { "type": "string" },
+          "score": { "type": "number" }
+        }
+      }
+    },
+
+    "topics": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "display_name": { "type": "string" },
+          "score": { "type": "number" }
+        }
+      }
+    },
+
+    "updated_date": { "type": "string", "format": "date-time" },
+    "created_date": { "type": "string", "format": "date-time" }
+  },
+
+  "additionalProperties": true
+}

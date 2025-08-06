@@ -6,12 +6,15 @@ from langchain.text_splitter import RecursiveCharacterTextSplitter
 from uuid import uuid4
 from datetime import datetime
 from io import BytesIO
+import traceback
 
 # === Config ===
 MINIO_ENDPOINT = "http://192.168.0.17:9000"
 MINIO_ACCESS_KEY = "admin"
 MINIO_SECRET_KEY = "adminsecret"
 MINIO_BUCKET = "papers"
+
+ERROR_LOG_PATH = "chunking_errors.log"
 
 PG_CONFIG = {
     "host": "192.168.0.11",
@@ -42,10 +45,14 @@ s3 = boto3.client(
 )
 
 # === PDF Text Extractor ===
-def extract_text_from_pdf_bytes(pdf_bytes):
-    with fitz.open(stream=pdf_bytes, filetype="pdf") as doc:
-        text = "\n".join(page.get_text() for page in doc)
-    return text.replace('\x00', '')  # 🔧 Remove NUL bytes
+def extract_text_from_pdf_bytes(pdf_bytes, key):
+    try:
+        with fitz.open(stream=pdf_bytes, filetype="pdf") as doc:
+            text = "\n".join(page.get_text() for page in doc)
+        return text.replace('\x00', '')
+    except Exception as e:
+        log_error(f"extract_text_from_pdf_bytes failed for {key}: {e}")
+        raise
 
 # === Check if work_id already chunked ===
 def is_already_chunked(work_id):
@@ -68,48 +75,61 @@ def work_id_exists(work_id):
     return exists
 
 # === DB Insertion ===
-def insert_chunks(work_id, chunks):
-    conn = psycopg2.connect(**PG_CONFIG)
-    cur = conn.cursor()
-    for idx, chunk in enumerate(chunks):
-        clean_text = chunk['text'].replace('\x00', '')  # 🔧 Remove NUL bytes
-        chunk_id = str(uuid4())
-        cur.execute("""
-            INSERT INTO chunks (id, work_id, chunk_index, text, char_start, char_end, token_count, embedded, created_at)
-            VALUES (%s, %s, %s, %s, %s, %s, %s, FALSE, %s);
-        """, (
-            chunk_id,
-            work_id,
-            idx,
-            clean_text,
-            chunk['start'],
-            chunk['end'],
-            chunk['tokens'],
-            datetime.utcnow()
-        ))
-    conn.commit()
-    cur.close()
-    conn.close()
+def insert_chunks(work_id, chunks, key):
+    try:
+        conn = psycopg2.connect(**PG_CONFIG)
+        cur = conn.cursor()
+        for idx, chunk in enumerate(chunks):
+            clean_text = chunk['text'].replace('\x00', '')
+            chunk_id = str(uuid4())
+            cur.execute("""
+                INSERT INTO chunks (id, work_id, chunk_index, text, char_start, char_end, token_count, embedded, created_at)
+                VALUES (%s, %s, %s, %s, %s, %s, %s, FALSE, %s);
+            """, (
+                chunk_id,
+                work_id,
+                idx,
+                clean_text,
+                chunk['start'],
+                chunk['end'],
+                chunk['tokens'],
+                datetime.utcnow()
+            ))
+        conn.commit()
+        cur.close()
+        conn.close()
+    except Exception as e:
+        log_error(f"insert_chunks failed for {key} ({work_id}): {e}")
+        raise
 
 # === Process a single PDF from MinIO ===
 def process_pdf_from_minio(work_id, key):
-    response = s3.get_object(Bucket=MINIO_BUCKET, Key=key)
-    pdf_bytes = response['Body'].read()
-    raw_text = extract_text_from_pdf_bytes(pdf_bytes)
-    splits = splitter.create_documents([raw_text])
-    chunks = []
-    char_pos = 0
-    for doc in splits:
-        text = doc.page_content.replace('\x00', '')  # 🔧 Redundant safeguard
-        length = len(text)
-        chunks.append({
-            "text": text,
-            "start": char_pos,
-            "end": char_pos + length,
-            "tokens": length // 4  # rough estimate
-        })
-        char_pos += length - CHUNK_OVERLAP
-    insert_chunks(work_id, chunks)
+    try:
+        response = s3.get_object(Bucket=MINIO_BUCKET, Key=key)
+        pdf_bytes = response['Body'].read()
+        raw_text = extract_text_from_pdf_bytes(pdf_bytes, key)
+        splits = splitter.create_documents([raw_text])
+        chunks = []
+        char_pos = 0
+        for doc in splits:
+            text = doc.page_content.replace('\x00', '')
+            length = len(text)
+            chunks.append({
+                "text": text,
+                "start": char_pos,
+                "end": char_pos + length,
+                "tokens": length // 4
+            })
+            char_pos += length - CHUNK_OVERLAP
+        insert_chunks(work_id, chunks, key)
+    except Exception as e:
+        log_error(f"process_pdf_from_minio failed for {key} ({work_id}):\n{traceback.format_exc()}")
+        raise
+
+# === Log Errors ===
+def log_error(message):
+    with open(ERROR_LOG_PATH, "a", encoding="utf-8") as f:
+        f.write(f"{datetime.utcnow().isoformat()} | {message}\n")
 
 # === Iterate through all PDFs in MinIO ===
 def process_all_pdfs():

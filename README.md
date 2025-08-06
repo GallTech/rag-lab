@@ -10,7 +10,7 @@ Each top-level folder represents a functional stage in the pipeline. The lab ing
 - **LangChain-based orchestration**: dynamic context assembly & prompt engineering before LLM calls.  
 
 **Status: 🛠️ Early Development**  
-Currently focused on the ingestion pipeline: SharePoint, OpenAlex, MinIO (files), PostgreSQL (metadata), chunking and embedding. 
+MVP end-to-end process is now working. Currently refactoring all code to facilitate unit testing. Next step is finalise SharePoint sites. Then finetuning chunking, embedding, retrieval and UI for the rest of August. 
 
 ## Process  
 

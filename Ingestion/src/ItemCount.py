@@ -50,6 +50,21 @@ def count_json_in_postgres():
     conn.close()
     return count
 
+# === Count distinct chunked work_ids in Postgres ===
+def count_unique_chunked_papers():
+    conn = psycopg2.connect(
+        host=PG_HOST,
+        dbname=PG_DB,
+        user=PG_USER,
+        password=PG_PASSWORD
+    )
+    cur = conn.cursor()
+    cur.execute("SELECT COUNT(DISTINCT work_id) FROM chunks;")
+    count = cur.fetchone()[0]
+    cur.close()
+    conn.close()
+    return count
+
 # === Main ===
 if __name__ == "__main__":
     print("🔍 Checking system status...\n")
@@ -64,4 +79,10 @@ if __name__ == "__main__":
         postgres_count = count_json_in_postgres()
         print(f"🧠 JSON metadata in PostgreSQL: {postgres_count}")
     except Exception as e:
-        print(f"❌ Error accessing PostgreSQL: {e}")
+        print(f"❌ Error accessing PostgreSQL (metadata): {e}")
+
+    try:
+        chunked_count = count_unique_chunked_papers()
+        print(f"📑 Distinct chunked papers: {chunked_count}")
+    except Exception as e:
+        print(f"❌ Error accessing PostgreSQL (chunks): {e}")

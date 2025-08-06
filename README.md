@@ -11,7 +11,7 @@ Each top-level folder represents a functional stage in the pipeline. The lab ing
 
 Status: 🛠️ Development
 
-The end-to-end MVP pipeline is now functional. Focus is currently on refactoring code to support unit testing and to ensure all environment variables (e.g., DB credentials, storage keys) are handled securely. Once the SharePoint ingestion process is finalized, fine-tuning work will begin (starting the week of 11 August 2025), covering chunking, embedding and retrieval.
+The end-to-end MVP pipeline is now functional. Focus is currently on refactoring code to support unit testing and to ensure all environment variables (e.g., DB credentials, storage keys) are handled securely. Once the SharePoint ingestion process is finalised, fine-tuning work will begin (11 August 2025), covering chunking, embedding and retrieval.
 
 ## Process Flow  
 

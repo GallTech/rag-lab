@@ -39,7 +39,30 @@ A dedicated **monitoring server** (`lab-1-monitoring`) runs:
 - **Monitoring/** → Prometheus + Grafana. Validate MinIO ↔ PostgreSQL consistency  
 - **UI/** → Streamlit & React prototypes for queries  
 - **API/** → FastAPI microservice for retrieval + LLM  
-- **MLExperiments/** → Fine-tuning & testing workflows  
+- **MLExperiments/** → Fine-tuning & testing workflows
+
+## Lab Configuration Versions
+
+This is a **laboratory environment**, where the goal is not just to build a functioning RAG pipeline, but to **study and understand** the impact of each component over time. While Git handles source control, this configuration matrix is designed to track the **experimental state** of each part of the system—ensuring reproducibility, meaningful comparisons, and long-term learning.
+
+Every configuration parameter listed here **directly affects pipeline behavior or output quality**. When any of these change, a new version should be created, and results should be evaluated accordingly.
+
+| Category             | Parameter / Element                                     | Why It Matters                                                | Current Version |
+|----------------------|---------------------------------------------------------|----------------------------------------------------------------|-----------------|
+| **Chunking**         | TextSplitter class (e.g. `RecursiveCharacterTextSplitter`) | Controls chunk granularity and coherence                       | 0.0.1           |
+|                      | `chunk_size`, `chunk_overlap`                          | Affects semantic continuity and embedding efficiency           | 0.0.1           |
+|                      | Preprocessing rules (e.g. strip `\x00`, token est.)    | Ensures clean, consistent input for chunking and embedding     | 0.0.1           |
+| **Embedding**        | Embedding model used (e.g. `nomic-embed-text-v1`)      | Defines the vector representation of your data                 | 0.0.1           |
+|                      | Pooling strategy / device configuration                | Affects embedding consistency and performance                  | 0.0.1           |
+|                      | Embedding script logic                                 | Determines batching, retry behavior, and preprocessing details | 0.0.1           |
+| **Storage & Retrieval** | Qdrant config (distance metric, HNSW params, etc.)     | Impacts vector search quality and speed                        | 0.0.1           |
+|                      | Collection schema (e.g. payload structure)             | Dictates how metadata is organized and queried                 | 0.0.1           |
+| **Download/Filtering** | OpenAlex filtering parameters                         | Controls the scope and relevance of ingested documents         | 0.0.1           |
+| **Postprocessing**   | Re-ranking strategy                                    | Modifies the ordering of retrieved results                     | 0.0.1           |
+| **Retrieval Logic**  | `top_k`, similarity thresholds, reranking methods      | Strongly influences which chunks are used at inference time    | 0.0.1           |
+| **Prompt Templates** | Prompt text and formatting                             | Defines how context and questions are framed                   | 0.0.1           |
+| **LLM Generation**   | Generation model, temperature, top_p, etc.             | Controls response creativity, specificity, and tone            | 0.0.1           |
+| **Timing**           | Chunk ingestion date filters                           | Governs incremental update behavior and data freshness         | 0.0.1           |
 
 ## Infrastructure  
 

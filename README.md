@@ -43,9 +43,9 @@ A dedicated **monitoring server** (`lab-1-monitoring`) runs:
 
 ## Lab Configuration Versions
 
-This is a **laboratory environment**, where the goal is not just to build a functioning RAG pipeline, but to **study and understand** the impact of each component over time. While Git handles source control, this configuration matrix is designed to track the **experimental state** of each part of the system—ensuring reproducibility, meaningful comparisons, and long-term learning.
+This is a lab environment, where the goal is not just to build a functioning RAG pipeline, but to study and understand the impact of each component over time. While Git handles source control, this configuration matrix is designed to track the experimental state of each part of the system—ensuring reproducibility, meaningful comparisons, and long-term learning.
 
-Every configuration parameter listed here **directly affects pipeline behavior or output quality**. When any of these change, a new version should be created, and results should be evaluated accordingly.
+Every configuration parameter listed here directly affects pipeline behavior or output quality. When any of these change, a new version should be created, and results should be evaluated accordingly.
 
 | Category             | Parameter / Element                                     | Why It Matters                                                | Current Version |
 |----------------------|---------------------------------------------------------|----------------------------------------------------------------|-----------------|

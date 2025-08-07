@@ -7,6 +7,7 @@ from uuid import uuid4
 from datetime import datetime
 from io import BytesIO
 import traceback
+import sys
 
 # === Config ===
 MINIO_ENDPOINT = "http://192.168.0.17:9000"
@@ -44,17 +45,24 @@ s3 = boto3.client(
     aws_secret_access_key=MINIO_SECRET_KEY,
 )
 
-# === PDF Text Extractor ===
-def extract_text_from_pdf_bytes(pdf_bytes, key):
-    try:
-        with fitz.open(stream=pdf_bytes, filetype="pdf") as doc:
-            text = "\n".join(page.get_text() for page in doc)
-        return text.replace('\x00', '')
-    except Exception as e:
-        log_error(f"extract_text_from_pdf_bytes failed for {key}: {e}")
-        raise
+# === Error Logging ===
+def log_error(message):
+    with open(ERROR_LOG_PATH, "a", encoding="utf-8") as f:
+        f.write(f"{datetime.utcnow().isoformat()} | {message}\n")
 
-# === Check if work_id already chunked ===
+# === Status Tracking ===
+def mark_status(work_id, status):
+    try:
+        conn = psycopg2.connect(**PG_CONFIG)
+        cur = conn.cursor()
+        cur.execute("UPDATE openalex_works SET chunking_status = %s WHERE id = %s;", (status, work_id))
+        conn.commit()
+        cur.close()
+        conn.close()
+    except Exception as e:
+        log_error(f"⚠️ Failed to update status for {work_id} to {status}: {e}")
+
+# === DB Checks ===
 def is_already_chunked(work_id):
     conn = psycopg2.connect(**PG_CONFIG)
     cur = conn.cursor()
@@ -64,7 +72,6 @@ def is_already_chunked(work_id):
     conn.close()
     return exists
 
-# === Check if work_id exists in openalex_works ===
 def work_id_exists(work_id):
     conn = psycopg2.connect(**PG_CONFIG)
     cur = conn.cursor()
@@ -74,7 +81,7 @@ def work_id_exists(work_id):
     conn.close()
     return exists
 
-# === DB Insertion ===
+# === Chunk Inserter ===
 def insert_chunks(work_id, chunks, key):
     try:
         conn = psycopg2.connect(**PG_CONFIG)
@@ -95,14 +102,25 @@ def insert_chunks(work_id, chunks, key):
                 chunk['tokens'],
                 datetime.utcnow()
             ))
+        cur.execute("UPDATE openalex_works SET chunking_status = 'success' WHERE id = %s;", (work_id,))
         conn.commit()
         cur.close()
         conn.close()
     except Exception as e:
         log_error(f"insert_chunks failed for {key} ({work_id}): {e}")
+        mark_status(work_id, 'failed')
         raise
 
-# === Process a single PDF from MinIO ===
+# === PDF Processor ===
+def extract_text_from_pdf_bytes(pdf_bytes, key):
+    try:
+        with fitz.open(stream=pdf_bytes, filetype="pdf") as doc:
+            text = "\n".join(page.get_text() for page in doc)
+        return text.replace('\x00', '')
+    except Exception as e:
+        log_error(f"extract_text_from_pdf_bytes failed for {key}: {e}")
+        raise
+
 def process_pdf_from_minio(work_id, key):
     try:
         response = s3.get_object(Bucket=MINIO_BUCKET, Key=key)
@@ -124,14 +142,30 @@ def process_pdf_from_minio(work_id, key):
         insert_chunks(work_id, chunks, key)
     except Exception as e:
         log_error(f"process_pdf_from_minio failed for {key} ({work_id}):\n{traceback.format_exc()}")
+        mark_status(work_id, 'failed')
         raise
 
-# === Log Errors ===
-def log_error(message):
-    with open(ERROR_LOG_PATH, "a", encoding="utf-8") as f:
-        f.write(f"{datetime.utcnow().isoformat()} | {message}\n")
+# === Reprocessing ===
+def get_failed_work_ids():
+    conn = psycopg2.connect(**PG_CONFIG)
+    cur = conn.cursor()
+    cur.execute("SELECT id, pdf_key FROM openalex_works WHERE chunking_status = 'failed';")
+    results = cur.fetchall()
+    cur.close()
+    conn.close()
+    return results
 
-# === Iterate through all PDFs in MinIO ===
+def reprocess_failed():
+    failed_items = get_failed_work_ids()
+    for work_id, key in failed_items:
+        print(f"🔁 Retrying: {key}")
+        try:
+            process_pdf_from_minio(work_id, key)
+            print(f"✅ Retry succeeded: {key}")
+        except Exception as e:
+            print(f"❌ Retry failed again for {key}: {e}")
+
+# === Full Run ===
 def process_all_pdfs():
     paginator = s3.get_paginator("list_objects_v2")
     for page in paginator.paginate(Bucket=MINIO_BUCKET):
@@ -160,4 +194,7 @@ def process_all_pdfs():
 
 # === Run ===
 if __name__ == "__main__":
-    process_all_pdfs()
+    if len(sys.argv) > 1 and sys.argv[1] == "--retry-failed":
+        reprocess_failed()
+    else:
+        process_all_pdfs()

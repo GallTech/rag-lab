@@ -47,7 +47,7 @@ This is a lab environment, where the goal is not just to build a functioning RAG
 
 Each major pipeline script (e.g. chunking, embedding) includes a # version: tag and log execution metadata when run with the --track flag. Logged metadata includes script version, Git commit hash, and relevant configuration parameters (e.g. chunk size, splitter type, embedding model).
 
-Each major component will have its own dedicated logging table in PostgreSQL to support analysis and reproducibility. External dependencies (e.g. embedding model, retrieval LLM) will be tracked manually.
+Each major component will have its own dedicated logging table in PostgreSQL to support analysis and reproducibility. External dependencies (e.g. embedding model, generation LLM) will be tracked manually.
 
 This system allows the lab to correlate changes in pipeline configuration with performance outcomes.
 

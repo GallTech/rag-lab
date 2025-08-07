@@ -1,6 +1,7 @@
 A Retrieval-Augmented Generation (RAG) system designed to ingest, embed, and query ~100,000 Artificial Intelligence research papers.
 
-Each top-level folder represents a functional stage in the pipeline. The lab ingests ~100,000 AI/ML/Math/Stats research papers from **SharePoint**, **OpenAlex**, and other sources. It extracts metadata and ACLs, and generates vector embeddings for retrieval-augmented LLM reasoning.  
+Each top-level folder represents a functional stage in the pipeline. The lab ingests ~100,000 AI/ML/Math/Stats research papers from **SharePoint**, **OpenAlex**, and other sources. It extracts metadata and ACLs, and generates vector embeddings for retrieval-augmented LLM reasoning. 
+Sub-folder structure is currently very fluid. The layout will stabalise towards the end of Sept 2025 as I approach 1.0. 
 
 - **Flexible LLM backends**: OpenAI’s ChatGPT, Google Gemini, or local models.  
 - **Interchangeable components**: ingestion, embedding, vector storage, retrieval orchestration, and LLM reasoning are decoupled.  

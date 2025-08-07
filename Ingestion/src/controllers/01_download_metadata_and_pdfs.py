@@ -6,7 +6,7 @@ import time
 from urllib.parse import quote_plus, urlparse
 
 # === Config ===
-CONFIG_PATH = "../config/openalex_config.json"
+CONFIG_PATH = "../../config/openalex_config.json"
 OUTPUT_DIR = os.path.expanduser("~/staging")
 META_DIR = os.path.join(OUTPUT_DIR, "metadata")
 PDF_DIR = os.path.join(OUTPUT_DIR, "pdfs")

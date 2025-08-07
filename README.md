@@ -31,7 +31,7 @@ A dedicated **monitoring server** (`lab-1-monitoring`) runs:
 ## Project Structure  
 
 - **LangChainOrchestration/** → Prompt engineering, retrieval chains, context assembly  
-- **ManagementScripts/** → VM provisioning, orchestration, and backups (Terraform + Ansible)  
+- **ManagementScripts/** → VM provisioning (Terraform + Ansible), orchestration, and backups 
 - **Database/** → Qdrant for vectors, PostgreSQL for metadata  
 - **EmbedGeneration/** → Embedding generation utilities  
 - **Ingestion/** → SharePoint + OpenAlex pipelines  

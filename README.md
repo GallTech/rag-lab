@@ -1,4 +1,4 @@
-# RAG Lab: Modular Pipeline for Research Paper Retrieval & Generation  
+<img width="797" height="305" alt="image" src="https://github.com/user-attachments/assets/8c75a53a-6710-4b95-9719-b1afda7d7403" /># RAG Lab: Modular Pipeline for Research Paper Retrieval & Generation  
 
 A Retrieval-Augmented Generation (RAG) system designed to ingest, embed, and query ~100,000 Artificial Intelligence research papers.
 
@@ -67,7 +67,7 @@ This deliberate 1:1 mapping provides:
 | 192.168.0.12  | lab-1-embed-generator | Embedding generation (nomic-embed-text-v1) |
 | 192.168.0.13  | lab-1-ingestion    | Data ingestion (SharePoint + OpenAlex pipelines) |
 | 192.168.0.14  | lab-1-ui           | UI layer (Streamlit, React, TypeScript) |
-| 192.168.0.15  | lab-1-api          | FastAPI microservice for retrieval, LangChain orchestration, and prompt engineering  |
+| 192.168.0.15  | lab-1-retrieval    | FastAPI microservice for retrieval, LangChain orchestration, and prompt engineering  |
 | 192.168.0.16  | lab-1-PyTorch      | Local model inference (PyTorch/Mistral) |
 | 192.168.0.17  | lab-1-storage01    | Object storage (MinIO) |
 | 192.168.0.18  | lab-1-monitoring   | Prometheus, Grafana, Alertmanager |

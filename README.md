@@ -46,11 +46,11 @@ A dedicated **monitoring server** (`lab-1-monitoring`) runs:
 
 This is a lab environment, where the goal is not just to build a functioning RAG pipeline, but to study and understand the impact of each component over time. While Git handles general code source control, this configuration matrix is designed to track the experimental state of each part of the system — hopefully ensuring reproducibility, meaningful comparisons, and long-term learning.
 
-Each major pipeline script (e.g. chunking, embedding) includes a # version: tag and log execution metadata when run with the --track flag. Logged metadata includes script version, Git commit hash, and relevant configuration parameters (e.g. chunk size, splitter type, embedding model).
+Each major pipeline script (e.g. chunking, embedding) includes a # version: tag and logs execution metadata when run with the --track flag. Logged metadata includes script version, Git commit hash, and relevant configuration parameters (e.g. chunk size, splitter type, embedding model).
 
 Each major component will have its own dedicated logging table in PostgreSQL to support analysis and reproducibility. External dependencies (e.g. embedding model, generation LLM) will be tracked manually.
 
-This system will allow me to correlate changes in pipeline configuration with performance outcomes. I have no idea yet how to do the in an efficient and meaningful manner. My current versioning strategy is an attempt to lay the groundwork for such an approach. 
+This system will allow me to correlate changes in pipeline configuration with performance outcomes. I have no idea yet how to do this in an efficient and meaningful manner. My current versioning strategy is an attempt to lay the groundwork for such an approach. 
 
 | Category             | Parameter / Element                                     | Why It Matters                                                | Current Version |
 |----------------------|---------------------------------------------------------|----------------------------------------------------------------|-----------------|

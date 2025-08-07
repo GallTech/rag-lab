@@ -50,7 +50,7 @@ Each major pipeline script (e.g. chunking, embedding) includes a # version: tag 
 
 Each major component will have its own dedicated logging table in PostgreSQL to support analysis and reproducibility. External dependencies (e.g. embedding model, generation LLM) will be tracked manually.
 
-This system allows the lab to correlate changes in pipeline configuration with performance outcomes.
+This system will allow me to correlate changes in pipeline configuration with performance outcomes. I have no idea yet how to do the in an efficient and meaningful manner. My current versioning strategy is an attempt to lay the groundwork for such an approach. 
 
 | Category             | Parameter / Element                                     | Why It Matters                                                | Current Version |
 |----------------------|---------------------------------------------------------|----------------------------------------------------------------|-----------------|

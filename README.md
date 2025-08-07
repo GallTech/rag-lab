@@ -52,11 +52,11 @@ Every configuration parameter listed here directly affects pipeline behavior or 
 | **Chunking**         | TextSplitter class (e.g. `RecursiveCharacterTextSplitter`) | Controls chunk granularity and coherence                       | 0.0.1           |
 |                      | `chunk_size`, `chunk_overlap`                          | Affects semantic continuity and embedding efficiency           | 0.0.1           |
 |                      | Preprocessing rules (e.g. strip `\x00`, token est.)    | Ensures clean, consistent input for chunking and embedding     | 0.0.1           |
-| **Embedding**        | Current embedding model: **nomic-embed-text-v1**      | Defines the vector representation of your data                 | 0.0.1           |
+| **Embedding**        | Current embedding model: **nomic-embed-text-v1**      | Defines the vector representation of the data                 | 0.0.1           |
 |                      | Pooling strategy / device configuration                | Affects embedding consistency and performance                  | 0.0.1           |
 |                      | Embedding script logic                                 | Determines batching, retry behavior, and preprocessing details | 0.0.1           |
 | **Storage & Retrieval** | Qdrant config (distance metric, HNSW params, etc.)     | Impacts vector search quality and speed                        | 0.0.1           |
-|                      | Collection schema (e.g. payload structure)             | Dictates how metadata is organized and queried                 | 0.0.1           |
+|                      | Collection schema (e.g. payload structure)             | Dictates how metadata is organised and queried                 | 0.0.1           |
 | **Download/Filtering** | OpenAlex filtering parameters                         | Controls the scope and relevance of ingested documents         | 0.0.1           |
 | **Postprocessing**   | Re-ranking strategy                                    | Modifies the ordering of retrieved results                     | 0.0.1           |
 | **Retrieval Logic**  | `top_k`, similarity thresholds, reranking methods      | Strongly influences which chunks are used at inference time    | 0.0.1           |

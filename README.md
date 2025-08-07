@@ -48,9 +48,9 @@ This is a lab environment, where the goal is not just to build a functioning RAG
 
 Each major pipeline script (e.g. chunking, embedding) includes a # version: tag and logs execution metadata when run with the --track flag. Logged metadata includes script version, Git commit hash, and relevant configuration parameters (e.g. chunk size, splitter type, embedding model).
 
-Each major component will have its own dedicated logging table in PostgreSQL to support analysis and reproducibility. External dependencies (e.g. embedding model, generation LLM) will be tracked manually.
+Each major component will have its own dedicated run logging table in PostgreSQL to support analysis and reproducibility. External dependencies (e.g. embedding model, generation LLM) will be tracked manually. A basic reporting script queries the logs in PostgreSQL (chunking, embedding, retrieval, etc.), and outputs Markdown reports into my local Obsidian vault for this project.
 
-This system will allow me to correlate changes in pipeline configuration with performance outcomes. I have no idea yet how to do this in an efficient and meaningful manner. My current versioning strategy is an attempt to lay the groundwork for such an approach. 
+This system will allow me to correlate changes in pipeline configuration with performance outcomes. I have no idea yet how to do this in an efficient and meaningful manner. I'll track progress using subjective metrics and attempt to isolate hard date such as Recall@k. My current configuration versioning work is an attempt to lay the groundwork for such an approach. 
 
 | Category             | Parameter / Element                                     | Why It Matters                                                | Current Version |
 |----------------------|---------------------------------------------------------|----------------------------------------------------------------|-----------------|

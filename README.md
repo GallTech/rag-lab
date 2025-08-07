@@ -52,7 +52,7 @@ Every configuration parameter listed here directly affects pipeline behavior or 
 | **Chunking**         | TextSplitter class (e.g. `RecursiveCharacterTextSplitter`) | Controls chunk granularity and coherence                       | 0.0.1           |
 |                      | `chunk_size`, `chunk_overlap`                          | Affects semantic continuity and embedding efficiency           | 0.0.1           |
 |                      | Preprocessing rules (e.g. strip `\x00`, token est.)    | Ensures clean, consistent input for chunking and embedding     | 0.0.1           |
-| **Embedding**        | Current embedding model: nomic-embed-text-v1      | Defines the vector representation of your data                 | 0.0.1           |
+| **Embedding**        | Current embedding model: **nomic-embed-text-v1**      | Defines the vector representation of your data                 | 0.0.1           |
 |                      | Pooling strategy / device configuration                | Affects embedding consistency and performance                  | 0.0.1           |
 |                      | Embedding script logic                                 | Determines batching, retry behavior, and preprocessing details | 0.0.1           |
 | **Storage & Retrieval** | Qdrant config (distance metric, HNSW params, etc.)     | Impacts vector search quality and speed                        | 0.0.1           |

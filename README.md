@@ -167,13 +167,14 @@ CI/CD will integrate **unit + integration tests** on PRs, with **nightly E2E + d
 | 2025-08-29   | Qdrant Prune & Optimize        | Remove unused vectors and optimize storage               | 🔲 Not Started |
 
 ## Roadmap  
+| Month Range | Focus Area               | Key Deliverables                                                                 | Learning Outcomes                                   |
+|-------------|--------------------------|---------------------------------------------------------------------------------|----------------------------------------------------|
+| **Sept - Dec 2025**     | Core Pipeline            | - Dockerized ingestion<br>- Terraform VM provisioning<br>- Recall@k Grafana dashboard           | Linux/Python CI/CD, IaC basics                     |
+| **Sept - Dec 2025**     | Retrieval Optimization   | - Hybrid search (BM25 + vectors)<br>- PyTorch fine-tuned small LM (ONNX export)                 | Sparse/dense retrieval, basic training loops       |
+| **Jan - June 2026**     | Re-ranking & UI          | - Cross-encoder re-ranker<br>- React UI with query history/feedback                             | R for stats, TypeScript fundamentals               |
+| **Jan - June 2026**   | Scaling                  | - K8s Helm charts + HPA<br>- Postgres BRIN indexes<br>- Qdrant HNSW tuning                      | K8s orchestration, advanced DB tuning             |
+| **June 2026**   | Cloud Migration          | - AWS/GCP Terraform modules<br>- Mixed precision training pipeline                              | Cloud networking, PyTorch AMP                      |
+| **Sept 2026**   | Automation & Polish      | - 30-min Ansible deploy<br>- Feedback-trained embeddings<br>- Weekly digest feature            | End-to-end automation, personalized ranking        |
 
-- 🔄 **Urgent: Optimise project & Git structure**  
-- 🔄 **Finalise document retrieval** (Qdrant vector search + validation)  
-- 🔄 **Extend ingestion** (AI, ML, and AI Ethics categories)  
-- 📝 **Implement LangChain retrieval chains & dynamic prompt templates**  
-- 📝 **Build React + TypeScript UI alpha**  
-- 📝 **Reprovision entire solution using Terraform and Ansible**  
-- 📝 **Reprovision stateless services (API, UI, embedding workers) on Kubernetes**
-- 📝 **Idempotency everywhere** I need to make every stage re-runnable. Will add a run_id + data_hash to run logs
-- 📝 **Once that's all done, it's cloud migration time. I'll use the existing provisioning scripts and rebuild the entire thing in Azure and subsequently AWS**
+
+

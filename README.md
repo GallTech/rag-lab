@@ -24,10 +24,7 @@ The end-to-end MVP pipeline is now functional. Focus is currently on refactoring
 
 ## Monitoring  
 
-A dedicated **monitoring server** (`lab-1-monitoring`) runs:  
-- **Prometheus** for metrics collection  
-- **Grafana** for dashboards  
-- **Alertmanager** for notifications  
+A dedicated **monitoring server** (`lab-1-monitoring`) runs Node Exporter + Prometheus + Grafana 
 
 ## Project Structure  
 
@@ -68,6 +65,30 @@ This system will allow me to correlate changes in pipeline configuration with pe
 | **Prompt Templates** | Prompt text and formatting                             | Defines how context and questions are framed                   | 0.0.1           |
 | **LLM Generation**   | Generation model, temperature, top_p, etc.             | Controls response creativity, specificity, and tone            | 0.0.1           |
 | **Timing**           | Chunk ingestion date filters                           | Governs incremental update behavior and data freshness         | 0.0.1           |
+
+
+## 🔍 Weekly Golden Set Evaluation  
+
+To track retrieval quality over time, the lab maintains a **golden set** of ~100 curated Q→A pairs with known relevant document or chunk IDs.  
+Every week, a 5-minute offline harness runs these queries against the retriever (no LLM), logging **Recall@k** and **MRR@k** into Postgres for Grafana trend analysis.  
+
+**Recall@k** – % of queries where at least one gold item appears in the top-k results:  
+
+`Recall@k = (1/N) Σ[i=1→N]  1[ Gᵢ ∩ Rᵢ,k ≠ ∅ ]`  
+
+**MRR@k** – Mean reciprocal rank of the first correct hit:  
+
+`MRR@k = (1/N) Σ[i=1→N]  1 / rankᵢ`  
+
+Where:  
+
+- `Gᵢ` = set of gold IDs for query `i`  
+- `Rᵢ,k` = top-k retrieved IDs for query `i`  
+- `1[...]` = indicator function (1 if condition is true, else 0)  
+- `rankᵢ` = position of the first relevant result, or 0 if none found  
+
+This ensures parameter changes, embedding swaps, and retriever tweaks can be objectively tracked.
+
 
 ## Infrastructure  
 
@@ -148,4 +169,5 @@ CI/CD will integrate **unit + integration tests** on PRs, with **nightly E2E + d
 - 📝 **Build React + TypeScript UI alpha**  
 - 📝 **Reprovision entire solution using Terraform and Ansible**  
 - 📝 **Reprovision stateless services (API, UI, embedding workers) on Kubernetes**
+- 📝 **Idempotency everywhere** I need to make every stage re-runnable. Will add a run_id + data_hash to run logs
 - 📝 **Once that's all done, it's cloud migration time. I'll use the existing provisioning scripts and rebuild the entire thing in Azure and subsequently AWS**

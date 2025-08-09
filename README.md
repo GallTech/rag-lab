@@ -25,8 +25,8 @@ The end-to-end MVP pipeline is now functional. Focus is currently on refactoring
 3. **Chunk & embed content** Currently using a local nomic-embed-text-v1 model 
 4. **Store vector representations in Qdrant** for fast similarity search  
 5. **Retrieve relevant context** using **LangChain retrievers + custom Python logic**  
-7. **Generate answers via pluggable LLM backend** (OpenAI, Gemini, or local models)  
-8. **Serve responses** through FastAPI & Streamlit (**React + TypeScript UI under development**)  
+6. **Generate answers via pluggable LLM backend** (OpenAI, Gemini, or local models)  
+7. **Serve responses** through FastAPI & Streamlit (**React + TypeScript UI under development**)  
 
 ## Monitoring  
 
@@ -95,7 +95,7 @@ Where:
 
 This ensures parameter changes, embedding swaps, and retriever tweaks can be objectively tracked.
 
-Since high Recall@k doesn’t guarantee good answers, in the next sprint (Sept 2025), I plan to include end-to-end evaluation of generation quality to complement the existing retrieval metrics. While Recall@k and MRR@k are excellent for assessing the retriever, this next phase will focus on the quality of the final, LLM-generated answer. This will involve extending the weekly Golden Set to include not just correct document IDs, but also canonical or 'ideal' answers. 
+Since high Recall@k doesn’t guarantee good answers, in the next sprint (Sept 2025), I plan to include end-to-end evaluation of generation quality to complement the existing retrieval metrics. While Recall@k and MRR@k are excellent for assessing the retriever, this next phase will focus on the quality of the final, LLM-generated answer. This will involve extending the weekly Golden Set Evaluation to include not just correct document IDs, but also canonical or 'ideal' answers. 
 
 ## Infrastructure  
 

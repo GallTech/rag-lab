@@ -11,7 +11,6 @@ Sub-folder structure is currently very fluid. The layout will stabalise towards 
 
 - **Flexible LLM backends**: OpenAI’s ChatGPT, Google Gemini, or local models.  
 - **Interchangeable components**: ingestion, embedding, vector storage, retrieval orchestration, and LLM reasoning are decoupled.  
-- **Retrieval-first design**: retrieval is separated from generation, making it easy to mix or upgrade LLMs for different tasks.  
 - **LangChain-based orchestration**: dynamic context assembly & prompt engineering.  
 
 Status: 🛠️ Development

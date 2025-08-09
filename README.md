@@ -144,7 +144,7 @@ This project evolves from **POC → MVP → Pseudo-Production**, so testing dept
 
 CI/CD will integrate **unit + integration tests** on PRs, with **nightly E2E + data validation tests** on a controlled dataset.  
 
-## 🗓️ August Sprint  
+## August Sprint  
 **Start:** 1 August 2025  
 **End:** 31 August 2025  
 

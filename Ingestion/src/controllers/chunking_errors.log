@@ -9235,3 +9235,63 @@ Traceback (most recent call last):
     raise FileDataError('Failed to open stream') from e
 pymupdf.FileDataError: Failed to open stream
 
+2025-08-11T13:50:55.997484 | extract_text_from_pdf_bytes failed for W2065490969.pdf: Failed to open stream
+2025-08-11T13:50:56.004320 | process_pdf_from_minio failed for W2065490969.pdf (https://openalex.org/W2065490969):
+Traceback (most recent call last):
+  File "/home/mike/rag-lab/Ingestion/src/venv/lib/python3.10/site-packages/pymupdf/__init__.py", line 2937, in __init__
+    doc = mupdf.fz_open_document_with_stream(filetype if filetype else '', stream2)
+  File "/home/mike/rag-lab/Ingestion/src/venv/lib/python3.10/site-packages/pymupdf/mupdf.py", line 48463, in fz_open_document_with_stream
+    return _mupdf.fz_open_document_with_stream(magic, stream)
+pymupdf.mupdf.FzErrorFormat: code=7: no objects found
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/mike/rag-lab/Ingestion/src/controllers/09_chunk_pdfs_and_insert_chunks.py", line 128, in process_pdf_from_minio
+    raw_text = extract_text_from_pdf_bytes(pdf_bytes, key)
+  File "/home/mike/rag-lab/Ingestion/src/controllers/09_chunk_pdfs_and_insert_chunks.py", line 117, in extract_text_from_pdf_bytes
+    with fitz.open(stream=pdf_bytes, filetype="pdf") as doc:
+  File "/home/mike/rag-lab/Ingestion/src/venv/lib/python3.10/site-packages/pymupdf/__init__.py", line 2940, in __init__
+    raise FileDataError('Failed to open stream') from e
+pymupdf.FileDataError: Failed to open stream
+
+2025-08-11T13:50:58.285916 | extract_text_from_pdf_bytes failed for W2067857142.pdf: Failed to open stream
+2025-08-11T13:50:58.286047 | process_pdf_from_minio failed for W2067857142.pdf (https://openalex.org/W2067857142):
+Traceback (most recent call last):
+  File "/home/mike/rag-lab/Ingestion/src/venv/lib/python3.10/site-packages/pymupdf/__init__.py", line 2937, in __init__
+    doc = mupdf.fz_open_document_with_stream(filetype if filetype else '', stream2)
+  File "/home/mike/rag-lab/Ingestion/src/venv/lib/python3.10/site-packages/pymupdf/mupdf.py", line 48463, in fz_open_document_with_stream
+    return _mupdf.fz_open_document_with_stream(magic, stream)
+pymupdf.mupdf.FzErrorFormat: code=7: no objects found
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/mike/rag-lab/Ingestion/src/controllers/09_chunk_pdfs_and_insert_chunks.py", line 128, in process_pdf_from_minio
+    raw_text = extract_text_from_pdf_bytes(pdf_bytes, key)
+  File "/home/mike/rag-lab/Ingestion/src/controllers/09_chunk_pdfs_and_insert_chunks.py", line 117, in extract_text_from_pdf_bytes
+    with fitz.open(stream=pdf_bytes, filetype="pdf") as doc:
+  File "/home/mike/rag-lab/Ingestion/src/venv/lib/python3.10/site-packages/pymupdf/__init__.py", line 2940, in __init__
+    raise FileDataError('Failed to open stream') from e
+pymupdf.FileDataError: Failed to open stream
+
+2025-08-11T13:51:38.574133 | extract_text_from_pdf_bytes failed for W2098791415.pdf: Failed to open stream
+2025-08-11T13:51:38.574265 | process_pdf_from_minio failed for W2098791415.pdf (https://openalex.org/W2098791415):
+Traceback (most recent call last):
+  File "/home/mike/rag-lab/Ingestion/src/venv/lib/python3.10/site-packages/pymupdf/__init__.py", line 2937, in __init__
+    doc = mupdf.fz_open_document_with_stream(filetype if filetype else '', stream2)
+  File "/home/mike/rag-lab/Ingestion/src/venv/lib/python3.10/site-packages/pymupdf/mupdf.py", line 48463, in fz_open_document_with_stream
+    return _mupdf.fz_open_document_with_stream(magic, stream)
+pymupdf.mupdf.FzErrorFormat: code=7: no objects found
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/mike/rag-lab/Ingestion/src/controllers/09_chunk_pdfs_and_insert_chunks.py", line 128, in process_pdf_from_minio
+    raw_text = extract_text_from_pdf_bytes(pdf_bytes, key)
+  File "/home/mike/rag-lab/Ingestion/src/controllers/09_chunk_pdfs_and_insert_chunks.py", line 117, in extract_text_from_pdf_bytes
+    with fitz.open(stream=pdf_bytes, filetype="pdf") as doc:
+  File "/home/mike/rag-lab/Ingestion/src/venv/lib/python3.10/site-packages/pymupdf/__init__.py", line 2940, in __init__
+    raise FileDataError('Failed to open stream') from e
+pymupdf.FileDataError: Failed to open stream
+

@@ -1,9 +1,12 @@
 {
   "email": "mike.gallagher@live.ie",
-  "topics": [
-    { "name": "artificial intelligence", "concept_id": "C41008148" }
-  ],
-  "from_date": "2024-01-01",
-  "to_date": "2025-08-06",
+  "filters": {
+    "concepts": ["C154945302"],
+    "primary_topics": ["T10181"],
+    "type": "article",
+    "open_access": true,
+    "from_date": "1900-01-01",
+    "to_date": "2025-07-10"
+  },
   "per_page": 50
 }

@@ -75,7 +75,7 @@ This system will allow me to correlate changes in pipeline configuration with pe
 ## Weekly Golden Set Evaluation  
 
 To track retrieval quality over time, the lab maintains a **golden set** of ~100 curated Q→A pairs with known relevant document or chunk IDs.  
-I run these queries through an offline harness against the retriever with no LLM, logging **Recall@k** and **MRR@k** into Postgres for Grafana trend analysis. This tests the sytems's ability to find the relevant info, and not the LLM's ability to pull it all together.   
+I run these queries through an offline harness against the retriever with no LLM, logging Recall@k and MRR@k into Postgres for Grafana trend analysis. This tests the sytems's ability to find the relevant info, and not the LLM's ability to pull it all together.   
 
 **Recall@k** – % of queries where at least one gold item appears in the top-k results:  
 

@@ -1,4 +1,4 @@
-## Homelab Retrieval-Augmented Generation (RAG) system  
+## Homelab Retrieval-Augmented Generation (RAG)  
 
 A Retrieval-Augmented Generation (RAG) system designed to ingest, embed, and query ~100,000 Artificial Intelligence research papers.
 

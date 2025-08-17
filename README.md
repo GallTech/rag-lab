@@ -27,6 +27,9 @@ Each top-level folder represents a functional stage in the pipeline. The lab ing
 - **MLExperiments/** → Fine-tuning & testing workflows
 
 ## Retrieval Metrics
+These metrics run in the evaluation pipeline (Metrics & Golden Set stage) to measure how well the retriever (Qdrant + re-ranking) surfaces relevant documents, independent of the LLM.
+
+As I experiment with RAG pipelines, the challenge is tracing how changes to each stage affect overall performance. Metrics like these provide a starting point for systematically measuring and comparing those impacts.
 
 **Precision@k** - Fraction of retrieved documents that are relevant:
 

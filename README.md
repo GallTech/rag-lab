@@ -1,3 +1,31 @@
+## Infrastructure  
+
+Hosted on **Proxmox** (Minisforum UM890 Pro):  
+- Ryzen 9 8945HS  
+- 64 GB DDR5 RAM  
+- 2 TB NVMe  
+
+### VM-to-Functional-Area Mapping  
+
+Each stage of the RAG pipeline runs on a dedicated Ubuntu VM.  
+This deliberate 1:1 mapping provides:  
+- **Clear functional boundaries** (ingestion, embedding, storage, etc.)  
+- **Fault isolation** (a failure in one stage won’t cascade)  
+- **Independent scaling** (e.g., scale only embedding or DB nodes)  
+- **Makes it easier for me to learn about and experiment with each component in isolation**  
+
+| VM IP         | Hostname            | Functional Area             |
+|---------------|--------------------|-----------------------------|
+| 192.168.0.10  | lab-1-mgmt1        | Management & orchestration (Terraform, Ansible) |
+| 192.168.0.11  | lab-1-db1          | Metadata (PostgreSQL) & vector DB (Qdrant) |
+| 192.168.0.12  | lab-1-embed-generator | Embedding generation (nomic-embed-text-v1) |
+| 192.168.0.13  | lab-1-ingestion    | Data ingestion (SharePoint + OpenAlex pipelines) |
+| 192.168.0.14  | lab-1-ui           | UI layer (Streamlit, React, TypeScript) |
+| 192.168.0.15  | lab-1-retrieval    | FastAPI microservice for retrieval, LangChain orchestration, and prompt engineering  |
+| 192.168.0.16  | lab-1-PyTorch      | Local model inference (PyTorch/Mistral) |
+| 192.168.0.17  | lab-1-storage01    | Object storage (MinIO) |
+| 192.168.0.18  | lab-1-monitoring   | Prometheus, Grafana, Alertmanager |
+
 
 # Project Timeline (2025–2027)
 

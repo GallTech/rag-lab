@@ -7,7 +7,7 @@ A Retrieval-Augmented Generation (RAG) system designed to ingest, embed, and que
 2.	Deep dive into RAG & AI – Explore the architecture, components, and best practices of retrieval-augmented generation systems.
 3.	Practical research assistant – Maintain a weekly-updated RAG pipeline of the latest AI research to both learn from and stay current with the field.
 
-Each top-level folder represents a functional stage in the pipeline. The lab ingests ~200,000 AI research papers from **SharePoint**, **OpenAlex**, and other sources. It extracts metadata and ACLs, and generates vector embeddings for retrieval-augmented LLM reasoning. Each month I will add the latest available papers. 
+Each top-level folder in the repository represents a functional stage in the pipeline. The lab ingests ~200,000 AI research papers from **SharePoint**, **OpenAlex**, and other sources. It extracts metadata and ACLs, and generates vector embeddings for retrieval-augmented LLM reasoning. Each month I will add the latest available papers. 
 
 - **Flexible LLM backends**: OpenAI’s ChatGPT, Google Gemini, or local models.  
 - **Interchangeable components**: Ingestion, embedding, vector storage, retrieval orchestration, and LLM reasoning are decoupled.  
@@ -90,11 +90,11 @@ This deliberate 1:1 mapping provides:
 
 | Dates              | Project                          | Notes                                                                 |
 |--------------------|----------------------------------|-----------------------------------------------------------------------|
-| Jun – Aug 2025    | Core RAG Build (on-prem)         | Nearly complete, already processing ~200k docs                        |
+| Jun – Aug 2025     | Core RAG Build (on-prem)         | Nearly complete, already processing ~200k docs                        |
 | Sept – Dec 2025    | SharePoint ACL RAG               | End-to-end permission flow; changes in SharePoint must propagate fast |
 | Sept – Dec 2025    | Kubernetes/Terraform/Ansible     | Refactor existing code              |
 | Jan – Apr 2026     | Metrics & Golden Set             | Recall@k, MRR@k, dashboards, observability stack                      |
-| May – Aug 2026     | Domain LLM (Literary)            | Train/fine-tune pipeline on curated literary corpora                  |
+| May – Aug 2026 | Domain LLM (AI Research) | Fine-tune pipeline on AI/ML research corpora; experiment with domain-adapted summarization & retrieval |
 | Sept – Dec 2026    | Graph Retriever & Re-ranking     | Multi-hop, relationship-aware retrieval w/ Mistral-7B                 |
 | Jan – Jun 2027     | Cloud Migration                  | Full pipeline → AWS/GCP; hybrid homelab ↔ cloud; metric parity check  |
 | Jul – Dec 2027     | Cloud Land & Expand              | Cloud-native scaling, managed services, cost optimization             |

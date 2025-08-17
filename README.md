@@ -1,3 +1,17 @@
+## Homelab Retrieval-Augmented Generation (RAG)  
+
+A Retrieval-Augmented Generation (RAG) system designed to ingest, embed, and query ~200,000 Artificial Intelligence research papers.
+
+1.	Hands-on learning – Build my first non-trivial Linux software project, gaining practical experience with Python, Bash, GitHub, monitoring, and related tooling.
+2.	Deep dive into RAG & AI – Explore the architecture, components, and best practices of retrieval-augmented generation systems.
+3.	Practical research assistant – Maintain a weekly-updated RAG pipeline of the latest AI research to both learn from and stay current with the field.
+
+Each top-level folder represents a functional stage in the pipeline. The lab ingests ~100,000 AI research papers from **SharePoint**, **OpenAlex**, and other sources. It extracts metadata and ACLs, and generates vector embeddings for retrieval-augmented LLM reasoning. Each month I will add the latest papers. 
+
+- **Flexible LLM backends**: OpenAI’s ChatGPT, Google Gemini, or local models.  
+- **Interchangeable components**: Ingestion, embedding, vector storage, retrieval orchestration, and LLM reasoning are decoupled.  
+- **LangChain-based orchestration**: Dynamic context assembly & prompt engineering.  
+
 ## Infrastructure  
 
 Hosted on **Proxmox** (Minisforum UM890 Pro):  

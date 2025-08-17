@@ -126,54 +126,37 @@ This deliberate 1:1 mapping provides:
 
 This architecture makes it easy to **swap components** (e.g., different embedding models, storage backends, or UI layers) without disrupting the rest of the system. Also facilitates moving the stateless services to K8s.
 
-## Testing Strategy  
+# Project Timeline (Sept 2025 – Sept 2027)
 
-This project evolves from **POC → MVP → Pseudo-Production**, so testing depth scales accordingly:  
+## Main Projects
 
-- **POC (now)**  
-  - Minimal sanity checks (manual or quick scripts)  
-  - Focus on proving end-to-end ingestion → retrieval → generation  
+1. **Baseline RAG**  
+   Dates: → Sept 2025  
+   Focus: End-to-end ingestion → retrieval → LLM  
 
-- **MVP**  
-  - Unit tests for key functions (chunking, embedding, metadata parsing)  
-  - Basic integration tests (ingestion → MinIO → PostgreSQL → Qdrant)  
-  - Simple E2E test on a small synthetic dataset  
+2. **ACL-Aware Enterprise RAG Stack**  
+   Dates: Sept 2025 – Jan 2026  
+   Focus: Security, governance, compliance, integrations  
 
-- **Pseudo-Production**  
-  - Full unit + integration test coverage  
-  - E2E tests validating ingestion → storage → retrieval → generation  
-  - Data integrity tests (PostgreSQL ↔ MinIO ↔ Qdrant consistency)  
-  - Smoke/health checks for all services  
-  - Performance tests under realistic query + ingestion load  
+3. **Metrics & Golden Set Evaluation**  
+   Dates: Jan – Jun 2026  
+   Focus: Recall@k, MRR@k, dashboards, bed down RAG  
 
-CI/CD will integrate **unit + integration tests** on PRs, with **nightly E2E + data validation tests** on a controlled dataset.  
+4. **Domain LLM Training (Literary)**  
+   Dates: Jul – Dec 2026  
+   Focus: Training/fine-tuning pipeline on custom corpora  
 
-## August Sprint  
-**Start:** 1 August 2025  
-**End:** 31 August 2025  
+5. **Graph-Based Retriever**  
+   Dates: Jan – Jun 2027  
+   Focus: Multi-hop / relationship-aware retrieval for Mistral-7B  
 
-| Date         | Title                          | Description                                              | Status       |
-|--------------|--------------------------------|----------------------------------------------------------|--------------|
-| 2025-08-01   | Kickoff + Planning             | Define sprint goals, assign VM tasks, lock priorities    | ✅ Completed |
-| 2025-08-03   | Embed Worker Sync              | Test embedding script handoff to Qdrant write queue      | 🚧 In Progress |
-| 2025-08-06   | Ingestion Status Report        | Verify all OpenAlex papers ingested + stored        | ✅ Completed |
-| 2025-08-08   | SharePoint ACL Audit           | Review SharePoint ingestion                        | 🔲 Not Started |
-| 2025-08-11   | LangChain Chain Template Test  | Create draft RAG template                                | 🔲 Not Started |
-| 2025-08-14   | Vector Consistency Validator   | Compare Qdrant IDs with chunk table in Postgres          | 🚧 In Progress |
-| 2025-08-18   | CI/CD Stub Setup               | Begin draft GitHub Actions pipeline for ingest + embed   | 🔲 Not Started |
-| 2025-08-21   | FastAPI Retrieval Test         | Run test query through FastAPI + LangChain orchestration | 🔲 Not Started |
-| 2025-08-24   | Prometheus MinIO Alerts        | Add storage usage alerts and scrape metrics              | 🔲 Not Started |
-| 2025-08-29   | Qdrant Prune & Optimize        | Remove unused vectors and optimize storage               | 🔲 Not Started |
+---
 
-## Roadmap  
-| Month Range | Focus Area               | Key Deliverables                                                                 | Learning Outcomes                                   |
-|-------------|--------------------------|---------------------------------------------------------------------------------|----------------------------------------------------|
-| **Sept - Dec 2025**     | Core Pipeline            | - Dockerized ingestion<br>- Terraform VM provisioning<br>- Recall@k Grafana dashboard           | Linux/Python CI/CD, IaC basics                     |
-| **Sept - Dec 2025**     | Retrieval Optimization   | - Hybrid search (BM25 + vectors)<br>- PyTorch fine-tuned small LM (ONNX export)                 | Sparse/dense retrieval, basic training loops       |
-| **Jan - June 2026**     | Re-ranking & UI          | - Cross-encoder re-ranker<br>- React UI with query history/feedback                             | R for stats, TypeScript fundamentals               |
-| **Jan - June 2026**   | Scaling                  | - K8s Helm charts + HPA<br>- Postgres BRIN indexes<br>- Qdrant HNSW tuning                      | K8s orchestration, advanced DB tuning             |
-| **June 2026**   | Cloud Migration          | - AWS/GCP Terraform modules<br>- Mixed precision training pipeline                              | Cloud networking, PyTorch AMP                      |
-| **Sept 2026**   | Automation & Polish      | - 30-min Ansible deploy<br>- Feedback-trained embeddings<br>- Weekly digest feature            | End-to-end automation, personalized ranking        |
+## Parallel Workstream: Deployment & Ops
 
-
-
+- **Continuous CI/CD improvement**  
+- **Kubernetes orchestration** (Helm charts, HPA, service mesh)  
+- **Terraform infrastructure as code**  
+- **Ansible automation** (config mgmt, secrets, backups)  
+- **Monitoring & observability** (Prometheus, Grafana, Alertmanager)  
+- **Cloud migration modules** (AWS/GCP)  

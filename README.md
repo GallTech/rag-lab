@@ -13,6 +13,43 @@ Each top-level folder represents a functional stage in the pipeline. The lab ing
 - **Interchangeable components**: Ingestion, embedding, vector storage, retrieval orchestration, and LLM reasoning are decoupled.  
 - **LangChain-based orchestration**: Dynamic context assembly & prompt engineering.  
 
+## Project Structure  
+
+- **LangChainOrchestration/** → Prompt engineering, retrieval chains, context assembly  
+- **ManagementScripts/** → VM provisioning (Terraform + Ansible), orchestration, and backups 
+- **Database/** → Qdrant for vectors, PostgreSQL for metadata  
+- **EmbedGeneration/** → Embedding generation utilities  
+- **Ingestion/** → SharePoint + OpenAlex pipelines  
+- **Storage/** → MinIO for original documents  
+- **Monitoring/** → Prometheus + Grafana. Validate MinIO ↔ PostgreSQL consistency  
+- **UI/** → Streamlit & React prototypes for queries  
+- **API/** → FastAPI microservice for retrieval + LLM  
+- **MLExperiments/** → Fine-tuning & testing workflows
+
+## Weekly Golden Set Evaluation  
+
+To track retrieval quality over time, the lab maintains a **golden set** of ~100 curated Q→A pairs with known relevant document or chunk IDs.  
+I run these queries through an offline harness against the retriever with no LLM, logging Recall@k and MRR@k into Postgres for Grafana trend analysis. This tests the sytems's ability to find the relevant info, and not the LLM's ability to pull it all together.   
+
+**Recall@k** – % of queries where at least one gold item appears in the top-k results:  
+
+`Recall@k = (1/N) Σ[i=1→N]  1[ Gᵢ ∩ Rᵢ,k ≠ ∅ ]`  
+
+**MRR@k** – Mean reciprocal rank of the first correct hit:  
+
+`MRR@k = (1/N) Σ[i=1→N]  1 / rankᵢ`  
+
+Where:  
+
+- `Gᵢ` = set of gold IDs for query `i`  
+- `Rᵢ,k` = top-k retrieved IDs for query `i`  
+- `1[...]` = indicator function (1 if condition is true, else 0)  
+- `rankᵢ` = position of the first relevant result, or 0 if none found  
+
+This ensures parameter changes, embedding swaps, and retriever tweaks can be objectively tracked.
+
+Since high Recall@k doesn’t guarantee good answers, I plan to include end-to-end evaluation of generation quality to complement the existing retrieval metrics. While Recall@k and MRR@k are excellent for assessing the retriever, this next phase will focus on the quality of the final, LLM-generated answer. This will involve extending the weekly Golden Set Evaluation to include not just correct document IDs, but also canonical or 'ideal' answers. 
+
 ## Infrastructure  
 
 Hosted on **Proxmox** (Minisforum UM890 Pro):  

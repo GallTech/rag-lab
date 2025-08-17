@@ -26,29 +26,26 @@ Each top-level folder represents a functional stage in the pipeline. The lab ing
 - **API/** → FastAPI microservice for retrieval + LLM  
 - **MLExperiments/** → Fine-tuning & testing workflows
 
-## Weekly Golden Set Evaluation  
+## Retrieval Metrics
 
-To track retrieval quality over time, the lab maintains a **golden set** of ~100 curated Q→A pairs with known relevant document or chunk IDs.  
-I run these queries through an offline harness against the retriever with no LLM, logging Recall@k and MRR@k into Postgres for Grafana trend analysis. This tests the sytems's ability to find the relevant info, and not the LLM's ability to pull it all together.   
+**Recall@k** - Percentage of queries where at least one relevant document appears in top-k results:
 
-**Recall@k** – % of queries where at least one gold item appears in the top-k results:  
+$$
+Recall@k = \frac{1}{N}\sum_{i=1}^{N} \mathbb{1}[G_i \cap R_{i,k} \neq \emptyset]
+$$
 
-`Recall@k = (1/N) Σ[i=1→N]  1[ Gᵢ ∩ Rᵢ,k ≠ ∅ ]`  
+**Mean Reciprocal Rank (MRR@k)** - Average of reciprocal ranks of first relevant result:
 
-**MRR@k** – Mean reciprocal rank of the first correct hit:  
+$$
+MRR@k = \frac{1}{N}\sum_{i=1}^{N} \frac{1}{rank_i}
+$$
 
-`MRR@k = (1/N) Σ[i=1→N]  1 / rankᵢ`  
+Where:
+- $G_i$ = Set of ground truth relevant IDs for query $i$
+- $R_{i,k}$ = Top-k retrieved IDs for query $i$
+- $\mathbb{1}[\cdot]$ = Indicator function (1 if true, 0 otherwise)
+- $rank_i$ = Position of first relevant result (∞ if none found)
 
-Where:  
-
-- `Gᵢ` = set of gold IDs for query `i`  
-- `Rᵢ,k` = top-k retrieved IDs for query `i`  
-- `1[...]` = indicator function (1 if condition is true, else 0)  
-- `rankᵢ` = position of the first relevant result, or 0 if none found  
-
-This ensures parameter changes, embedding swaps, and retriever tweaks can be objectively tracked.
-
-Since high Recall@k doesn’t guarantee good answers, I plan to include end-to-end evaluation of generation quality to complement the existing retrieval metrics. While Recall@k and MRR@k are excellent for assessing the retriever, this next phase will focus on the quality of the final, LLM-generated answer. This will involve extending the weekly Golden Set Evaluation to include not just correct document IDs, but also canonical or 'ideal' answers. 
 
 ## Infrastructure  
 

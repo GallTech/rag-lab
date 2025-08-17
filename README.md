@@ -126,7 +126,7 @@ This deliberate 1:1 mapping provides:
 
 This architecture makes it easy to **swap components** (e.g., different embedding models, storage backends, or UI layers) without disrupting the rest of the system. Also facilitates moving the stateless services to K8s.
 
-# Project Timeline (Sept 2025 – Sept 2027)
+# Project Timeline (Sept 2025 – June 2027)
 
 ## Main Projects
 

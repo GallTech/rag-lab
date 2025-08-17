@@ -20,7 +20,7 @@ Each functional stage of the pipeline has:
 - a **dedicated Git branch** (isolated development)  
 - a **dedicated VM** (runtime environment)  
 
-This **1:1:1 mapping** enforces clear separation of concerns and makes it easy to evolve, test, or swap out stages independently.  
+This **1:1:1 mapping** enforces clear separation of concerns and makes it easy to evolve, test, or swap out stages independently. As I move forward, this will evolve to a more standard feature-branching workflow within each service branch.  
 
 | VM Name              | Branch Name              | Description                                                      |
 |----------------------|--------------------------|------------------------------------------------------------------|

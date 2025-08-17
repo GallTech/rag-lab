@@ -32,7 +32,7 @@ This **1:1:1 mapping** enforces clear separation of concerns and makes it easy t
 | lab-1-retrieval      | lab-1-retrieval          | FastAPI retrieval microservice + LangChain orchestration         |
 | lab-1-storage01      | lab-1-storage01          | Object storage (MinIO)                                           |
 | lab-1-monitoring     | lab-1-monitoring         | Monitoring stack (Prometheus, Grafana, Alertmanager)             |
-| lab-1-db2            | lab-1-db2                | Secondary DB node (replication/backup testing)                   |
+
 
 
 ## Retrieval Metrics

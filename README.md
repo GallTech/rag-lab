@@ -22,17 +22,16 @@ Each functional stage of the pipeline has:
 
 This **1:1:1 mapping** enforces clear separation of concerns and makes it easy to evolve, test, or swap out stages independently. As I move forward, this will evolve to a more standard feature-branching workflow within each service branch.  
 
-| VM Name              | Branch Name              | Description                                                      |
-|----------------------|--------------------------|------------------------------------------------------------------|
-| lab-1-mgmt1          | lab-1-mgmt1              | Management & orchestration (Terraform, Ansible, backups)         |
-| lab-1-db1            | lab-1-db1                | Metadata (PostgreSQL) + Vector DB (Qdrant)                       |
-| lab-1-embed-generator| lab-1-embed-generator    | Local model: nomic-embed-text-v1                       |
-| lab-1-ingestion      | lab-1-ingestion          | Data ingestion (SharePoint + OpenAlex pipelines)                 |
-| lab-1-ui             | lab-1-ui                 | UI layer (Streamlit, React, TypeScript)                          |
-| lab-1-retrieval      | lab-1-retrieval          | FastAPI retrieval microservice + LangChain orchestration         |
-| lab-1-storage01      | lab-1-storage01          | Object storage (MinIO)                                           |
-| lab-1-monitoring     | lab-1-monitoring         | Monitoring stack (Prometheus, Grafana, Alertmanager)             |
-
+| VM Name              | Branch Name              | Git Folder        | Description                                                      |
+|----------------------|--------------------------|-------------------|------------------------------------------------------------------|
+| lab-1-mgmt1          | lab-1-mgmt1              | Management        | Management & orchestration (Terraform, Ansible, backups)         |
+| lab-1-db1            | lab-1-db1                | Database          | Metadata (PostgreSQL) + Vector DB (Qdrant)                       |
+| lab-1-embed-generator| lab-1-embed-generator    | EmbedGeneration   | Local model: nomic-embed-text-v1                                 |
+| lab-1-ingestion      | lab-1-ingestion          | Ingestion         | Data ingestion (SharePoint + OpenAlex pipelines)                 |
+| lab-1-ui             | lab-1-ui                 | UI                | UI layer (Streamlit, React, TypeScript)                          |
+| lab-1-retrieval      | lab-1-retrieval          | Retrieval         | FastAPI retrieval microservice + LangChain orchestration         |
+| lab-1-storage01      | lab-1-storage01          | Storage           | Object storage (MinIO)                                           |
+| lab-1-monitoring     | lab-1-monitoring         | Monitoring        | Monitoring stack (Prometheus, Grafana, Alertmanager)             |
 
 
 ## Retrieval Metrics

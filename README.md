@@ -22,7 +22,7 @@ Each functional stage of the pipeline has:
 
 This **1:1:1 mapping** enforces clear separation of concerns and makes it easy to evolve, test, or swap out stages independently. As I move forward, this will evolve to a more standard feature-branching workflow within each service branch.  
 
-| Git Folder       | VM Name              | Branch Name              | Description                                                      |
+| Repo Folder       | VM Name              | Branch Name              | Description                                                      |
 |------------------|----------------------|--------------------------|------------------------------------------------------------------|
 | Management       | lab-1-mgmt1          | lab-1-mgmt1              | Management & orchestration (Terraform, Ansible, backups)         |
 | Database         | lab-1-db1            | lab-1-db1                | Metadata (PostgreSQL) + Vector DB (Qdrant)                       |

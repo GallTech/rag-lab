@@ -24,8 +24,9 @@ PG_CONFIG = {
     "password": os.getenv("PG_PASSWORD")
 }
 
-CHUNK_SIZE = 2048
-CHUNK_OVERLAP = 512
+CHUNK_SIZE = 900
+CHUNK_OVERLAP = 200
+
 
 if not PG_CONFIG["password"]:
     raise RuntimeError("❌ PG_PASSWORD not set.")

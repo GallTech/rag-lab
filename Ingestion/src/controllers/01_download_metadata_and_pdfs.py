@@ -32,33 +32,7 @@ HEADERS = {
 }
 
 # === Blocklist for PDF hosts ===
-BLOCKED_DOMAINS = [
-    "academic.oup.com",
-    "dl.acm.org",
-    "repositorio.unal.edu.co",
-    "rss.onlinelibrary.wiley.com",
-    "research.rug.nl",
-    "discovery.ucl.ac.uk",
-    "deepblue.lib.umich.edu",
-    "onlinelibrary.wiley.com",
-    "www.tandfonline.com",
-    "saberesepraticas.cenpec.org.br",
-    "www.nature.com",
-    "lirias.kuleuven.be",
-    "www.thelancet.com",
-    "eprints.whiterose.ac.uk",
-    "cris.maastrichtuniversity.nl",
-    "eprints.qut.edu.au",
-    "advances.sciencemag.org",
-    "direct.mit.edu",
-    "zenodo.org",
-    "ahajournals.org",
-    "scans.hebis.de",
-    "www.zora.uzh.ch",
-    "www.biorxiv.org",
-    "www.sciencedirect.com",
-    "nsuworks.nova.edu",
-]
+BLOCKED_DOMAINS = []
 # Normalize and support subdomain matches: host == entry OR host endswith("." + entry_wo_www)
 _BLOCKED_SUFFIXES = {d.lower().lstrip(".").removeprefix("www.") for d in BLOCKED_DOMAINS}
 _BLOCKED_EXACT = {d.lower().lstrip(".") for d in BLOCKED_DOMAINS}

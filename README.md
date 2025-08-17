@@ -7,7 +7,7 @@ A Retrieval-Augmented Generation (RAG) system designed to ingest, embed, and que
 2.	Deep dive into RAG & AI – Explore the architecture, components, and best practices of retrieval-augmented generation systems.
 3.	Practical research assistant – Maintain a weekly-updated RAG pipeline of the latest AI research to both learn from and stay current with the field.
 
-Each top-level folder in the repository represents a functional stage in the pipeline. The lab ingests ~200,000 AI research papers from **SharePoint**, **OpenAlex**, and other sources. It extracts metadata and ACLs, and generates vector embeddings for retrieval-augmented LLM reasoning. Each month I will add the latest available papers. 
+The lab ingests ~200,000 AI research papers from **SharePoint**, **OpenAlex**, and other sources. It extracts metadata and ACLs, and generates vector embeddings for retrieval-augmented LLM reasoning. Each month I will add the latest available papers. 
 
 - **Flexible LLM backends**: OpenAI’s ChatGPT, Google Gemini, or local models.  
 - **Interchangeable components**: Ingestion, embedding, vector storage, retrieval orchestration, and LLM reasoning are decoupled.  
@@ -15,16 +15,25 @@ Each top-level folder in the repository represents a functional stage in the pip
 
 ## Project Structure  
 
-- **LangChainOrchestration/** → Prompt engineering, retrieval chains, context assembly  
-- **ManagementScripts/** → VM provisioning (Terraform + Ansible), orchestration, and backups 
-- **Database/** → Qdrant for vectors, PostgreSQL for metadata  
-- **EmbedGeneration/** → Embedding generation utilities  
-- **Ingestion/** → SharePoint + OpenAlex pipelines  
-- **Storage/** → MinIO for original documents  
-- **Monitoring/** → Prometheus + Grafana. Validate MinIO ↔ PostgreSQL consistency  
-- **UI/** → Streamlit & React prototypes for queries  
-- **API/** → FastAPI microservice for retrieval + LLM  
-- **MLExperiments/** → Fine-tuning & testing workflows
+Each functional stage of the pipeline has:  
+- a **folder** in the repository (code & configs)  
+- a **dedicated Git branch** (isolated development)  
+- a **dedicated VM** (runtime environment)  
+
+This **1:1:1 mapping** enforces clear separation of concerns and makes it easy to evolve, test, or swap out stages independently.  
+
+| VM Name              | Branch Name              | Description                                                      |
+|----------------------|--------------------------|------------------------------------------------------------------|
+| lab-1-mgmt1          | lab-1-mgmt1              | Management & orchestration (Terraform, Ansible, backups)         |
+| lab-1-db1            | lab-1-db1                | Metadata (PostgreSQL) + Vector DB (Qdrant)                       |
+| lab-1-embed-generator| lab-1-embed-generator    | Local model: nomic-embed-text-v1                       |
+| lab-1-ingestion      | lab-1-ingestion          | Data ingestion (SharePoint + OpenAlex pipelines)                 |
+| lab-1-ui             | lab-1-ui                 | UI layer (Streamlit, React, TypeScript)                          |
+| lab-1-retrieval      | lab-1-retrieval          | FastAPI retrieval microservice + LangChain orchestration         |
+| lab-1-storage01      | lab-1-storage01          | Object storage (MinIO)                                           |
+| lab-1-monitoring     | lab-1-monitoring         | Monitoring stack (Prometheus, Grafana, Alertmanager)             |
+| lab-1-db2            | lab-1-db2                | Secondary DB node (replication/backup testing)                   |
+
 
 ## Retrieval Metrics
 These metrics run in the evaluation pipeline (Metrics & Golden Set stage) to measure how well the retriever (Qdrant + re-ranking) surfaces relevant documents, independent of the LLM.

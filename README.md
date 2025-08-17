@@ -3,9 +3,9 @@
 A Retrieval-Augmented Generation (RAG) system designed to ingest, embed, and query ~200,000 Artificial Intelligence research papers.
 
 ### Project Goals
-1.	Hands-on learning – Build my first non-trivial Linux software project, gaining practical experience with Python, Bash, GitHub, monitoring, and related tooling.
-2.	Deep dive into RAG & AI – Explore the architecture, components, and best practices of retrieval-augmented generation systems.
-3.	Practical research assistant – Maintain a weekly-updated repository of the latest AI research, enriched through my RAG pipeline and queried via LLMs.
+1.	Hands-on learning - Build my first non-trivial Linux software project, gaining practical experience with Python, Bash, GitHub, monitoring, and related tooling.
+2.	Deep dive into RAG & AI - Explore the architecture, components, and best practices of retrieval-augmented generation systems.
+3.	Practical research assistant - Maintain a weekly-updated repository of the latest AI research, enriched through my RAG pipeline and queried via LLMs.
 
 The lab ingests ~200,000 AI research papers from **SharePoint**, **OpenAlex**, and other sources. It extracts metadata and ACLs, and generates vector embeddings for retrieval-augmented LLM reasoning. Each week I will add the latest available papers. 
 
@@ -76,12 +76,12 @@ Hosted on a Minisforum UM890 Pro running Proxmox
 
 | Dates              | Project                          | Notes                                                                 |
 |--------------------|----------------------------------|-----------------------------------------------------------------------|
-| Jun – Aug 2025     | Core RAG Build (on-prem)         | Nearly complete, already processing ~200k docs                        |
-| Sept – Dec 2025    | SharePoint ACL RAG               | End-to-end permission flow; changes in SharePoint must propagate fast |
-| Sept – Dec 2025    | Kubernetes/Terraform/Ansible     | Refactor existing code              |
-| Jan – Apr 2026     | Metrics & Golden Set             | Optimise dashboards & observability stack                      |
-| May – Aug 2026 | Domain LLM (AI Research) | Fine-tune pipeline on AI/ML research corpora; experiment with domain-adapted summarisation & retrieval |
-| Sept – Dec 2026    | Graph Retriever & Re-ranking     | Multi-hop, relationship-aware retrieval with Mistral-7B                 |
-| Jan – Jun 2027     | Cloud Migration                  | Full pipeline → AWS/GCP; hybrid homelab ↔ cloud; metric parity check  |
-| Jul – Dec 2027     | Cloud Land & Expand              | Cloud-native scaling, managed services, cost optimization             |
+| Jun - Aug 2025     | Core RAG Build (on-prem)         | Nearly complete, already processing ~200k docs                        |
+| Sept - Dec 2025    | SharePoint ACL RAG               | End-to-end permission flow; changes in SharePoint must propagate fast |
+| Sept - Dec 2025    | Kubernetes/Terraform/Ansible     | Refactor existing code              |
+| Jan - Apr 2026     | Metrics & Golden Set             | Optimise dashboards & observability stack                      |
+| May - Aug 2026 | Domain LLM (AI Research) | Fine-tune pipeline on AI/ML research corpora; experiment with domain-adapted summarisation & retrieval |
+| Sept - Dec 2026    | Graph Retriever & Re-ranking     | Multi-hop, relationship-aware retrieval with Mistral-7B                 |
+| Jan - Jun 2027     | Cloud Migration                  | Full pipeline → AWS/GCP; hybrid homelab ↔ cloud; metric parity check  |
+| Jul - Dec 2027     | Cloud Land & Expand              | Cloud-native scaling, managed services, cost optimization             |
 

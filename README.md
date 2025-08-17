@@ -26,26 +26,32 @@ Each top-level folder represents a functional stage in the pipeline. The lab ing
 - **API/** → FastAPI microservice for retrieval + LLM  
 - **MLExperiments/** → Fine-tuning & testing workflows
 
-## Retrieval Metrics
+# Retrieval Metrics
 
-**Recall@k** - Percentage of queries where at least one relevant document appears in top-k results:
+**Precision@k** - Fraction of retrieved documents that are relevant:
 
-$$
-Recall@k = \frac{1}{N}\sum_{i=1}^{N} \mathbb{1}[G_i \cap R_{i,k} \neq \emptyset]
-$$
+\[
+Precision@k = \frac{1}{N} \sum_{i=1}^{N} \frac{|G_i \cap R_{i,k}|}{k}
+\]
 
-**Mean Reciprocal Rank (MRR@k)** - Average of reciprocal ranks of first relevant result:
+**Recall@k** - Fraction of relevant documents retrieved in top-k:
 
-$$
-MRR@k = \frac{1}{N}\sum_{i=1}^{N} \frac{1}{rank_i}
-$$
+\[
+Recall@k = \frac{1}{N} \sum_{i=1}^{N} \frac{|G_i \cap R_{i,k}|}{|G_i|}
+\]
+
+**Mean Reciprocal Rank (MRR@k)** - Average inverse rank of first relevant result:
+
+\[
+MRR@k = \frac{1}{N} \sum_{i=1}^{N} \frac{1}{\text{rank}_i}
+\]
 
 Where:
-- $G_i$ = Set of ground truth relevant IDs for query $i$
-- $R_{i,k}$ = Top-k retrieved IDs for query $i$
-- $\mathbb{1}[\cdot]$ = Indicator function (1 if true, 0 otherwise)
-- $rank_i$ = Position of first relevant result (∞ if none found)
-
+- \( G_i \) = Set of ground truth relevant IDs for query \( i \)
+- \( R_{i,k} \) = Top-k retrieved IDs for query \( i \)
+- \( \text{rank}_i \) = Position of first relevant result (\(\infty\) if none found)
+- \( \mathbb{1}[\cdot] \) = Indicator function (1 if true, 0 otherwise)
+- \( | \cdot | \) = Cardinality of set
 
 ## Infrastructure  
 

@@ -90,7 +90,7 @@ This deliberate 1:1 mapping provides:
 
 | Dates              | Project                          | Notes                                                                 |
 |--------------------|----------------------------------|-----------------------------------------------------------------------|
-| Jun – Sept 2025    | Core RAG Build (on-prem)         | Nearly complete, already processing ~200k docs                        |
+| Jun – Aug 2025    | Core RAG Build (on-prem)         | Nearly complete, already processing ~200k docs                        |
 | Sept – Dec 2025    | SharePoint ACL RAG               | End-to-end permission flow; changes in SharePoint must propagate fast |
 | Sept – Dec 2025    | Kubernetes/Terraform/Ansible     | Refactor existing code              |
 | Jan – Apr 2026     | Metrics & Golden Set             | Recall@k, MRR@k, dashboards, observability stack                      |

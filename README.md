@@ -25,7 +25,14 @@ Each top-level folder represents a functional stage in the pipeline. The lab ing
 - **UI/** → Streamlit & React prototypes for queries  
 - **API/** → FastAPI microservice for retrieval + LLM  
 - **MLExperiments/** → Fine-tuning & testing workflows
+
 ## Retrieval Metrics
+
+**Precision@k** - Fraction of retrieved documents that are relevant:
+
+$$
+Precision@k = \frac{1}{N}\sum_{i=1}^{N} \frac{|G_i \cap R_{i,k}|}{k}
+$$
 
 **Recall@k** - Percentage of queries where at least one relevant document appears in top-k results:
 
@@ -44,6 +51,7 @@ Where:
 - $R_{i,k}$ = Top-k retrieved IDs for query $i$
 - $\mathbb{1}[\cdot]$ = Indicator function (1 if true, 0 otherwise)
 - $rank_i$ = Position of first relevant result (∞ if none found)
+- $|\cdot|$ = Cardinality of set
 
 
 ## Infrastructure  

@@ -94,8 +94,8 @@ This deliberate 1:1 mapping provides:
 | Sept – Dec 2025    | SharePoint ACL RAG               | End-to-end permission flow; changes in SharePoint must propagate fast |
 | Sept – Dec 2025    | Kubernetes/Terraform/Ansible     | Refactor existing code              |
 | Jan – Apr 2026     | Metrics & Golden Set             | Recall@k, MRR@k, dashboards, observability stack                      |
-| May – Aug 2026 | Domain LLM (AI Research) | Fine-tune pipeline on AI/ML research corpora; experiment with domain-adapted summarization & retrieval |
-| Sept – Dec 2026    | Graph Retriever & Re-ranking     | Multi-hop, relationship-aware retrieval w/ Mistral-7B                 |
+| May – Aug 2026 | Domain LLM (AI Research) | Fine-tune pipeline on AI/ML research corpora; experiment with domain-adapted summarisation & retrieval |
+| Sept – Dec 2026    | Graph Retriever & Re-ranking     | Multi-hop, relationship-aware retrieval with Mistral-7B                 |
 | Jan – Jun 2027     | Cloud Migration                  | Full pipeline → AWS/GCP; hybrid homelab ↔ cloud; metric parity check  |
 | Jul – Dec 2027     | Cloud Land & Expand              | Cloud-native scaling, managed services, cost optimization             |
 

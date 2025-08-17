@@ -3,174 +3,242 @@ import json
 import requests
 import psycopg2
 import time
-from urllib.parse import quote_plus, urlparse
+from datetime import datetime
+from urllib.parse import urlencode, urlparse
 
-# === Config ===
+# === Config Paths ===
 CONFIG_PATH = "../../config/openalex_config.json"
 OUTPUT_DIR = os.path.expanduser("~/staging")
 META_DIR = os.path.join(OUTPUT_DIR, "metadata")
 PDF_DIR = os.path.join(OUTPUT_DIR, "pdfs")
 
+# === Database Config ===
 DB_HOST = "192.168.0.11"
 DB_PORT = 5432
 DB_NAME = "raglab"
 DB_USER = "mike"
 DB_PASSWORD = os.getenv("PG_PASSWORD")
 
+# === API Config ===
+BASE_URL = "https://api.openalex.org/works"
 PER_PAGE = 50
 DOWNLOAD_LIMIT = 100_000
 RETRY_COUNT = 1
-RETRY_DELAY = 5
-
-BASE_URL = "https://api.openalex.org/works"
-TABLE_NAME = "openalex_works"
-TRUSTED_OA_DOMAINS = [
-    "arxiv.org", "osf.io", "biorxiv.org", "medrxiv.org", "europepmc.org", "nih.gov/pmc"
-]
-
-BLOCKED_DOMAINS = [
-    "academic.oup.com",
-    "dl.acm.org",
-    "repositorio.unal.edu.co",
-    "rss.onlinelibrary.wiley.com",
-    "research.rug.nl",
-    "discovery.ucl.ac.uk",
-    "deepblue.lib.umich.edu",
-    "onlinelibrary.wiley.com",
-    "www.tandfonline.com",
-    "saberesepraticas.cenpec.org.br",
-    "www.nature.com",
-    "lirias.kuleuven.be",
-    "www.thelancet.com",
-    "eprints.whiterose.ac.uk",
-    "cris.maastrichtuniversity.nl",
-    "eprints.qut.edu.au",
-    "advances.sciencemag.org",
-    "direct.mit.edu",
-    "zenodo.org",
-    "ahajournals.org",
-    "scans.hebis.de",
-    "www.zora.uzh.ch",
-    "www.biorxiv.org",
-    "www.sciencedirect.com",
-    "nsuworks.nova.edu"
-]
+RETRY_DELAY = 1
 
 HEADERS = {
-    "User-Agent": "Mozilla/5.0",
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)",
     "Accept": "application/json"
 }
 
+# === Blocklist for PDF hosts ===
+BLOCKED_DOMAINS = []
+# Normalize and support subdomain matches: host == entry OR host endswith("." + entry_wo_www)
+_BLOCKED_SUFFIXES = {d.lower().lstrip(".").removeprefix("www.") for d in BLOCKED_DOMAINS}
+_BLOCKED_EXACT = {d.lower().lstrip(".") for d in BLOCKED_DOMAINS}
+
+def is_blocked(url: str) -> bool:
+    """Return True if URL host is in blocklist or is a subdomain of a blocked domain."""
+    try:
+        host = urlparse(url).netloc.split(":")[0].lower()
+        host_wo_www = host.removeprefix("www.")
+        if host in _BLOCKED_EXACT or host_wo_www in _BLOCKED_EXACT:
+            return True
+        return any(
+            host == suf or host_wo_www == suf or host.endswith("." + suf)
+            for suf in _BLOCKED_SUFFIXES
+        )
+    except Exception:
+        return False
+
+# === Setup Directories & Logging ===
 os.makedirs(META_DIR, exist_ok=True)
 os.makedirs(PDF_DIR, exist_ok=True)
+LOG_DIR = "/home/mike/rag-lab/Ingestion/src/logs"
+os.makedirs(LOG_DIR, exist_ok=True)
+log_stamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+LOG_PATH = os.path.join(LOG_DIR, f"openalex_download_{log_stamp}.csv")
 
-# === Load config ===
-with open(CONFIG_PATH) as f:
-    config = json.load(f)
+# === Load and Validate Config ===
+try:
+    with open(CONFIG_PATH) as f:
+        config = json.load(f)
 
-EMAIL = config["email"]
-CONCEPT_IDS = ",".join([c["concept_id"] for c in config["topics"]])
+    if not all(k in config for k in ["email", "filters"]):
+        raise ValueError("Config missing required fields (email or filters)")
 
-# === Connect to PostgreSQL ===
-pg_conn = psycopg2.connect(
-    host=DB_HOST, port=DB_PORT, dbname=DB_NAME, user=DB_USER, password=DB_PASSWORD
-)
-pg_cursor = pg_conn.cursor()
+    if not isinstance(config["filters"].get("concepts", []), list):
+        raise ValueError("filters.concepts must be an array")
+
+    EMAIL = config["email"]
+    FILTERS = config["filters"]
+
+except Exception as e:
+    print(f"❌ Config error: {str(e)}")
+    raise SystemExit(1)
+
+# === Database Connection ===
+try:
+    pg_conn = psycopg2.connect(
+        host=DB_HOST, port=DB_PORT,
+        dbname=DB_NAME, user=DB_USER,
+        password=DB_PASSWORD
+    )
+    pg_cursor = pg_conn.cursor()
+except Exception as e:
+    print(f"❌ Database connection failed: {str(e)}")
+    raise SystemExit(1)
 
 def already_downloaded(work_id: str) -> bool:
-    pg_cursor.execute("SELECT 1 FROM openalex_works WHERE id = %s", (work_id,))
-    return pg_cursor.fetchone() is not None
+    try:
+        pg_cursor.execute("SELECT 1 FROM openalex_works WHERE id = %s", (work_id,))
+        return pg_cursor.fetchone() is not None
+    except Exception as e:
+        print(f"⚠️ Database query failed: {str(e)}")
+        return False
 
 def build_url(cursor="*"):
-    filter_str = f"concepts.id:{CONCEPT_IDS},open_access.is_oa:true"
+    filter_parts = []
+
+    # Handle concepts
+    if concepts := FILTERS.get("concepts"):
+        concept_filters = [f"concepts.id:{c}" for c in concepts]
+        filter_parts.append("|".join(concept_filters))
+
+    # Handle primary topics
+    if primary_topics := FILTERS.get("primary_topics"):
+        primary_filters = [f"primary_topic.id:{p}" for p in primary_topics]
+        filter_parts.append("|".join(primary_filters))
+
+    # Required filters
+    filter_parts.extend([
+        f"type:{FILTERS.get('type', 'article')}",
+        f"open_access.is_oa:{str(FILTERS.get('open_access', True)).lower()}",
+    ])
+
+    # Date filters
+    if from_date := FILTERS.get("from_date"):
+        filter_parts.append(f"from_publication_date:{from_date}")
+    if to_date := FILTERS.get("to_date"):
+        filter_parts.append(f"to_publication_date:{to_date}")
+
     params = {
-        "filter": filter_str,
-        "per_page": PER_PAGE,
+        "filter": ",".join(filter_parts),
+        "per_page": config.get("per_page", PER_PAGE),
         "cursor": cursor,
-        "mailto": EMAIL
+        "mailto": EMAIL,
     }
-    query = "&".join(f"{k}={quote_plus(str(v))}" for k, v in params.items() if k != "filter")
-    return f"{BASE_URL}?filter={filter_str}&{query}"
+    return f"{BASE_URL}?{urlencode(params)}"
 
 def get_pdf_url(work):
-    candidates = []
-    best = work.get("best_oa_location")
-    if best and best.get("pdf_url"):
-        candidates.append(best["pdf_url"])
-    for loc in work.get("locations", []):
-        if loc.get("pdf_url"):
-            candidates.append(loc["pdf_url"])
+    """Return first allowed PDF URL from OA locations, skipping blocked hosts."""
+    locations = []
+    if work.get("best_oa_location"):
+        locations.append(work["best_oa_location"])
+    locations.extend(work.get("locations", []))
 
-    for url in candidates:
-        domain = urlparse(url).netloc
-        if domain in BLOCKED_DOMAINS:
-            print(f"⛔ Skipping blocked domain: {domain} → {url}")
+    for loc in locations:
+        if not loc:
             continue
-        if any(trusted in url for trusted in TRUSTED_OA_DOMAINS):
-            return url
-        return url  # fallback if no trust check required
-
+        url = loc.get("pdf_url")
+        if not url:
+            continue
+        if is_blocked(url):
+            print(f"⛔ Blocked host for {work.get('id','?')}: {url}")
+            continue
+        return url
     return None
 
-def download(work, pdf_url):
+def download_paper(work):
     work_id = work["id"]
     short_id = work_id.split("/")[-1]
+    pdf_url = get_pdf_url(work)
+
+    if not pdf_url or is_blocked(pdf_url):
+        print(f"⚠️ Skipping (blocked/no PDF): {short_id}")
+        return False
 
     meta_path = os.path.join(META_DIR, f"{short_id}.json")
     pdf_path = os.path.join(PDF_DIR, f"{short_id}.pdf")
 
-    with open(meta_path, "w") as f:
-        json.dump(work, f, indent=2)
+    try:
+        # Save metadata
+        with open(meta_path, "w") as f:
+            json.dump(work, f, indent=2)
 
-    for attempt in range(RETRY_COUNT):
-        try:
-            r = requests.get(pdf_url, timeout=60, headers=HEADERS)
-            r.raise_for_status()
-            with open(pdf_path, "wb") as f:
-                f.write(r.content)
-            print(f"✅ {short_id} downloaded")
-            return True
-        except Exception as e:
-            print(f"❌ Retry {attempt+1} for {short_id}: {e}")
-            time.sleep(RETRY_DELAY)
-    print(f"❌ {short_id} failed PDF download")
-    return False
+        # Download PDF with retries
+        for attempt in range(RETRY_COUNT + 1):
+            try:
+                resp = requests.get(pdf_url, headers=HEADERS, timeout=30)
+                resp.raise_for_status()
+                with open(pdf_path, "wb") as f:
+                    f.write(resp.content)
+                print(f"✅ Downloaded {short_id}")
+                return True
+            except Exception as e:
+                if attempt < RETRY_COUNT:
+                    print(f"❌ Download error ({short_id}), retry {attempt+1}/{RETRY_COUNT}: {e}")
+                    time.sleep(RETRY_DELAY)
+                    continue
+                print(f"❌ Failed to download {short_id}: {e}")
+                return False
+    except Exception as e:
+        print(f"❌ File operation failed for {short_id}: {e}")
+        return False
 
 def main():
+    # Initialize log
+    with open(LOG_PATH, "w") as f:
+        f.write("filename,publication_date,download_time,primary_topic_id,primary_topic_name\n")
+
+    total_downloaded = 0
     cursor = "*"
-    total = 0
 
-    while total < DOWNLOAD_LIMIT:
-        url = build_url(cursor)
-        print(f"📡 Fetching: {url}")
-        r = requests.get(url, timeout=60, headers=HEADERS)
+    try:
+        while total_downloaded < DOWNLOAD_LIMIT:
+            url = build_url(cursor)
+            print(f"🔍 Fetching: {url}")
 
-        if r.status_code == 403 or r.status_code == 400:
-            print(f"❌ HTTP {r.status_code}. Full response:")
-            print(r.text)
-            break
-
-        r.raise_for_status()
-        data = r.json()
-
-        for work in data["results"]:
-            work_id = work["id"]
-            if already_downloaded(work_id):
-                continue
-            pdf_url = get_pdf_url(work)
-            if not pdf_url:
-                continue
-            if download(work, pdf_url):
-                total += 1
-            if total >= DOWNLOAD_LIMIT:
+            try:
+                response = requests.get(url, headers=HEADERS, timeout=60)
+                response.raise_for_status()
+                data = response.json()
+            except Exception as e:
+                print(f"❌ API request failed: {e}")
                 break
 
-        cursor = data.get("meta", {}).get("next_cursor")
-        if not cursor:
-            break
+            results = data.get("results", [])
+            if not results:
+                break
 
-    print(f"\n✅ Finished. {total} items downloaded.")
-    pg_conn.close()
+            for work in results:
+                if total_downloaded >= DOWNLOAD_LIMIT:
+                    break
+
+                if already_downloaded(work["id"]):
+                    continue
+
+                if download_paper(work):
+                    pt = work.get("primary_topic") or {}
+                    pt_id = pt.get("id", "")
+                    pt_name = pt.get("display_name", "")
+                    with open(LOG_PATH, "a") as f:
+                        f.write(
+                            f"{work['id'].split('/')[-1]}.pdf,"
+                            f"{work.get('publication_date', '')},"
+                            f"{datetime.now().isoformat()},"
+                            f"{pt_id},{pt_name}\n"
+                        )
+                    total_downloaded += 1
+
+            cursor = data.get("meta", {}).get("next_cursor")
+            if not cursor:
+                break
+    finally:
+        pg_conn.close()
+
+    print(f"\n🎉 Finished. Downloaded {total_downloaded} papers.")
+    print(f"📊 Log saved to: {LOG_PATH}")
 
 if __name__ == "__main__":
     main()

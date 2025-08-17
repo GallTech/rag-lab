@@ -1,1 +1,0 @@
-rm -v /home/mike/staging/metadata/* /home/mike/staging/pdfs/*

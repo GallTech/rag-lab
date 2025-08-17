@@ -27,7 +27,7 @@ This deliberate 1:1 mapping provides:
 | 192.168.0.18  | lab-1-monitoring   | Prometheus, Grafana, Alertmanager |
 
 
-# Project Timeline (2025–2027)
+## Project Timeline (2025–2027)
 
 | Dates              | Project                          | Notes                                                                 |
 |--------------------|----------------------------------|-----------------------------------------------------------------------|

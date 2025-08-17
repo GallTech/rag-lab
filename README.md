@@ -67,7 +67,7 @@ Where:
 
 ## Infrastructure  
 
-Hosted on **Proxmox** (Minisforum UM890 Pro):  
+Hosted on a Minisforum UM890 Pro running Proxmox  
 - Ryzen 9 8945HS  
 - 64 GB DDR5 RAM  
 - 2 TB NVMe  

@@ -80,7 +80,23 @@ Where:
 Hosted on a Minisforum UM890 Pro running Proxmox  
 - Ryzen 9 8945HS  
 - 64 GB DDR5 RAM  
-- 2 TB NVMe  
+- 2 TB NVMe
+
+## RAG CLI — Knowledge Repository Manager
+
+I'm working on centralising the utilities I've build into a CLI. This will enable users to add standalone documents to the system, experiment with download JSON filters and explore the repository. 
+
+- `rag testfilter` — Preview OpenAlex filter results (count, sample titles).  
+- `rag count` — Show total results for the current filter.  
+- `rag fetch` — Fetch metadata pages to `/metadata/pages` (no PDFs).  
+- `rag download` — Download per-work metadata and PDFs into `/metadata` and `/pdf`.  
+- `rag add <pdf>` — Add a standalone PDF; enrich metadata via DOI/AI; validate and save.  
+- `rag validate` — Validate all JSON/PDF pairs; quarantine failures.  
+- `rag ingest` — Upsert validated works into Postgres.  
+- `rag dedupe` — Merge duplicates using IDs and heuristics.  
+- `rag status` — Show repository health (counts, quarantined files, last run info).
+
+
 
 ## Project Timeline (2025–2027)
 

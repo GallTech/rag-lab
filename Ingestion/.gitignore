@@ -1,3 +1,10 @@
 Ingestion/src/logs/*.csv
 Ingestion/src/logs/*.csv
 Ingestion/src/logs/*.csv
+
+
+# Python
+venv/
+.env/
+*.pyc
+__pycache__/

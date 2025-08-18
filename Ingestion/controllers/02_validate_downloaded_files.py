@@ -1,16 +1,11 @@
 import sys
 import os
 
-# === Adjust path to import local modules ===
-CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
-FUNCTIONS_DIR = os.path.join(CURRENT_DIR, "adapters")
-sys.path.append(FUNCTIONS_DIR)
-
 # === Import validation functions and delete helper ===
-from ValidateJson import validate_all_json_files
-from ValidatePdf import validate_all_pdfs
-from delete_pdf_json import delete_pair
-from DocumentConsistencyCheck import check_and_delete_orphans 
+from adapters.validate_json import validate_all_json_files
+from adapters.validate_pdf import validate_all_pdfs
+from adapters.delete_pdf_json import delete_pair
+from adapters.document_consistency_check import check_and_delete_orphans
 
 # === Constants ===
 SCHEMA_PATH = "/home/mike/rag-lab/Ingestion/schemas/openalex_work.schema.json"

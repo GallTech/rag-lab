@@ -7,7 +7,7 @@ from datetime import datetime
 from urllib.parse import urlencode, urlparse
 
 # === Config Paths ===
-CONFIG_PATH = "../../config/openalex_config.json"
+CONFIG_PATH = "/home/mike/rag-lab/Ingestion/config/openalex_config.json"
 OUTPUT_DIR = os.path.expanduser("~/staging")
 META_DIR = os.path.join(OUTPUT_DIR, "metadata")
 PDF_DIR = os.path.join(OUTPUT_DIR, "pdfs")

@@ -14,7 +14,8 @@ The lab ingests ~200,000 AI research papers from **SharePoint**, **OpenAlex**, a
 - **LangChain-based orchestration**: Dynamic context assembly & prompt engineering.  
 
 ## Current Ingestion Status
-<img width="505" height="111" alt="image" src="https://github.com/user-attachments/assets/3adb509e-751a-4f38-b807-72ea41cc41de" />
+<img width="491" height="101" alt="image" src="https://github.com/user-attachments/assets/cebb8189-4339-4546-b407-3b9fb965dcb0" />
+
 
 
 

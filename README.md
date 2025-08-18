@@ -74,14 +74,23 @@ Hosted on a Minisforum UM890 Pro running Proxmox
 
 ## Project Timeline (2025–2027)
 
-| Dates              | Project                          | Notes                                                                 |
-|--------------------|----------------------------------|-----------------------------------------------------------------------|
-| Jun - Aug 2025     | Core RAG Build (on-prem)         | Nearly complete, already processing ~200k docs                        |
-| Sept - Dec 2025    | SharePoint ACL RAG               | End-to-end permission flow; changes in SharePoint must propagate fast |
-| Sept - Dec 2025    | Kubernetes/Terraform/Ansible     | Refactor existing code              |
-| Jan - Apr 2026     | Metrics & Golden Set             | Optimise dashboards & observability stack                      |
-| May - Aug 2026 | Domain LLM (AI Research) | Fine-tune pipeline on AI/ML research corpora; experiment with domain-adapted summarisation & retrieval |
-| Sept - Dec 2026    | Graph Retriever & Re-ranking     | Multi-hop, relationship-aware retrieval with Mistral-7B                 |
-| Jan - Jun 2027     | Cloud Migration                  | Full pipeline → AWS/GCP; hybrid homelab ↔ cloud; metric parity check  |
-| Jul - Dec 2027     | Cloud Land & Expand              | Cloud-native scaling, managed services, cost optimization             |
+| Dates           | Project                          | Notes                                                                 |
+|-----------------|----------------------------------|-----------------------------------------------------------------------|
+| Jun – Aug 2025  | Core RAG Build (hybrid: on-prem + cloud LLM) | Self-hosted ingestion, storage, retrieval; query LLM (ChatGPT) in cloud; ~200k docs |
+| Sept – Dec 2025 | SharePoint ACL RAG (hybrid)      | End-to-end permission flow; SharePoint in cloud, RAG infra on-prem; fast propagation of ACL changes |
+| Sept – Dec 2025 | Kubernetes/Terraform/Ansible (on-prem) | Refactor deployment of existing pipeline services into containerized + IaC form |
+| Jan – Apr 2026  | Metrics & Golden Set (on-prem)   | Optimise dashboards, observability stack, golden dataset evaluation; Grafana/Prometheus self-hosted |
+| May – Aug 2026  | Domain LLM (hybrid)              | Fine-tune pipeline on AI/ML research corpora (local GPUs + cloud training options); LoRA/adapters; prompt workflows |
+| Sept – Dec 2026 | Graph Retriever & Re-ranking (hybrid) | Multi-hop, relationship-aware retrieval with Mistral-7B (cloud); pipeline infra on-prem |
+| Jan – Jun 2027  | Cloud Migration (hybrid → cloud-native) | Migrate pipeline to AWS/GCP; hybrid homelab ↔ cloud; ensure metric parity during transition |
+| Jul – Dec 2027  | Cloud Land & Expand (cloud-native) | Fully cloud-based scaling, managed services, cost optimisation, cloud-first workloads |
+
+### Exploratory Areas
+
+- **Data Lineage Tracking**: OpenLineage for permission/change audits  
+- **Federated Learning**: Train models across homelab + cloud without raw data transfer  
+- **Homomorphic Encryption**: Secure processing of sensitive documents  
+- **RAGAS / LangSmith**: Benchmark retrieval quality beyond golden sets  
+- **Drift Detection**: Monitor embedding/model decay in production  
+
 

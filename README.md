@@ -13,7 +13,7 @@ The lab ingests ~200,000 AI research papers from **SharePoint**, **OpenAlex**, a
 - **Interchangeable components**: Ingestion, embedding, vector storage, retrieval orchestration, and LLM reasoning are decoupled.  
 - **LangChain-based orchestration**: Dynamic context assembly & prompt engineering.  
 
-## Current Ingestion Status 
+## Current Ingestion & Embedding Status 
 - PDFs in MinIO: 85987  
 - JSON metadata in PostgreSQL: 85987  
 - Distinct chunked papers: 63004  

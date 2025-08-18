@@ -84,7 +84,7 @@ Hosted on a Minisforum UM890 Pro running Proxmox
 
 ## RAG CLI — Knowledge Repository Manager
 
-I'm working on centralising the utilities I've build into a CLI. This will enable users to add standalone documents to the system, experiment with download JSON filters and explore the repository.  
+I'm working on centralising the utilities I've build into a CLI. As well as some basic management tasks, this will enable users to add standalone documents to the system, experiment with download JSON filters and explore the repository.  
 
 - `rag testfilter` — Preview OpenAlex filter results (count, sample titles). 
 - `rag count` — Show total results for the current filter.  

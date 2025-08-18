@@ -13,11 +13,10 @@ The lab ingests ~200,000 AI research papers from **SharePoint**, **OpenAlex**, a
 - **Interchangeable components**: Ingestion, embedding, vector storage, retrieval orchestration, and LLM reasoning are decoupled.  
 - **LangChain-based orchestration**: Dynamic context assembly & prompt engineering.  
 
-## Current Ingestion Status
+## Current Ingestion Status 
 <img width="491" height="101" alt="image" src="https://github.com/user-attachments/assets/cebb8189-4339-4546-b407-3b9fb965dcb0" />
 
-
-
+<sup>Mon Aug 18 25 12:36:13</sup>
 
 ## Project Structure  
 

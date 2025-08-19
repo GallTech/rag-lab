@@ -10,10 +10,6 @@ A Retrieval-Augmented Generation (RAG) system designed to ingest, embed, and que
 
 The lab ingests ~200,000 AI research papers from **SharePoint**, **OpenAlex**, and other sources. It extracts metadata and ACLs, and generates vector embeddings for retrieval-augmented LLM reasoning. Each week I will add the latest available papers. 
 
-- **Flexible LLM backends**: OpenAI’s ChatGPT, Google Gemini, or local models.  
-- **Interchangeable components**: Ingestion, embedding, vector storage, retrieval orchestration, and LLM reasoning are decoupled.  
-- **LangChain-based orchestration**: Dynamic context assembly & prompt engineering.  
-
 ## Current Ingestion & Embedding Status 
 - PDFs in MinIO: 85987  
 - JSON metadata in PostgreSQL: 85987  

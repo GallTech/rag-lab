@@ -44,59 +44,6 @@ This **1:1:1 mapping** enforces clear separation of concerns and makes it easy t
 | Monitoring       | lab-1-monitoring     | lab-1-monitoring         | Monitoring & Logging (Prometheus, Grafana, Alertmanager, Filebeat → Elasticsearch)             |
 
 
-## Retrieval Metrics
-These metrics run in the evaluation pipeline (Metrics & Golden Set stage) to measure how well the retriever (Qdrant + re-ranking) surfaces relevant documents, independent of the LLM.
-
-As I experiment with RAG pipelines, the challenge is tracing how changes to each stage affect overall performance. Metrics like these provide a starting point for systematically measuring and comparing those impacts.
-
-**Precision@k** - Fraction of retrieved documents that are relevant:
-
-$$
-Precision@k = \frac{1}{N}\sum_{i=1}^{N} \frac{|G_i \cap R_{i,k}|}{k}
-$$
-
-**Recall@k** - Percentage of queries where at least one relevant document appears in top-k results:
-
-$$
-Recall@k = \frac{1}{N}\sum_{i=1}^{N} \mathbb{1}[G_i \cap R_{i,k} \neq \emptyset]
-$$
-
-**Mean Reciprocal Rank (MRR@k)** - Average of reciprocal ranks of first relevant result:
-
-$$
-MRR@k = \frac{1}{N}\sum_{i=1}^{N} \frac{1}{rank_i}
-$$
-
-Where:
-- $G_i$ = Set of ground truth relevant IDs for query $i$
-- $R_{i,k}$ = Top-k retrieved IDs for query $i$
-- $\mathbb{1}[\cdot]$ = Indicator function (1 if true, 0 otherwise)
-- $rank_i$ = Position of first relevant result (∞ if none found)
-- $|\cdot|$ = Cardinality of set
-
-
-## Infrastructure  
-
-Hosted on a Minisforum UM890 Pro running Proxmox  
-- Ryzen 9 8945HS  
-- 64 GB DDR5 RAM  
-- 2 TB NVMe
-
-## RAG CLI — Knowledge Repository Manager
-
-I'm working on centralising the utilities I've build into a CLI. As well as some basic management tasks, this will enable users to add standalone documents to the system, experiment with download JSON filters and explore the repository.  
-
-- `rag testfilter` — Preview OpenAlex filter results (count, sample titles). 
-- `rag count` — Show total results for the current filter.  
-- `rag fetch` — Fetch metadata pages to `/metadata/pages` (no PDFs).  
-- `rag download` — Download per-work metadata and PDFs into `/metadata` and `/pdf`.  
-- `rag add <pdf>` — Add a standalone PDF; enrich metadata via DOI/AI; validate and save.  
-- `rag validate` — Validate all JSON/PDF pairs; quarantine failures.  
-- `rag ingest` — Upsert validated works into Postgres.  
-- `rag dedupe` — Merge duplicates using IDs and heuristics.  
-- `rag status` — Show repository health (counts, quarantined files, last run info).
-
-
 ## Project Timeline (2025–2027)
 
 | Dates           | Project                          | Notes                                                                 |
@@ -149,6 +96,58 @@ sequenceDiagram
     FastAPI-->>Maria: 10. 200 OK (filtered results)
 ```
 
+## Retrieval Metrics
+These metrics run in the evaluation pipeline (Metrics & Golden Set stage) to measure how well the retriever (Qdrant + re-ranking) surfaces relevant documents, independent of the LLM.
+
+As I experiment with RAG pipelines, the challenge is tracing how changes to each stage affect overall performance. Metrics like these provide a starting point for systematically measuring and comparing those impacts.
+
+**Precision@k** - Fraction of retrieved documents that are relevant:
+
+$$
+Precision@k = \frac{1}{N}\sum_{i=1}^{N} \frac{|G_i \cap R_{i,k}|}{k}
+$$
+
+**Recall@k** - Percentage of queries where at least one relevant document appears in top-k results:
+
+$$
+Recall@k = \frac{1}{N}\sum_{i=1}^{N} \mathbb{1}[G_i \cap R_{i,k} \neq \emptyset]
+$$
+
+**Mean Reciprocal Rank (MRR@k)** - Average of reciprocal ranks of first relevant result:
+
+$$
+MRR@k = \frac{1}{N}\sum_{i=1}^{N} \frac{1}{rank_i}
+$$
+
+Where:
+- $G_i$ = Set of ground truth relevant IDs for query $i$
+- $R_{i,k}$ = Top-k retrieved IDs for query $i$
+- $\mathbb{1}[\cdot]$ = Indicator function (1 if true, 0 otherwise)
+- $rank_i$ = Position of first relevant result (∞ if none found)
+- $|\cdot|$ = Cardinality of set
+
+
+## Infrastructure  
+
+Hosted on a Minisforum UM890 Pro running Proxmox  
+- Ryzen 9 8945HS  
+- 64 GB DDR5 RAM  
+- 2 TB NVMe
+
+
+## RAG CLI — Knowledge Repository Manager
+
+I'm working on centralising the utilities I've build into a CLI. As well as some basic management tasks, this will enable users to add standalone documents to the system, experiment with download JSON filters and explore the repository.  
+
+- `rag testfilter` — Preview OpenAlex filter results (count, sample titles). 
+- `rag count` — Show total results for the current filter.  
+- `rag fetch` — Fetch metadata pages to `/metadata/pages` (no PDFs).  
+- `rag download` — Download per-work metadata and PDFs into `/metadata` and `/pdf`.  
+- `rag add <pdf>` — Add a standalone PDF; enrich metadata via DOI/AI; validate and save.  
+- `rag validate` — Validate all JSON/PDF pairs; quarantine failures.  
+- `rag ingest` — Upsert validated works into Postgres.  
+- `rag dedupe` — Merge duplicates using IDs and heuristics.  
+- `rag status` — Show repository health (counts, quarantined files, last run info).
 
 ## Future Exploratory Areas
 
@@ -157,5 +156,3 @@ sequenceDiagram
 - **Homomorphic Encryption**: Secure processing of sensitive documents  
 - **RAGAS / LangSmith**: Benchmark retrieval quality beyond golden sets  
 - **Drift Detection**: Monitor embedding/model decay in production  
-
-

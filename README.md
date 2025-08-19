@@ -97,19 +97,57 @@ I'm working on centralising the utilities I've build into a CLI. As well as some
 - `rag status` — Show repository health (counts, quarantined files, last run info).
 
 
-
 ## Project Timeline (2025–2027)
 
 | Dates           | Project                          | Notes                                                                 |
 |-----------------|----------------------------------|-----------------------------------------------------------------------|
 | Jun – Aug 2025  | Core RAG Build (hybrid: on-prem + cloud LLM) | Self-hosted ingestion, storage, retrieval; query LLM (ChatGPT) in cloud; ~200k docs |
-| Sept – Dec 2025 | SharePoint ACL RAG (hybrid)      | End-to-end permission flow; SharePoint in cloud, RAG infra on-prem; fast propagation of ACL changes |
+| Sept – Dec 2025 | SharePoint Security Integration (hybrid)      | End-to-end permission flow; SharePoint in cloud, RAG infra on-prem; fast propagation of ACL changes |
 | Sept – Dec 2025 | Kubernetes/Terraform/Ansible (on-prem) | Refactor deployment of existing pipeline services into containerized + IaC form |
 | Jan – Apr 2026  | Metrics & Golden Set (on-prem)   | Optimise dashboards, observability stack, golden dataset evaluation; Grafana/Prometheus self-hosted |
 | May – Aug 2026  | Domain LLM (hybrid)              | Fine-tune pipeline on AI/ML research corpora (local GPUs + cloud training options); LoRA/adapters; prompt workflows |
 | Sept – Dec 2026 | Graph Retriever & Re-ranking (hybrid) | Multi-hop, relationship-aware retrieval with Mistral-7B (cloud); pipeline infra on-prem |
 | Jan – Jun 2027  | Cloud Migration (hybrid → cloud-native) | Migrate pipeline to AWS/GCP; hybrid homelab ↔ cloud; ensure metric parity during transition |
 | Jul – Dec 2027  | Cloud Land & Expand (cloud-native) | Fully cloud-based scaling, managed services, cost optimisation, cloud-first workloads |
+
+## SharePoint Security Integration
+This is a challenging phase. I need to implement end-to-end permission flow with:
+• RBAC Integration: Map Azure AD groups to Qdrant/PostgreSQL document-level access controls. Use OpenPolicyAgent or custom logic to enforce read/no-access per user/group.
+• MinIO Hardening:
+- TLS via certbot for all MinIO endpoints (internal + external).
+- Bucket policies scoped to RBAC roles (e.g., s3:GetObject only for users with SharePoint read ACLs).
+- Server-side encryption (SSE-S3) for stored PDFs.
+• ACL Propagation: Event-driven sync (Azure Event Grid → Lambda) to update Qdrant/PostgreSQL permissions within 5s of SharePoint changes.
+
+**Here’s my current thinking about this implementation (subject to change).**
+
+Auth: Maria logs in, and her Azure AD groups (e.g., Staff_RW) are embedded in a signed JWT.
+
+Enforcement: The RAG system checks these groups against document ACLs in PostgreSQL, then filters Qdrant results to only documents she’s allowed to see.
+
+Guarantee: Even if "salaries" matches restricted Management docs, the system excludes them—security is enforced at every layer (API, DB, and vector search).
+
+This ensures Maria never leaks unauthorised data, while maintaining low-latency retrieval.
+
+```mermaid
+sequenceDiagram
+    participant Maria
+    participant AzureAD
+    participant FastAPI
+    participant PostgreSQL
+    participant Qdrant
+    Maria->>AzureAD: 1. Login (OAuth2)
+    AzureAD->>Maria: 2. JWT (contains groups: ["Staff_RW"])
+    Maria->>FastAPI: 3. GET /query?q=salaries (Auth: Bearer JWT)
+    FastAPI->>AzureAD: 4. Introspect token
+    AzureAD-->>FastAPI: 5. Valid (groups: ["Staff_RW"])
+    FastAPI->>PostgreSQL: 6. Get doc ACLs WHERE groups ∩ ["Staff_RW"]
+    PostgreSQL-->>FastAPI: 7. {allowed_doc_ids: ["doc123"]}
+    FastAPI->>Qdrant: 8. Search(query="salaries", filter=doc_id ∈ ["doc123"])
+    Qdrant-->>FastAPI: 9. Results (only Staff docs)
+    FastAPI-->>Maria: 10. 200 OK (filtered results)
+```
+
 
 ### Exploratory Areas
 

@@ -110,16 +110,17 @@ I'm working on centralising the utilities I've build into a CLI. As well as some
 | Jan – Jun 2027  | Cloud Migration (hybrid → cloud-native) | Migrate pipeline to AWS/GCP; hybrid homelab ↔ cloud; ensure metric parity during transition |
 | Jul – Dec 2027  | Cloud Land & Expand (cloud-native) | Fully cloud-based scaling, managed services, cost optimisation, cloud-first workloads |
 
-## SharePoint Security Integration
-This is a challenging phase. I need to implement end-to-end permission flow with:
-• RBAC Integration: Map Azure AD groups to Qdrant/PostgreSQL document-level access controls. Use OpenPolicyAgent or custom logic to enforce read/no-access per user/group.
-• MinIO Hardening:
-- TLS via certbot for all MinIO endpoints (internal + external).
-- Bucket policies scoped to RBAC roles (e.g., s3:GetObject only for users with SharePoint read ACLs).
-- Server-side encryption (SSE-S3) for stored PDFs.
-• ACL Propagation: Event-driven sync (Azure Event Grid → Lambda) to update Qdrant/PostgreSQL permissions within 5s of SharePoint changes.
+## SharePoint Online Security Integration
+This is a challenging phase. Ideally I hope to update Qdrant/PostgreSQL permissions within 5s of SharePoint changes. One possible mechanism is event-driven sync via [Graph change notifications → Event Grid → Lambda].
 
-**Here’s my current thinking about this implementation (subject to change).**
+I need to implement end-to-end permission flow with:
+- RBAC Integration: Map Azure AD groups to Qdrant/PostgreSQL document-level access controls. Use OpenPolicyAgent or custom logic to enforce read/no-access per user/group.
+- MinIO Hardening:
+  - TLS via certbot for all MinIO endpoints (internal + external).
+  - Bucket policies scoped to RBAC roles (e.g., s3:GetObject only for users with SharePoint read ACLs).
+  - Server-side encryption (SSE-S3) for stored PDFs.
+
+Here’s my current thinking about this implementation (subject to change).
 
 Auth: Maria logs in, and her Azure AD groups (e.g., Staff_RW) are embedded in a signed JWT.
 
@@ -149,7 +150,7 @@ sequenceDiagram
 ```
 
 
-### Exploratory Areas
+### Future Exploratory Areas
 
 - **Data Lineage Tracking**: OpenLineage for permission/change audits  
 - **Federated Learning**: Train models across homelab + cloud without raw data transfer  

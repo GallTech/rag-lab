@@ -57,7 +57,7 @@ This **1:1:1 mapping** enforces clear separation of concerns and makes it easy t
 | Jan – Jun 2027  | Cloud Migration (hybrid → cloud-native) | Migrate pipeline to AWS/GCP; hybrid homelab ↔ cloud; ensure metric parity during transition |
 | Jul – Dec 2027  | Cloud Land & Expand (cloud-native) | Fully cloud-based scaling, managed services, cost optimisation, cloud-first workloads |
 
-## SharePoint Online Security Integration
+## SharePoint Online Security Integration (Sept – Dec 2025)
 This is a challenging phase. Ideally I hope to update Qdrant/PostgreSQL permissions within 5s of SharePoint changes. One possible mechanism is event-driven sync via Graph change notifications (Graph → Event Grid → Lambda → RAG System).
 
 I need to implement end-to-end permission flow with:

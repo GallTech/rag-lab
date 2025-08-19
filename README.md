@@ -48,7 +48,7 @@ This **1:1:1 mapping** enforces clear separation of concerns and makes it easy t
 
 | Dates           | Project                          | Notes                                                                 |
 |-----------------|----------------------------------|-----------------------------------------------------------------------|
-| Jun – Aug 2025  | Core RAG Build (hybrid: on-prem + cloud LLM) | Self-hosted ingestion, storage, retrieval; query LLM (ChatGPT) in cloud; ~200k docs |
+| Jun – Aug 2025  | Core RAG Build (hybrid: on-prem + cloud LLM) | Self-hosted ingestion, storage, retrieval; query LLM (ChatGPT) in cloud; ~200k docs; basic CLI |
 | Sept – Dec 2025 | SharePoint Security Integration (hybrid)      | End-to-end permission flow; SharePoint in cloud, RAG infra on-prem; fast propagation of ACL changes |
 | Sept – Dec 2025 | Kubernetes/Terraform/Ansible (on-prem) | Refactor deployment of existing pipeline services into containerized + IaC form |
 | Jan – Apr 2026  | Metrics & Golden Set (on-prem)   | Optimise dashboards, observability stack, golden dataset evaluation; Grafana/Prometheus self-hosted |

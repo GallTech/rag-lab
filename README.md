@@ -34,7 +34,7 @@ This **1:1:1 mapping** enforces clear separation of concerns and makes it easy t
 
 | Repo Folder       | VM Name              | Branch Name              | Description                                                      |
 |------------------|----------------------|--------------------------|------------------------------------------------------------------|
-| Management       | lab-1-mgmt1          | lab-1-mgmt1              | Management & orchestration (Terraform, Ansible, backups)         |
+| Management       | lab-1-mgmt1          | lab-1-mgmt1              | Management & orchestration (Terraform, Ansible, backups); Logging (Filebeat → Elasticsearch → Grafana)         |
 | Database         | lab-1-db1            | lab-1-db1                | Metadata (PostgreSQL) + Vector DB (Qdrant)                       |
 | EmbedGeneration  | lab-1-embed-generator| lab-1-embed-generator    | Local model: nomic-embed-text-v1                                 |
 | Ingestion        | lab-1-ingestion      | lab-1-ingestion          | Data ingestion (SharePoint + OpenAlex pipelines)                 |

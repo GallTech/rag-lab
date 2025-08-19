@@ -36,12 +36,12 @@ This **1:1:1 mapping** enforces clear separation of concerns and makes it easy t
 |------------------|----------------------|--------------------------|------------------------------------------------------------------|
 | Management       | lab-1-mgmt1          | lab-1-mgmt1              | Management & orchestration (Terraform, Ansible, backups)         |
 | Database         | lab-1-db1            | lab-1-db1                | Metadata (PostgreSQL) + Vector DB (Qdrant)                       |
-| EmbedGeneration  | lab-1-embed-generator| lab-1-embed-generator    | Local model: nomic-embed-text-v1                                 |
+| EmbedGeneration  | lab-1-embed-generator| lab-1-embed-generator    | Embedding Service (currently: nomic-embed-text-v1)               |
 | Ingestion        | lab-1-ingestion      | lab-1-ingestion          | Data ingestion (SharePoint + OpenAlex pipelines)                 |
-| UI               | lab-1-ui             | lab-1-ui                 | UI layer (Streamlit, React, TypeScript)                          |
+| UI               | lab-1-ui             | lab-1-ui                 | UI layer (Prototyping: Streamlit; Prod: React + TypeScript)      |
 | Retrieval        | lab-1-retrieval      | lab-1-retrieval          | FastAPI retrieval microservice + LangChain orchestration         |
 | Storage          | lab-1-storage01      | lab-1-storage01          | Object storage (MinIO)                                           |
-| Monitoring       | lab-1-monitoring     | lab-1-monitoring         | Monitoring stack (Prometheus, Grafana, Alertmanager); Logging (Filebeat → Elasticsearch → Grafana)             |
+| Monitoring       | lab-1-monitoring     | lab-1-monitoring         | Monitoring & Logging (Prometheus, Grafana, Alertmanager, Filebeat → Elasticsearch)             |
 
 
 ## Retrieval Metrics

@@ -51,7 +51,7 @@ This **1:1:1 mapping** enforces clear separation of concerns and makes it easy t
 | Jun – Aug 2025  | Core RAG Build (hybrid: on-prem + cloud LLM) | Self-hosted ingestion, storage, retrieval; query LLM (ChatGPT) in cloud; ~200k docs; basic CLI |
 | Sept – Dec 2025 | SharePoint Security Integration (hybrid)      | End-to-end permission flow; SharePoint in cloud, RAG infra on-prem; fast propagation of ACL changes |
 | Sept – Dec 2025 | Kubernetes/Terraform/Ansible (on-prem) | Refactor deployment of existing pipeline services into containerized + IaC form |
-| Jan – Apr 2026  | Metrics & Golden Set (on-prem)   | Optimise dashboards, observability stack, golden dataset evaluation; Grafana/Prometheus self-hosted |
+| Jan – Apr 2026  | Metrics & Golden Set (on-prem)   | Optimise dashboards, observability stack, golden dataset evaluation; Grafana/Prometheus; Build evaluation pipeline with retrieval quality metrics (Precision@k, Recall@k, MRR@k, etc.|
 | May – Aug 2026  | Domain LLM (hybrid)              | Fine-tune pipeline on AI/ML research corpora (local GPUs + cloud training options); LoRA/adapters; prompt workflows |
 | Sept – Dec 2026 | Graph Retriever & Re-ranking (hybrid) | Multi-hop, relationship-aware retrieval with Mistral-7B (cloud); pipeline infra on-prem |
 | Jan – Jun 2027  | Cloud Migration (hybrid → cloud-native) | Migrate pipeline to AWS/GCP; hybrid homelab ↔ cloud; ensure metric parity during transition |
@@ -95,37 +95,6 @@ sequenceDiagram
     Qdrant-->>FastAPI: 9. Results (only Staff docs)
     FastAPI-->>Maria: 10. 200 OK (filtered results)
 ```
-
-## Retrieval Metrics
-These metrics run in the evaluation pipeline (Metrics & Golden Set stage) to measure how well the retriever (Qdrant + re-ranking) surfaces relevant documents, independent of the LLM.
-
-As I experiment with RAG pipelines, the challenge is tracing how changes to each stage affect overall performance. Metrics like these provide a starting point for systematically measuring and comparing those impacts.
-
-**Precision@k** - Fraction of retrieved documents that are relevant:
-
-$$
-Precision@k = \frac{1}{N}\sum_{i=1}^{N} \frac{|G_i \cap R_{i,k}|}{k}
-$$
-
-**Recall@k** - Percentage of queries where at least one relevant document appears in top-k results:
-
-$$
-Recall@k = \frac{1}{N}\sum_{i=1}^{N} \mathbb{1}[G_i \cap R_{i,k} \neq \emptyset]
-$$
-
-**Mean Reciprocal Rank (MRR@k)** - Average of reciprocal ranks of first relevant result:
-
-$$
-MRR@k = \frac{1}{N}\sum_{i=1}^{N} \frac{1}{rank_i}
-$$
-
-Where:
-- $G_i$ = Set of ground truth relevant IDs for query $i$
-- $R_{i,k}$ = Top-k retrieved IDs for query $i$
-- $\mathbb{1}[\cdot]$ = Indicator function (1 if true, 0 otherwise)
-- $rank_i$ = Position of first relevant result (∞ if none found)
-- $|\cdot|$ = Cardinality of set
-
 
 ## Infrastructure  
 

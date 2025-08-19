@@ -120,7 +120,7 @@ I need to implement end-to-end permission flow with:
   - Bucket policies scoped to RBAC roles (e.g., s3:GetObject only for users with SharePoint read ACLs).
   - Server-side encryption (SSE-S3) for stored PDFs.
 
-Here’s my current thinking about this implementation (subject to change).
+Here’s my current thinking about this implementation from a user perspective (assuming I've already figured out the permissions sync challenge).
 
 Auth: Maria logs in, and her Azure AD groups (e.g., Staff_RW) are embedded in a signed JWT.
 

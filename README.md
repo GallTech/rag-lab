@@ -150,7 +150,7 @@ sequenceDiagram
 ```
 
 
-### Future Exploratory Areas
+## Future Exploratory Areas
 
 - **Data Lineage Tracking**: OpenLineage for permission/change audits  
 - **Federated Learning**: Train models across homelab + cloud without raw data transfer  

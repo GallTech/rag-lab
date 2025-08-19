@@ -3,9 +3,10 @@
 A Retrieval-Augmented Generation (RAG) system designed to ingest, embed, and query ~200,000 Artificial Intelligence research papers.
 
 ## Project Goals
-1.	Hands-on learning - Build my first non-trivial Linux software project, gaining practical experience with Python, Bash, GitHub, monitoring, and related tooling.
-2.	Deep dive into RAG & AI - Explore the architecture, components, and best practices of retrieval-augmented generation systems.
-3.	Practical research assistant - Maintain a weekly-updated repository of the latest AI research, enriched through my RAG pipeline and queried via LLMs.
+1.	Hands-on learning: Build my first non-trivial Linux software project, gaining practical experience with Python, Bash, GitHub, monitoring, and related tooling.
+2.	Deep dive into RAG & AI: Explore the architecture, components, and best practices of retrieval-augmented generation systems.
+3.	Prompt engineering and user experience: Design intuitive interfaces and effective, measurable prompts. 
+4.	Practical research assistant: Maintain a weekly-updated repository of the latest AI research, enriched through my RAG pipeline and queried via LLMs.
 
 The lab ingests ~200,000 AI research papers from **SharePoint**, **OpenAlex**, and other sources. It extracts metadata and ACLs, and generates vector embeddings for retrieval-augmented LLM reasoning. Each week I will add the latest available papers. 
 
@@ -49,15 +50,17 @@ This **1:1:1 mapping** enforces clear separation of concerns and makes it easy t
 | Dates           | Project                          | Notes                                                                 |
 |-----------------|----------------------------------|-----------------------------------------------------------------------|
 | Jun – Aug 2025  | Core RAG Build (hybrid: on-prem + cloud LLM) | Self-hosted ingestion, storage, retrieval; query LLM (ChatGPT) in cloud; ~200k docs; basic CLI |
-| Sept – Dec 2025 | SharePoint Security Integration (hybrid)      | End-to-end permission flow; SharePoint in cloud, RAG infra on-prem; fast propagation of ACL changes |
-| Sept – Dec 2025 | Kubernetes/Terraform/Ansible (on-prem) | Refactor deployment of existing pipeline services into containerized + IaC form |
-| Jan – Apr 2026  | Metrics & Golden Set (on-prem)   | Optimise dashboards, observability stack, golden dataset evaluation; Grafana/Prometheus; Build evaluation pipeline with retrieval quality metrics (Precision@k, Recall@k, MRR@k, etc)|
-| May – Aug 2026  | Domain LLM (hybrid)              | Fine-tune pipeline on AI/ML research corpora (local GPUs + cloud training options); LoRA/adapters; prompt workflows |
-| Sept – Dec 2026 | Graph Retriever & Re-ranking (hybrid) | Multi-hop, relationship-aware retrieval with Mistral-7B (cloud); pipeline infra on-prem |
-| Jan – Jun 2027  | Cloud Migration (hybrid → cloud-native) | Migrate pipeline to AWS/GCP; hybrid homelab ↔ cloud; ensure metric parity during transition |
+| Sept – Oct 2025 | Prompt Engineering & User Experience | Design intuitive interfaces, prototype user flows, and build first prompt libraries |
+| Nov 2025 – Jan 2026 | SharePoint Security Integration (hybrid) | End-to-end permission flow; SharePoint in cloud, RAG infra on-prem; fast propagation of ACL changes |
+| Feb – Apr 2026  | Kubernetes/Terraform/Ansible (on-prem) | Refactor deployment of existing pipeline services into containerized + IaC form |
+| May – Jul 2026  | Metrics & Golden Set (on-prem)   | Optimise dashboards, observability stack, golden dataset evaluation; Grafana/Prometheus; Build evaluation pipeline with retrieval quality metrics (Precision@k, Recall@k, MRR@k, etc) |
+| Aug – Oct 2026  | Domain LLM (hybrid)              | Fine-tune pipeline on AI/ML research corpora (local GPUs + cloud training options); LoRA/adapters; prompt workflows |
+| Nov 2026 – Jan 2027 | Graph Retriever & Re-ranking (hybrid) | Multi-hop, relationship-aware retrieval with Mistral-7B (cloud); pipeline infra on-prem |
+| Feb – Jun 2027  | Cloud Migration (hybrid → cloud-native) | Migrate pipeline to AWS/GCP; hybrid homelab ↔ cloud; ensure metric parity during transition |
 | Jul – Dec 2027  | Cloud Land & Expand (cloud-native) | Fully cloud-based scaling, managed services, cost optimisation, cloud-first workloads |
 
-## SharePoint Online Security Integration (Sept – Dec 2025)
+
+## SharePoint Online Security Integration (Nov 2025 – Jan 2026)
 This is a challenging phase. Ideally I hope to update Qdrant/PostgreSQL permissions within 5s of SharePoint changes. One possible mechanism is event-driven sync via Graph change notifications (Graph → Event Grid → Lambda → RAG System).
 
 I need to implement end-to-end permission flow with:

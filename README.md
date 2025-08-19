@@ -128,7 +128,7 @@ Enforcement: The RAG system checks these groups against document ACLs in Postgre
 
 Guarantee: Even if "salaries" matches restricted Management docs, the system excludes them—security is enforced at every layer (API, DB, and vector search).
 
-This ensures Maria never leaks unauthorised data, while maintaining low-latency retrieval.
+This ensures Maria never accesses unauthorised data, while maintaining low-latency retrieval. A key part of this work will be automated testing to ensure the integrity of this mechanism. 
 
 ```mermaid
 sequenceDiagram

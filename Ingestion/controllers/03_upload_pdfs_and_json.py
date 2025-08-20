@@ -17,21 +17,17 @@ PG_PASSWORD = os.getenv("PG_PASSWORD")
 
 PDF_DIR = os.path.expanduser("~/staging/pdfs")
 META_DIR = os.path.expanduser("~/staging/metadata")
-LOG_FILE = "upload.log"
 
 # === Check env ===
 if not PG_PASSWORD:
     raise RuntimeError("❌ PG_PASSWORD environment variable not set.")
 
-# === Setup Logging ===
+# === Setup Logging (stdout only) ===
 logging.basicConfig(
-    filename=LOG_FILE,
     level=logging.INFO,
     format="%(asctime)s [%(levelname)s] %(message)s",
+    handlers=[logging.StreamHandler()]  # only stdout
 )
-console = logging.StreamHandler()
-console.setLevel(logging.INFO)
-logging.getLogger().addHandler(console)
 
 # === Clients ===
 s3 = boto3.client(

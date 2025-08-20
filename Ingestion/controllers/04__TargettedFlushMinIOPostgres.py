@@ -1,4 +1,19 @@
 #!/usr/bin/env python3
+
+"""
+Purge low-relevance OpenAlex works from PostgreSQL and MinIO.
+
+This script calculates each works AI concept score (from the 'concepts'
+field in full_raw JSON), compares against a threshold (default 0.4), and
+deletes those below it.
+
+Supports dry-run (--whatif) and execution (--execute).
+Deletion order: MinIO PDFs first, then Postgres rows.
+Qdrant is not touched.
+python3 purge_ai_low.py --threshold 0.35
+
+"""
+
 import os
 import sys
 import argparse
@@ -6,6 +21,7 @@ from typing import List, Tuple, Dict
 
 import boto3
 import psycopg2
+
 
 # === Config (env overrides allowed) ===
 MINIO_ENDPOINT = os.getenv("MINIO_ENDPOINT", "http://192.168.0.17:9000")

@@ -55,7 +55,66 @@ This extends the CPU tiering with **RAM rules** that keep core services steady w
 
 ---
 
-## Proxmox Commands (examples)
+## Proxmox Commands
+# VM CPU Allocation Policy
+
+## Tiers
+- **Tier A – Batch / Hog**
+  - Purpose: Long-running, CPU-heavy background jobs (embedding, training).
+  - vCPU: 14 (during batch runs).
+  - CPU share: 1024 (`--cpuunits`).
+  - Limit: `--cpulimit` equal to cores.
+  - Inside VM: run processes with `nice -n 10 ionice -c2 -n7` to be polite.
+
+- **Tier B – Active Services**
+  - Purpose: Core online services that must stay responsive (DB, ingestion, retrieval).
+  - vCPU: 4 each.
+  - CPU share: 2048 (`--cpuunits`) → higher priority during contention.
+  - Limit: `--cpulimit` equal to cores.
+
+- **Tier C – Baseline**
+  - Purpose: Supporting services (management, UI, monitoring, storage, train placeholder).
+  - vCPU: 2 each.
+  - CPU share: 512 (`--cpuunits`) → lower priority.
+  - Limit: `--cpulimit` equal to cores.
+
+## Current Mapping
+- **Tier A**
+  - 9103 – `lab-1-embed01`
+
+- **Tier B**
+  - 9102 – `lab-1-db01`
+  - 9104 – `lab-1-ingestion01`
+  - 9106 – `lab-1-retrieval01`
+
+- **Tier C**
+  - 9101 – `lab-1-mgmt01`
+  - 9105 – `lab-1-ui01`
+  - 9107 – `lab-1-train01`
+  - 9108 – `lab-1-storage01`
+  - 9109 – `lab-1-monitoring01`
+
+## Rationale
+- Keeps **core services** responsive under load.
+- Embedding can saturate CPU but stays “polite”.
+- Baseline VMs stay small but functional.
+- Provides a repeatable model for future VMs.
+
+## Oversubscription
+- Total vCPUs: 36
+- Physical cores: 16
+- Oversub factor: ~2.25×
+
+This is acceptable during embedding runs.  
+**After batch completes**: reduce `lab-1-embed01` to 8–10 vCPU, lowering oversub to ~1.7×.
+
+## Monitoring
+- Host pressure:  
+  `uptime; mpstat -P ALL 2 5`
+- Per-VM CPU use:  
+  `qm monitor <vmid> info cpus`
+
+  
 
 ### Set memory + ballooning
 ```bash

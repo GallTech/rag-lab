@@ -2,8 +2,6 @@
 
 All of this is very much a work in-progress as I learn.
 
----
-
 ## Memory Tiers
 
 ### **Tier A — Batch / Hog (embedding, heavy training)**
@@ -35,7 +33,6 @@ All of this is very much a work in-progress as I learn.
 - **Ballooning:** **Enabled**
 - **Swap (guest):** default is fine; `vm.swappiness=30–60`
 
----
 
 ## Current Fleet —  Memory Settings
 
@@ -53,7 +50,6 @@ All of this is very much a work in-progress as I learn.
 
 > Rule of thumb: **Tier B (DB)** either disables ballooning or sets **high min**. Others keep ballooning **on** with sensible mins.
 
----
 
 # VM CPU Allocation Policy
 

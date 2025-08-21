@@ -37,7 +37,7 @@ This extends the CPU tiering with **RAM rules** that keep core services steady w
 
 ---
 
-## Current Fleet — Suggested Memory Settings
+## Current Fleet —  Memory Settings
 
 | VMID | Name                   | Tier | vCPU | **Max RAM** | **Min RAM (balloon)** | Notes |
 |-----:|------------------------|:----:|:----:|------------:|----------------------:|------|

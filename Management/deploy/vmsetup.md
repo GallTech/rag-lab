@@ -55,7 +55,6 @@ All of this is very much a work in-progress as I learn.
 
 ---
 
-## Proxmox Commands
 # VM CPU Allocation Policy
 
 ## Tiers
@@ -115,7 +114,7 @@ This is acceptable during embedding runs.
   `qm monitor <vmid> info cpus`
 
   
-
+## Proxmox Commands
 ### Set memory + ballooning
 ```bash
 # Tier A (embed)

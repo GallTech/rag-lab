@@ -1,6 +1,6 @@
 # VM Resource Policy — CPU + **Memory** Tiers
 
-This extends the CPU tiering with **RAM rules** that keep core services steady while allowing headroom for batch work.
+All of this is very much a work in-progress as I learn how these things work and respond to work.
 
 ---
 

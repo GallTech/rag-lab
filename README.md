@@ -101,7 +101,7 @@ Hosted on a Minisforum UM890 Pro running Proxmox
 - Ryzen 9 8945HS  
 - 64 GB DDR5 RAM  
 - 2 TB NVMe
-
+[Click here to read about my ongoing efforts to manage CPU & RAM allocation](https://github.com/lanternadev/rag-lab/blob/main/Management/deploy/vmsetup.md)
 
 ## RAG CLI — Knowledge Repository Manager
 

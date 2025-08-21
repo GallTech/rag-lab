@@ -11,14 +11,14 @@ A Retrieval-Augmented Generation (RAG) system designed to ingest, embed, and que
 The lab ingests ~200,000 AI research papers from **SharePoint**, **OpenAlex**, and other sources. It extracts metadata and ACLs, and generates vector embeddings for retrieval-augmented LLM reasoning. Each week I will add the latest available papers. 
 
 ## Current Ingestion & Embedding Status 
-- PDFs in MinIO: 85987  
-- JSON metadata in PostgreSQL: 85987  
-- Distinct chunked papers: 63004  
-- Papers with ANY chunk embedded: 8467  
-- Fully embedded papers (ALL chunks): 8466  
-- Any-embed progress: 8467/63004 (13.44%) — Remaining (any): 54537  
-- Full-embed progress: 8466/63004 (13.44%) — Remaining (full): 54538  
-<sup>18 August 2025 12:36:13</sup>
+- PDFs in MinIO: 105688  
+- JSON metadata in PostgreSQL: 105688  
+- Distinct chunked papers: 105688  
+- Papers with ANY chunk embedded: 17524  
+- Fully embedded papers (ALL chunks): 17523  
+- Any-embed progress: 17524/105688 (16.58%) — Remaining (any): 88164
+- Full-embed progress: 17523/105688 (16.58%) — Remaining (full): 88165
+<sup>21 August 2025 03:28:41</sup>
 
 ## Project Structure  
 

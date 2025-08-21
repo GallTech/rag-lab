@@ -1,6 +1,6 @@
 # VM Resource Policy — CPU + **Memory** Tiers
 
-All of this is very much a work in-progress as I learn how these things work and respond to work.
+All of this is very much a work in-progress as I learn.
 
 ---
 

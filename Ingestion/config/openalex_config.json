@@ -2,12 +2,15 @@
   "email": "mike.gallagher@live.ie",
   "filters": {
     "open_access.is_oa": true,
-    "title_and_abstract.search": "retrieval-augmented generation",
-    "language": "languages/en",
-    "primary_topic.id": "t10181",
-    "publication_year": "2024-2025"
+    "language": "en",
+    "title_and_abstract.search": [
+      "retrieval augmented generation",
+      "retrieval-augmented generation",
+      "RAG"
+    ],
+    "from_date": "2023-01-01",
+    "to_date": "2025-08-20"
   },
   "per_page": 50,
-  "page": 9,
   "sort": "publication_year:desc"
 }

@@ -1,11 +1,4 @@
 # Database
 
-This folder contains scripts and configs for the **Database** stage.
+This folder contains scripts and configs for the **Qdrant Database** VM.
 
-- VM: (see mapping in root README)
-- Purpose: Describe what this stage does.
-- Typical commands: TBD.
-
-
-this is a test
-This is also a test. 

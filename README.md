@@ -107,7 +107,9 @@ Hosted on a Minisforum UM890 Pro running Proxmox
 ## Performance & Tuning
 Now that I have a functional pipeline, I'm learning how to measure and tune performance. Going forward I'll add more hardware, however the metrics I establish now will always be relevant. 
 
-For example, a key bottleneck is PostgreSQL. I'm looking at the following measures:
+At present I’m running entirely on CPU (Ryzen 9 8945HS), with no GPU acceleration. While that imposes obvious limits, it also creates a great opportunity to learn how to push systems through careful configuration, query optimisation, and monitoring rather than raw compute power. (In other words, and in less spinny terms, my hardware is underspecced but I'm making the most of it by learning about tuning.)
+
+One of the main areas I’m exploring is PostgreSQL performance. These are some of the metrics I'm tracking:
 
 # PostgreSQL Health Check Summary
 

@@ -5,7 +5,7 @@ hosts = [
     ("192.168.0.17", "Storage"),
     ("192.168.0.13", "Ingestion"),
     ("192.168.0.11", "Databases"),
-]
+    ]
 username = "mike"      # Change to your SSH username
 key_file = "/home/mike/.ssh/id_rsa"  # Path to your SSH private key
 

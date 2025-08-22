@@ -23,8 +23,3 @@ Ingestion/src/venv/
 secrets/*.yaml
 Ingestion/src/venv/
 
-
-venv/
-.venv/
-env/
-ENV/

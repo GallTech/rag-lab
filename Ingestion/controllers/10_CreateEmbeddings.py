@@ -18,7 +18,7 @@ QDRANT_URL = "http://192.168.0.11:6333"
 QDRANT_COLLECTION = "openalex"
 
 BATCH_SIZE = 1000         # total chunks to process per loop
-EMBED_CHUNK_SIZE = 192    # per request to embed server
+EMBED_CHUNK_SIZE = 256    # per request to embed server
 QDRANT_CHUNK_SIZE = 512   # per upsert to Qdrant
 SLEEP_BETWEEN_BATCHES = 0 # seconds
 
@@ -76,7 +76,7 @@ def mark_embedded(ids):
         conn.commit()
 
 # === Embedding & Qdrant helpers ===
-@retry  # ADDED
+@retry   
 def embed_texts(texts):
     r = requests.post(EMBED_ENDPOINT, json={"texts": texts}, timeout=600)
     r.raise_for_status()
@@ -198,7 +198,6 @@ def process_batch():
     return len(rows)
 
 def main():
-    # ADDED: probe vector size once and ensure collection up front
     try:
         probe_vec = embed_texts(["probe"])[0]
         ensure_collection(len(probe_vec))

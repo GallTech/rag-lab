@@ -107,7 +107,7 @@ Hosted on a Minisforum UM890 Pro running Proxmox
 ## Performance & Tuning
 Now that I have a functional pipeline, I'm learning how to measure and tune performance. Going forward I'll add more hardware, however the metrics I establish now will always be relevant. 
 
-For example, a key bottleneck is Postrgres. I'm looking at the following measures:
+For example, a key bottleneck is PostgreSQL. I'm looking at the following measures:
 
 # PostgreSQL Health Check Summary
 

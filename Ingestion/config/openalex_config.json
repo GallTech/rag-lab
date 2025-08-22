@@ -1,16 +1,4 @@
 {
   "email": "mike.gallagher@live.ie",
-  "filters": {
-    "open_access.is_oa": true,
-    "language": "en",
-    "title_and_abstract.search": [
-      "retrieval augmented generation",
-      "retrieval-augmented generation",
-      "RAG"
-    ],
-    "from_date": "2023-01-01",
-    "to_date": "2025-08-20"
-  },
-  "per_page": 50,
-  "sort": "publication_year:desc"
+
 }

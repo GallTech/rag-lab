@@ -23,9 +23,8 @@ Ingestion/src/venv/
 secrets/*.yaml
 Ingestion/src/venv/
 
+
 venv/
 .venv/
 env/
 ENV/
-# Nested venv inside EmbedGeneration/setup/
-EmbedGeneration/setup/venv/

@@ -23,7 +23,6 @@ Ingestion/src/venv/
 secrets/*.yaml
 Ingestion/src/venv/
 
-# logs
-/logs
-Ingestion/src/logs/
-Ingestion/src/controllers/upload.logs
+
+# Nested venv inside EmbedGeneration/setup/
+EmbedGeneration/setup/venv/

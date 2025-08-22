@@ -38,15 +38,15 @@ All of this is very much a work in-progress as I learn.
 
 | VMID | Name                   | Tier | vCPU | **Max RAM** | **Min RAM (balloon)** | Notes |
 |-----:|------------------------|:----:|:----:|------------:|----------------------:|------|
-| 9103 | lab-1-embed01          |  A   | 14   | 28–32 GB    | 18–22 GB              | Enable ballooning (currently 0) |
-| 9102 | lab-1-db01             |  B   | 4    | 16–24 GB    | 14–20 GB              | Prefer balloon **off** for PG, or min ≥85% |
-| 9104 | lab-1-ingestion01      |  B   | 4    | 12–16 GB    | 8–12 GB               | Balloon on |
-| 9106 | lab-1-retrieval01      |  B   | 4    | 12–16 GB    | 8–12 GB               | Balloon on |
-| 9101 | lab-1-mgmt01           |  C   | 2    | 4–6 GB      | 3–5 GB                | If mostly idle, 4/3 is fine |
-| 9105 | lab-1-ui01             |  C   | 2    | 2–4 GB      | 2–3 GB                | Web UI is light |
-| 9107 | lab-1-train01          |  C   | 2    | 2–4 GB      | 2–3 GB                | Placeholder until real training |
-| 9108 | lab-1-storage01        |  C   | 2    | 4–6 GB      | 3–5 GB                | I/O bound |
-| 9109 | lab-1-monitoring01     |  C   | 2    | 2–4 GB      | 2–3 GB                | If Prom/Grafana: 4/3 can help |
+| 9103 | lab-1-embed01          |  A   | 14   | 28 GB    | 16 GB              | Balloon on |
+| 9102 | lab-1-db01             |  B   | 4    | 24 GB    | 0             | Prefer balloon **off** for PG, or min ≥85% |
+| 9104 | lab-1-ingestion01      |  B   | 4    | 16 GB    | 6 GB               | Balloon on |
+| 9106 | lab-1-retrieval01      |  B   | 4    | 16 GB    | 6 GB               | Balloon on |
+| 9101 | lab-1-mgmt01           |  C   | 2    | 4 GB      | 2 GB                | Currently light usage |
+| 9105 | lab-1-ui01             |  C   | 2    | 4 GB      | 2 GB                | Web UI is light |
+| 9107 | lab-1-train01          |  C   | 2    | 4 GB      | 2 GB                | Placeholder until real training |
+| 9108 | lab-1-storage01        |  C   | 2    | 6 GB      | 3 GB                | I/O bound |
+| 9109 | lab-1-monitoring01     |  C   | 2    | 4 GB      | 2 GB                | If Prom/Grafana: 4/3 can help |
 
 > Rule of thumb: **Tier B (DB)** either disables ballooning or sets **high min**. Others keep ballooning **on** with sensible mins.
 

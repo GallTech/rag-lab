@@ -29,16 +29,16 @@ Each functional stage of the pipeline has:
 
 This **1:1:1 mapping** enforces clear separation of concerns and makes it easy to evolve, test, or swap out stages independently. As I move forward, this will evolve to a more standard feature-branching workflow within each service branch.  
 
-| Repo Folder       | VM Name              | Branch Name              | Description                                                      |
-|------------------|----------------------|--------------------------|------------------------------------------------------------------|
-| Management       | lab-1-mgmt1          | lab-1-mgmt1              | Management & orchestration (Terraform, Ansible, backups)         |
-| Database         | lab-1-db1            | lab-1-db1                | Metadata (PostgreSQL) + Vector DB (Qdrant)                       |
-| EmbedGeneration  | lab-1-embed-generator| lab-1-embed-generator    | Embedding Service (currently: nomic-embed-text-v1)               |
-| Ingestion        | lab-1-ingestion      | lab-1-ingestion          | Data ingestion (SharePoint + OpenAlex pipelines)                 |
-| UI               | lab-1-ui             | lab-1-ui                 | UI layer (Prototyping: Streamlit; Prod: React + TypeScript)      |
-| Retrieval        | lab-1-retrieval      | lab-1-retrieval          | FastAPI retrieval microservice + LangChain orchestration         |
-| Storage          | lab-1-storage01      | lab-1-storage01          | Object storage (MinIO)                                           |
-| Monitoring       | lab-1-monitoring     | lab-1-monitoring         | Monitoring & Logging (Prometheus, Grafana, Alertmanager, Filebeat → Elasticsearch)             |
+| Repo Folder      | VM Name             | Branch Name             | Description                                                                 |
+|------------------|---------------------|-------------------------|-----------------------------------------------------------------------------|
+| Management       | lab-1-mgmt01        | lab-1-mgmt01            | Management & orchestration (Terraform, Ansible, backups)                    |
+| Database         | lab-1-db01          | lab-1-db01              | Metadata (PostgreSQL) + Vector DB (Qdrant)                                  |
+| EmbedGeneration  | lab-1-embed01       | lab-1-embed01           | Embedding Service (currently: nomic-embed-text-v1)                          |
+| Ingestion        | lab-1-ingestion01   | lab-1-ingestion01       | Data ingestion (SharePoint + OpenAlex pipelines)                            |
+| UI               | lab-1-ui01          | lab-1-ui01              | UI layer (Prototyping: Streamlit; Prod: React + TypeScript)                 |
+| Retrieval        | lab-1-retrieval01   | lab-1-retrieval01       | FastAPI retrieval microservice + LangChain orchestration                    |
+| Storage          | lab-1-storage01     | lab-1-storage01         | Object storage (MinIO)                                                      |
+| Monitoring       | lab-1-monitoring01  | lab-1-monitoring01      | Monitoring & Logging (Prometheus, Grafana, Alertmanager, Filebeat → Elasticsearch) |
 
 
 ## Project Timeline (2025–2027)

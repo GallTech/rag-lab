@@ -53,7 +53,7 @@ This **1:1:1 mapping** enforces clear separation of concerns and makes it easy t
 | Aug – Oct 2026  | Domain LLM (hybrid)              | Fine-tune pipeline on AI/ML research corpora (local GPUs + cloud training options); LoRA/adapters; prompt workflows |
 | Nov 2026 – Jan 2027 | Graph Retriever & Re-ranking (hybrid) | Multi-hop, relationship-aware retrieval with Mistral-7B (cloud); pipeline infra on-prem |
 | Feb – Jun 2027  | Cloud Migration (hybrid → cloud-native) | Migrate pipeline to AWS/GCP; hybrid homelab ↔ cloud; ensure metric parity during transition |
-| Jul – Dec 2027  | Cloud Land & Expand (cloud-native) | Fully cloud-based scaling, managed services, cost optimisation, cloud-first workloads |
+| Jul – Dec 2027  | Cloud: Land & Expand | Fully cloud-based scaling, managed services, cost optimisation, cloud-first workloads |
 
 
 ## SharePoint Online Security Integration (Nov 2025 – Jan 2026)

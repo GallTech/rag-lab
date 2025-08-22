@@ -1,6 +1,6 @@
 ## Homelab Retrieval-Augmented Generation (RAG)  
 
-A Retrieval-Augmented Generation (RAG) system designed to ingest, embed, and query ~200,000 Artificial Intelligence research papers.
+A Retrieval-Augmented Generation (RAG) system designed to ingest, embed, and query ~100,000 Artificial Intelligence research papers.
 
 ## Project Goals
 1.	Hands-on learning: Build my first non-trivial Linux software project, gaining practical experience with Python, Bash, GitHub, monitoring, and related tooling.
@@ -8,7 +8,7 @@ A Retrieval-Augmented Generation (RAG) system designed to ingest, embed, and que
 3.	User Experience & Prompt Engineering: Design intuitive interfaces and effective, measurable prompts. 
 4.	Practical research assistant: Maintain a weekly-updated repository of the latest AI research, enriched through my RAG pipeline and queried via LLMs.
 
-The lab ingests ~200,000 AI research papers from **SharePoint**, **OpenAlex**, and other sources. It extracts metadata and ACLs, and generates vector embeddings for retrieval-augmented LLM reasoning. Each week I will add the latest available papers. 
+The lab ingests ~100,000 AI research papers from **SharePoint**, **OpenAlex**, and other sources. It extracts metadata and ACLs, and generates vector embeddings for retrieval-augmented LLM reasoning. Each week I will add the latest available papers. 
 
 ## Current Ingestion & Embedding Status 
 - PDFs in MinIO: 105688  
@@ -45,7 +45,7 @@ This **1:1:1 mapping** enforces clear separation of concerns and makes it easy t
 
 | Dates           | Project                          | Notes                                                                 |
 |-----------------|----------------------------------|-----------------------------------------------------------------------|
-| Jun – Aug 2025  | Core RAG Build (hybrid: on-prem + cloud LLM) | Self-hosted ingestion, storage, retrieval; query LLM (ChatGPT) in cloud; ~200k docs; basic CLI |
+| Jun – Aug 2025  | Core RAG Build (hybrid: on-prem + cloud LLM) | Self-hosted ingestion, storage, retrieval; query LLM (ChatGPT) in cloud; ~100k docs; basic CLI |
 | Sept – Oct 2025 | Prompt Engineering & User Experience | Design intuitive interfaces, prototype user flows, and build first prompt libraries |
 | Nov 2025 – Jan 2026 | SharePoint Security Integration (hybrid) | End-to-end permission flow; SharePoint in cloud, RAG infra on-prem; fast propagation of ACL changes |
 | Feb – Apr 2026  | Kubernetes/Terraform/Ansible (on-prem) | Refactor deployment of existing pipeline services into containerized + IaC form |

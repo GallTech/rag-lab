@@ -1,0 +1,5 @@
+# Example only. Real file: /etc/default/minio
+MINIO_ROOT_USER=changeme
+MINIO_ROOT_PASSWORD=changeme-very-strong
+MINIO_VOLUMES="/mnt/storage"
+MINIO_OPTS="--address :9000 --console-address :9001"

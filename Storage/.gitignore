@@ -1,0 +1,7 @@
+.DS_Store
+__pycache__/
+*.log
+secrets/
+minio-data/
+prometheus-data/
+grafana-data/

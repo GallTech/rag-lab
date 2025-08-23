@@ -1,0 +1,2 @@
+# values.yaml - Helm chart values placeholder
+replicaCount: 1

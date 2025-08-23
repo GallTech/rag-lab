@@ -1,25 +1,13 @@
 # macOS
 .DS_Store
 
-# Python
+# Python cache everywhere
 __pycache__/
-*.pyc
-*.pyo
+*.py[cod]
 *.pyd
-.env
 
-# Terraform
-.terraform/
-*.tfstate
-*.tfstate.*
-terraform.tfvars
-
-# Ansible
-*.retry
-
-# K8s
-*.kubeconfig
-Ingestion/src/venv/
-secrets/*.yaml
-Ingestion/src/venv/
-
+# Common venv names (fallback)
+.venv/
+venv/
+env/
+ENV/

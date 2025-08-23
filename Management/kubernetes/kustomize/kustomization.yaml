@@ -1,0 +1,3 @@
+# kustomization.yaml - Kustomize base
+resources:
+  - ../manifests/namespace.yaml

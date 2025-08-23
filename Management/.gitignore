@@ -1,0 +1,17 @@
+# Terraform state
+.terraform/
+*.tfstate
+*.tfstate.*
+terraform.tfvars      # keep terraform.tfvars.example in Git
+# Optional: commit .terraform.lock.hcl if you want pinned providers
+# .terraform.lock.hcl
+
+# Ansible
+*.retry
+.vault_pass.txt
+
+# Backups/artifacts
+backup/output/
+*.bak
+*.tar.gz
+*.log

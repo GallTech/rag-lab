@@ -81,8 +81,12 @@ def embed_texts(texts):
     r = requests.post(EMBED_ENDPOINT, json={"texts": texts}, timeout=600)
     r.raise_for_status()
     data = r.json()
-    return data.get("embeddings", data)
-
+    # Accept both batch {vectors:[...]} and single {embedding:[...]}
+    if isinstance(data, dict) and "vectors" in data:
+        return data["vectors"]
+    if isinstance(data, dict) and "embedding" in data:
+        return [data["embedding"]]
+    raise ValueError(f"Unexpected embed response keys: {list(data)[:5]}")
 def ensure_collection(vector_size):
     """Ensure Qdrant collection exists with the given vector size."""
     base = f"{QDRANT_URL}/collections/{QDRANT_COLLECTION}"

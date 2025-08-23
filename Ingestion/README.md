@@ -66,23 +66,6 @@ State lives under `/var/*` (databases, durable data). Code, templates, and scrip
 - **Qdrant** (Database VM) — HTTP 6333
 - **MinIO** (Storage VM) — HTTP 9000 (API), 9001 (console)
 
-Access is LAN-only; credentials are provided via environment or local `.env` **not** committed to Git.
+Access is LAN-only; credentials are provided via environment or local `.env` 
 
----
-
-## Configuration
-
-- Copy templates from `config/` and provide real values via:
-  - `/etc/ingestion/.env` (preferred), or
-  - exported environment variables in the shell.
-- Do **not** commit secrets. `.gitignore` excludes common secret patterns.
-
----
-
-## Operational tips
-
-- Run reports frequently:
-  - `python controllers/04_summary_counts.py` — end-to-end counts & progress
-- If a stage fails, re-run the single controller rather than the whole pipeline.
-- Use `utils/` scripts for diagnostics (e.g., orphan checks, disk usage, retry helpers).
 

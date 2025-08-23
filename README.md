@@ -2,7 +2,7 @@
 
 A Retrieval-Augmented Generation (RAG) system designed to ingest, embed, and query ~100,000 Artificial Intelligence research papers.
 
-A Retrieval-Augmented Generation (RAG) system is a way of improving how AI answers questions by letting it search real documents before it responds. This system has consumed over 100,000 research papers on Artificial Intelligence. Each paper is processed into an “embedding,” a mathematical representation that makes it possible to compare concepts and ideas rather than just matching keywords. When a question is asked, the system finds the most relevant passages from these embeddings and provides them to the AI model, which then generates a clear answer grounded in the source material. 
+A Retrieval-Augmented Generation (RAG) system is a way of improving how AI answers questions by letting it search real documents before it responds. This system has consumed over 100,000 Artificial Intelligence research papers. Each paper is processed into an “embedding,” a mathematical representation that makes it possible to compare concepts and ideas rather than just matching keywords. When a question is asked, the system finds the most relevant passages from these embeddings and provides them to the AI model, which then generates a clear answer grounded in the source material. 
 
 ## Project Goals
 1.	Hands-on learning: Build my first non-trivial Linux software project, gaining practical experience with Python, Bash, GitHub, monitoring, and related tooling.

@@ -13,14 +13,13 @@ This VM serves the user interface for the RAG lab. For now it runs a minimal Str
 - Logs: /var/log/ui/stdout.log and /var/log/ui/stderr.log
 - Systemd unit: ui.service or ui@<user>.service
 
-Only /opt, /etc, and /var are used at runtime. The repo under ~/rag-lab is safe to delete or reclone.
 
 ---
 
 ## Networking
 
 - Streamlit HTTP: TCP 8501 (LAN only)
-- Intended clients: browsers on your LAN; the app will call the Retrieval API when wired
+- Intended clients: browsers on LAN; the app will call the Retrieval API when wired
 
 ---
 
@@ -31,7 +30,6 @@ Real runtime config lives in /etc/ui/.env. Example keys:
 - UI_PORT=8501
 - BACKEND_BASE_URL=http://lab-1-retrieval01:8001
 
-Keep a template at UI/config/.env.example in the repo. Never commit the real /etc/ui/.env.
 
 ---
 
@@ -40,7 +38,7 @@ Keep a template at UI/config/.env.example in the repo. Never commit the real /et
 - config/ — templates (example .env)
 - deploy/ — helpers to sync code to /opt and restart the service
 - docs/ — runbooks and notes (optional)
-- setup/ — one-time bootstrap scripts (optional)
+- setup/ — one-time bootstrap scripts 
 - src/ — app.py and UI source code
 - tests/ — smoke tests
 - .gitignore

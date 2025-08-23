@@ -13,7 +13,7 @@ PG_CONFIG = dict(
     user="mike",
     password=os.getenv("PG_PASSWORD"),
 )
-EMBED_ENDPOINT = "http://192.168.0.12:8000/embed"
+EMBED_ENDPOINT = os.getenv("EMBED_ENDPOINT", "http://lab-1-embed01:8000/embed")
 QDRANT_URL = "http://192.168.0.11:6333"
 QDRANT_COLLECTION = "openalex"
 

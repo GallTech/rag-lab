@@ -95,11 +95,3 @@ The deploy helper script UI/deploy/sync_and_restart.sh performs steps 2 and 3.
 
 Do not commit the venv. Keep requirements.txt in the repo.
 
----
-
-## Guardrails
-
-- Do not run the app manually; always use systemd.
-- Do not serve from ~/rag-lab; that clone is for Git work only.
-- Keep secrets and runtime config in /etc/ui/.env, never in Git.
-- Treat this VM as stateless; backups are not required beyond the repo.

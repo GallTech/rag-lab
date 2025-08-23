@@ -10,7 +10,6 @@ This VM serves the Retrieval API. It accepts queries, fetches relevant passages 
 - Logs: /var/log/retrieval/stdout.log and /var/log/retrieval/stderr.log
 - Systemd unit: retrieval.service
 
-Only /opt, /etc, and /var are used at runtime. The repo under ~/rag-lab is safe to delete/reclone.
 
 ## Networking
 - Retrieval HTTP API: TCP 8001 (LAN only)
@@ -24,7 +23,6 @@ Real runtime config lives in /etc/retrieval/.env. Example keys:
 - PG_DSN=postgresql://user:pass@lab-1-db01:5432/dbname
 - EMBED_ENDPOINT=http://lab-1-embed01:8000/embed
 
-Keep a template at Retrieval/config/.env.example. Never commit the real /etc/retrieval/.env.
 
 ## Repository layout (this folder)
 - config/ — templates (example .env)
@@ -63,9 +61,3 @@ Keep a template at Retrieval/config/.env.example. Never commit the real /etc/ret
   - source /opt/venvs/retrieval/bin/activate
   - pip install -r /opt/rag-lab/Retrieval/requirements.txt
   - deactivate
-Do not commit the venv. Keep requirements.txt in the repo.
-
-## Guardrails
-- Do not run manually; always use systemd.
-- Do not serve from ~/rag-lab; that clone is for Git work only.
-- Keep secrets and runtime config in /etc/retrieval/.env, never in Git.

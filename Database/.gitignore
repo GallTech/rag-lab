@@ -1,22 +1,14 @@
-# macOS
-.DS_Store
+# venvs (local-only)
+venv/
+.venv/
 
-# Python
-__pycache__/
-*.pyc
-*.pyo
-*.pyd
-.env
+# dumps & logs
+dumps/
+*.sql
+*.dump
+*.log
 
-# Terraform
-.terraform/
-*.tfstate
-*.tfstate.*
-terraform.tfvars
-
-# Ansible
-*.retry
-
-# K8s
-*.kubeconfig
-secrets/*.yaml
+# runtime state (never commit)
+.qdrant/
+qdrant/
+qdrant_data/

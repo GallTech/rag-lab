@@ -1,0 +1,28 @@
+# macOS
+.DS_Store
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyd
+
+# venvs
+venv/
+.venv/
+env/
+ENV/
+
+# logs
+*.log
+logs/
+nohup.out
+
+# local config
+.env
+*.env
+secrets/
+
+# Node (if you add a React/Next app later)
+node_modules/
+dist/
+.build/

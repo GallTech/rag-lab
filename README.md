@@ -40,7 +40,7 @@ This **1:1 mapping** enforces clear separation of concerns and makes it easy to 
 | [Retrieval](https://github.com/lanternadev/rag-lab/tree/main/Retrieval)   | lab-1-retrieval01  | FastAPI retrieval microservice + LangChain orchestration                    |
 | [Storage](https://github.com/lanternadev/rag-lab/tree/main/Storage)       | lab-1-storage01    | Object storage (MinIO)                                                      |
 | [Monitoring](https://github.com/lanternadev/rag-lab/tree/main/Monitoring) | lab-1-monitoring01 | Monitoring & Logging (Prometheus, Grafana, Alertmanager, Filebeat → Elasticsearch) |
-| [Model](https://github.com/lanternadev/rag-lab/tree/main/Model)           | lab-1-train01      | Training, fine-tuning, reranking, and evaluation experiments                |
+| [Model](https://github.com/lanternadev/rag-lab/tree/main/Model)           | lab-1-model01      | Training, fine-tuning, reranking, and evaluation experiments                |
 ## Project Timeline (2025–2027)
 
 | Dates           | Project                          | Notes                                                                 |

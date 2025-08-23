@@ -1,0 +1,35 @@
+# macOS cruft
+.DS_Store
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Virtual environments
+venv/
+.venv/
+env/
+ENV/
+/opt/venvs/
+EmbedGeneration/setup/venv/
+
+# Logs
+*.log
+logs/
+nohup.out
+
+# Models / caches
+.cache/
+models/
+checkpoints/
+
+# Local config (never commit real secrets)
+.env
+*.env
+secrets/
+
+# Systemd overrides / runtime state
+*.service
+*.pid

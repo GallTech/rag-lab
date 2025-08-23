@@ -93,5 +93,4 @@ The deploy helper script UI/deploy/sync_and_restart.sh performs steps 2 and 3.
   - pip install -r /opt/rag-lab/UI/requirements.txt
   - deactivate
 
-Do not commit the venv. Keep requirements.txt in the repo.
 

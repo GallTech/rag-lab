@@ -1,67 +1,62 @@
-# Database (lab-1-db01)
+This runs the embedding service. It exposes a FastAPI app served by Uvicorn that generates embeddings with the model nomic-embed-text-v1.
 
-This VM provides the **state layer** for the lab:
+Architecture
+	•	Service: FastAPI app (embed_server.py)
+	•	Model: nomic-embed-text-v1
+	•	Process manager: systemd (embed.service)
+	•	Network: TCP port 8000
+	•	Clients: Ingestion (batch embedding), Retrieval (on-demand)
 
-- **PostgreSQL** — authoritative metadata store (works, chunks, pipeline status).
-- **Qdrant** — vector database for chunk embeddings and semantic search.
+Paths
+	•	Runtime code: /opt/rag-lab/EmbedGeneration
+	•	Development clone: ~/rag-lab (scratch repo, safe to delete/reclone)
+	•	Virtual environment: /opt/venvs/embed
+	•	Config: /etc/embed/.env
+	•	Logs: /var/log/embed/stdout.log and /var/log/embed/stderr.log
+	•	Systemd unit: /etc/systemd/system/embed.service
 
-No application services run here.
+Configuration
 
----
+Runtime settings are in /etc/embed/.env. Example:
 
-## Canonical paths
+HOST=0.0.0.0
+PORT=8000
+QDRANT_URL=http://lab-1-db01:6333
+PG_DSN=postgresql://user:pass@lab-1-db01:5432/dbname
+EMBED_MODEL=nomic-embed-text-v1
 
-- PostgreSQL data: `/var/lib/postgresql/16/main`
-- Qdrant data: `/var/lib/qdrant` (bind-mounted to `/qdrant/storage` inside the container)
-- Module code (this repo): `/opt/rag-lab/Database`
-- Python venv (admin tooling): `/opt/venvs/database`
-- Logs: `/var/log/postgresql`, `/var/log/qdrant`
-- Live configs: `/etc/postgresql/16/main`, `/etc/qdrant` (templates live in this repo)
+Keep only a template (.env.example) in Git. Never commit real secrets.
 
-State stays under `/var/lib/...`. Code/templates/scripts stay under `/opt/rag-lab/Database`.
+Service management
 
----
+Check status: systemctl status embed
+Start: sudo systemctl start embed
+Stop: sudo systemctl stop embed
+Restart: sudo systemctl restart embed
+Logs (journal): journalctl -u embed -f
+Logs (files): tail -f /var/log/embed/stdout.log
 
-## Networking
+Health check
+	•	/docs = FastAPI auto docs
+	•	/health = optional simple status
+	•	Quick test: curl -s http://localhost:8000/health || curl -s http://localhost:8000/docs | head
 
-- PostgreSQL: TCP 5432 (LAN only)
-- Qdrant HTTP API: TCP 6333 (LAN only)
-- Access limited to Ingestion, Embed, Retrieval, and Management VMs.
+Updating code
+	1.	In ~/rag-lab, pull latest dev branch
+cd ~/rag-lab
+git checkout dev
+git pull origin dev
+	2.	Sync to runtime location
+rsync -a –delete ~/rag-lab/EmbedGeneration/ /opt/rag-lab/EmbedGeneration/
+	3.	Restart service
+sudo systemctl restart embed
+	4.	Verify
+curl -s http://localhost:8000/health
 
----
+Dependencies
 
-## Repository layout (this folder)
-
-- `config/` — templates only (never live configs)
-  - `postgresql.conf.template`
-  - `pg_hba.conf.template`
-  - `qdrant.yaml.template`
-- `migrations/` — optional SQL or Alembic migrations for PostgreSQL schema
-- `scripts/` — admin utilities (backup, restore, health checks, maintenance)
-- `docs/` — runbooks / SOPs / notes
-- `tests/` — smoke & consistency checks
-- `.gitignore`
-- `README.md`
-
-
----
-
-## Qdrant (container)
-
-- Image: `qdrant/qdrant:v1.9.1`
-- Container name: `qdrant`
-- Bind mount: `/var/lib/qdrant:/qdrant/storage`
-- Health probe: `curl -s http://localhost:6333/collections`
-
----
-
-## Python admin environment
-
-Create once and reuse:
-
-```bash
-python3 -m venv /opt/venvs/database
-source /opt/venvs/database/bin/activate
-python -m pip install --upgrade pip
-pip install "psycopg[binary]" qdrant-client pgcli
+Virtual environment lives at /opt/venvs/embed.
+To update packages:
+source /opt/venvs/embed/bin/activate
+pip install -r /opt/rag-lab/EmbedGeneration/requirements.txt
 deactivate

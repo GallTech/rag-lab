@@ -104,6 +104,29 @@ Hosted on a Minisforum UM890 Pro running Proxmox
   
 [Click here to read about my ongoing efforts to manage CPU & RAM allocation](https://github.com/lanternadev/rag-lab/blob/main/Management/deploy/vmsetup.md)
 
+
+# CI/CD Overview
+
+I building a simple branch-based promotion pipeline with two environments per service, orchestrated by GitHub Actions:
+
+- **dev → staging**  
+  Every push/merge to `dev` triggers a workflow that builds, runs tests, and deploys to the staging endpoint on the target VM (separate systemd unit/port).
+
+- **main → production**  
+  Merging `dev` into `main` triggers a workflow that (optionally after manual approval or stricter checks) deploys to the production endpoint on the same VM (prod unit/port).
+
+## Flow
+
+`feature branch → pull request → dev (auto deploy to staging) → verify (/health, /version) → PR dev→main → approval/tests → main (auto deploy to prod)`
+
+## Endpoints (example: Embed)
+
+- Staging: `http://embed.example.com:8000/health`  
+- Production: `https://embed.example.com/health`  
+
+Both expose `/health` and `/version` for post-deploy checks.
+
+
 ## Performance & Tuning
 Now that I have a functional pipeline, I'm learning how to measure and tune performance. Going forward I'll add more hardware, however the metrics I establish now will always be relevant. 
 

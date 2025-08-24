@@ -1,12 +1,12 @@
 ## Homelab Retrieval-Augmented Generation (RAG)  
 
-A Retrieval-Augmented Generation (RAG) system designed to ingest, embed, and query ~100,000 Artificial Intelligence research papers.
+**A Retrieval-Augmented Generation (RAG) system designed to ingest, embed, and query ~100,000 Artificial Intelligence research papers.**
 
-A Retrieval-Augmented Generation (RAG) system grounds a large language model's responses in a specific, authoritative knowledge base. My current lab RAG system has consumed over 100,000 Artificial Intelligence research papers. 
+Retrieval-Augmented Generation (RAG) systems ground a large language model's responses in a specific, authoritative knowledge base. My current RAG system has consumed over 100,000 Artificial Intelligence research papers. 
 
 Each paper is broken into smaller sections ("chunks") and each of these is processed into an “embedding,” a mathematical representation that makes it possible to compare concepts and ideas rather than just matching keywords. 
 
-When a question is asked, it is also broken into mathematical embeddings. The system then matches these embeddings and provides the results to the LLM model, which then generates a clear natural language answer grounded in the source material. 
+When a question is asked, it too is converted into mathematical embeddings. The system can then match these embeddings (question & content) and provide the results to the LLM model. The language model then uses the retrieved content, along with other instructions such as tone and style, to generate a clear natural-language answer that stays grounded in the source material.
 
 ## Project Goals
 1.	Hands-on learning: Build my first non-trivial Linux software project, gaining practical experience with Python, Bash, GitHub, monitoring, and related tooling.

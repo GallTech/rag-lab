@@ -105,9 +105,9 @@ Hosted on a Minisforum UM890 Pro running Proxmox
 [Click here to read about my ongoing efforts to manage CPU & RAM allocation](https://github.com/lanternadev/rag-lab/blob/main/Management/deploy/vmsetup.md)
 
 
-# CI/CD Overview
+## CI/CD Overview
 
-I building a simple branch-based promotion pipeline with two environments per service, orchestrated by GitHub Actions:
+I am building a simple branch-based promotion pipeline with two environments per service, orchestrated by GitHub Actions:
 
 - **dev → staging**  
   Every push/merge to `dev` triggers a workflow that builds, runs tests, and deploys to the staging endpoint on the target VM (separate systemd unit/port).
@@ -115,11 +115,11 @@ I building a simple branch-based promotion pipeline with two environments per se
 - **main → production**  
   Merging `dev` into `main` triggers a workflow that (optionally after manual approval or stricter checks) deploys to the production endpoint on the same VM (prod unit/port).
 
-## Flow
+**Flow**
 
 `feature branch → pull request → dev (auto deploy to staging) → verify (/health, /version) → PR dev→main → approval/tests → main (auto deploy to prod)`
 
-## Endpoints (example: Embed)
+**Endpoints (example: Embed)**
 
 - Staging: `http://embed.example.com:8000/health`  
 - Production: `https://embed.example.com/health`  
@@ -134,7 +134,7 @@ At present I’m running entirely on CPU (Ryzen 9 8945HS), with no GPU accelerat
 
 One of the main areas I’m exploring is PostgreSQL performance. These are some of the metrics I'm tracking:
 
-# PostgreSQL Health Check Summary
+## PostgreSQL Health Check Summary
 
 | Check                        | Command (psql)                                                                                                                                          | Healthy Target                  |
 |-------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------|
